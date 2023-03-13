@@ -4219,76 +4219,6 @@
     106,
     104
   ],
-  "mcl_jukebox_record_wait.png": [
-    39,
-    42,
-    55
-  ],
-  "mcl_jukebox_record_cat.png": [
-    40,
-    45,
-    51
-  ],
-  "mcl_jukebox_record_mellohi.png": [
-    46,
-    44,
-    59
-  ],
-  "mcl_jukebox_record_13.png": [
-    51,
-    47,
-    51
-  ],
-  "mcl_jukebox_record_ward.png": [
-    39,
-    43,
-    51
-  ],
-  "mcl_jukebox_record_chirp.png": [
-    49,
-    40,
-    50
-  ],
-  "mcl_jukebox_record_blocks.png": [
-    47,
-    37,
-    49
-  ],
-  "mcl_jukebox_record_11.png": [
-    41,
-    40,
-    52
-  ],
-  "mcl_jukebox_record_mall.png": [
-    42,
-    41,
-    62
-  ],
-  "mcl_jukebox_top.png": [
-    72,
-    56,
-    44
-  ],
-  "mcl_jukebox_record_strad.png": [
-    45,
-    45,
-    57
-  ],
-  "mcl_jukebox_record_far.png": [
-    47,
-    48,
-    52
-  ],
-  "mcl_jukebox_side.png": [
-    94,
-    74,
-    57
-  ],
-  "mcl_jukebox_record_stal.png": [
-    39,
-    38,
-    49
-  ],
   "loom_front.png": [
     127,
     101,
@@ -9238,11 +9168,6 @@
     110,
     101,
     96
-  ],
-  "mesecons_noteblock.png": [
-    104,
-    81,
-    63
   ],
   "jeija_solar_panel_inverted.png": [
     100,

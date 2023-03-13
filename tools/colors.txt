@@ -741,9 +741,6 @@ mcl_hoppers:hopper_side_disabled 50 50 50
 mcl_itemframes:glow_item_frame 182 132 79
 mcl_itemframes:item_frame 127 94 66
 
-# mcl_jukebox
-mcl_jukebox:jukebox 77 60 46
-
 # mcl_lanterns
 mcl_lanterns:chain 41 41 41
 mcl_lanterns:lantern_ceiling 102 73 51
@@ -2141,9 +2138,6 @@ mesecons_delayer:delayer_on_locked 116 104 99
 # mesecons_lightstone
 mesecons_lightstone:lightstone_off 73 52 44
 mesecons_lightstone:lightstone_on 122 65 41
-
-# mesecons_noteblock
-mesecons_noteblock:noteblock 114 89 69
 
 # mesecons_pistons
 mesecons_pistons:piston_down_normal_off 117 108 104

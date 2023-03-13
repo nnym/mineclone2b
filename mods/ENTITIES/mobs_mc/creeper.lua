@@ -85,18 +85,6 @@ mcl_mobs.register_mob("mobs_mc:creeper", {
 			end
 		end
 	end,
-	on_die = function(self, pos, cmi_cause)
-		-- Drop a random music disc when killed by skeleton or stray
-		if cmi_cause and cmi_cause.type == "punch" then
-			local luaentity = cmi_cause.puncher and cmi_cause.puncher:get_luaentity()
-			if luaentity and luaentity.name:find("arrow") then
-				local shooter_luaentity = luaentity._shooter and luaentity._shooter:get_luaentity()
-				if shooter_luaentity and (shooter_luaentity.name == "mobs_mc:skeleton" or shooter_luaentity.name == "mobs_mc:stray") then
-					minetest.add_item({x=pos.x, y=pos.y+1, z=pos.z}, "mcl_jukebox:record_" .. math.random(9))
-				end
-			end
-		end
-	end,
 	maxdrops = 2,
 	drops = {
 		{name = "mcl_mobitems:gunpowder",
@@ -204,18 +192,6 @@ mcl_mobs.register_mob("mobs_mc:creeper_charged", {
 			self._forced_explosion_countdown_timer = self._forced_explosion_countdown_timer - dtime
 			if self._forced_explosion_countdown_timer <= 0 then
 				self:boom(mcl_util.get_object_center(self.object), self.explosion_strength)
-			end
-		end
-	end,
-	on_die = function(self, pos, cmi_cause)
-		-- Drop a random music disc when killed by skeleton or stray
-		if cmi_cause and cmi_cause.type == "punch" then
-			local luaentity = cmi_cause.puncher and cmi_cause.puncher:get_luaentity()
-			if luaentity and luaentity.name:find("arrow") then
-				local shooter_luaentity = luaentity._shooter and luaentity._shooter:get_luaentity()
-				if shooter_luaentity and (shooter_luaentity.name == "mobs_mc:skeleton" or shooter_luaentity.name == "mobs_mc:stray") then
-					minetest.add_item({x=pos.x, y=pos.y+1, z=pos.z}, "mcl_jukebox:record_" .. math.random(9))
-				end
 			end
 		end
 	end,

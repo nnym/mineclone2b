@@ -19,7 +19,6 @@ minetest.register_alias("mesecons:pressure_plate_sprucewood", "mesecons_pressure
 minetest.register_alias("mesecons:pressure_plate_junglewood", "mesecons_pressureplates:pressure_plate_junglewood_off")
 minetest.register_alias("mesecons:mesecon_socket", "mesecons_temperest:mesecon_socket_off")
 minetest.register_alias("mesecons:mesecon_inverter", "mesecons_temperest:mesecon_inverter_on")
-minetest.register_alias("mesecons:noteblock", "mesecons_noteblock:noteblock")
 minetest.register_alias("mesecons:delayer", "mesecons_delayer:delayer_off_1")
 minetest.register_alias("mesecons:solarpanel", "mesecons_solarpanel:solar_panel_off")
 
