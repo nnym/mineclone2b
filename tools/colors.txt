@@ -780,23 +780,15 @@ mcl_mangrove:water_logged_roots 38 98 129
 
 # mcl_maps
 mcl_maps:filled_map_character_male 123 77 64
-mcl_maps:filled_map_mcl_skins_base_18D471DFF_female 0 0 0
 mcl_maps:filled_map_mcl_skins_base_18D471DFF_male 0 0 0
-mcl_maps:filled_map_mcl_skins_base_1B47A57FF_female 0 0 0
 mcl_maps:filled_map_mcl_skins_base_1B47A57FF_male 0 0 0
-mcl_maps:filled_map_mcl_skins_base_1EEB592FF_female 0 0 0
 mcl_maps:filled_map_mcl_skins_base_1EEB592FF_male 0 0 0
-mcl_maps:filled_map_mcl_skins_character_1_female 106 100 86
 
 # mcl_meshhand
 mcl_meshhand:character_male 123 77 64
-mcl_meshhand:mcl_skins_base_18D471DFF_female 0 0 0
 mcl_meshhand:mcl_skins_base_18D471DFF_male 0 0 0
-mcl_meshhand:mcl_skins_base_1B47A57FF_female 0 0 0
 mcl_meshhand:mcl_skins_base_1B47A57FF_male 0 0 0
-mcl_meshhand:mcl_skins_base_1EEB592FF_female 0 0 0
 mcl_meshhand:mcl_skins_base_1EEB592FF_male 0 0 0
-mcl_meshhand:mcl_skins_character_1_female 106 100 86
 
 # mcl_minecarts
 mcl_minecarts:activator_rail 87 70 59

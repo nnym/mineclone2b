@@ -3,14 +3,12 @@ local color_to_string = minetest.colorspec_to_colorstring
 
 mcl_skins = {
 	simple_skins = {},
-	item_names = {"base", "footwear", "eye", "mouth", "bottom", "top", "hair", "headwear"},
-	tab_names = {"template", "base", "headwear", "hair", "eye", "mouth", "top", "arm", "bottom", "footwear"},
+	item_names = {"base", "footwear", "mouth", "bottom", "top", "hair", "headwear"},
+	tab_names = {"template", "base", "headwear", "hair", "mouth", "top", "bottom", "footwear"},
 	tab_descriptions = {
 		template = S("Templates"),
-		arm = S("Arm size"),
 		base = S("Bases"),
 		footwear = S("Footwears"),
-		eye = S("Eyes"),
 		mouth = S("Mouths"),
 		bottom = S("Bottoms"),
 		top = S("Tops"),
@@ -19,7 +17,6 @@ mcl_skins = {
 		skin = S("Skins"),
 	},
 	steve = {}, -- Stores skin values for Steve skin
-	alex = {}, -- Stores skin values for Alex skin
 	base = {}, -- List of base textures
 	
 	-- Base color is separate to keep the number of junk nodes registered in check
@@ -43,7 +40,6 @@ mcl_skins = {
 	},
 	footwear = {},
 	mouth = {},
-	eye = {},
 	bottom = {},
 	top = {},
 	hair = {},
@@ -58,10 +54,6 @@ function mcl_skins.register_item(item)
 	local texture = item.texture or "blank.png"
 	if item.steve then
 		mcl_skins.steve[item.type] = texture
-	end
-	
-	if item.alex then
-		mcl_skins.alex[item.type] = texture
 	end
 	
 	table.insert(mcl_skins[item.type], texture)
@@ -119,13 +111,7 @@ function mcl_skins.update_player_skin(player)
 
 	mcl_player.player_set_skin(player, mcl_skins.compile_skin(skin))
 	
-	local slim_arms
-	if skin.simple_skins_id then
-		slim_arms = mcl_skins.simple_skins[skin.simple_skins_id].slim_arms
-	else
-		slim_arms = skin.slim_arms
-	end
-	local model = slim_arms and "mcl_armor_character_female.b3d" or "mcl_armor_character.b3d"
+	local model = "mcl_armor_character.b3d"
 	mcl_player.player_set_model(player, model)
 end
 
@@ -141,11 +127,7 @@ minetest.register_on_joinplayer(function(player)
 	if skin then
 		mcl_skins.players[player] = skin
 	else
-		if math.random() > 0.5 then
-			skin = table.copy(mcl_skins.steve)
-		else
-			skin = table.copy(mcl_skins.alex)
-		end
+		skin = table.copy(mcl_skins.steve)
 		mcl_skins.players[player] = skin
 	end
 	
@@ -202,13 +184,7 @@ function mcl_skins.show_formspec(player, active_tab, page_num)
 		if skin.simple_skins_id then break end
 	end
 	
-	local slim_arms
-	if skin.simple_skins_id then
-		slim_arms = mcl_skins.simple_skins[skin.simple_skins_id].slim_arms
-	else
-		slim_arms = skin.slim_arms
-	end
-	local mesh = slim_arms and "mcl_armor_character_female.b3d" or "mcl_armor_character.b3d"
+	local mesh = "mcl_armor_character.b3d"
 
 	formspec = formspec ..
 		"model[10,0.3;3,7;player_mesh;" .. mesh .. ";" ..
@@ -227,14 +203,13 @@ function mcl_skins.show_formspec(player, active_tab, page_num)
 		
 		local skins = table.copy(mcl_skins.simple_skins)
 		skins[-1] = {
-			slim_arms = skin.slim_arms,
 			texture = mcl_skins.compile_skin(skin),
 		}
 		
 		for i = page_start, page_end do
 			local skin = skins[i]
 			local j = i - page_start - 1
-			local mesh = skin.slim_arms and "mcl_armor_character_female.b3d" or "mcl_armor_character.b3d"
+			local mesh = "mcl_armor_character.b3d"
 			
 			local x = 3.5 + (j + 1) % 4 * 1.6
 			local y = 0.3 + math.floor((j + 1) / 4) * 3.1
@@ -263,13 +238,7 @@ function mcl_skins.show_formspec(player, active_tab, page_num)
 			mcl_skins.compile_skin(mcl_skins.steve) ..
 			",blank.png,blank.png;0,180;false;true;0,0]" ..
 
-			"button[4,5.2;2,0.8;steve;" .. S("Select") .. "]" ..
-
-			"model[6.5,2;2,3;player_mesh;mcl_armor_character_female.b3d;" ..
-			mcl_skins.compile_skin(mcl_skins.alex) ..
-			",blank.png,blank.png;0,180;false;true;0,0]" ..
-			
-			"button[6.5,5.2;2,0.8;alex;" .. S("Select") .. "]"
+			"button[4,5.2;2,0.8;steve;" .. S("Select") .. "]"
 			
 	elseif mcl_skins[active_tab] then
 		formspec = formspec ..
@@ -320,13 +289,6 @@ function mcl_skins.show_formspec(player, active_tab, page_num)
 			end
 			formspec = formspec .. "button[" .. x .. "," .. y .. ";1.5,1.5;" .. texture .. ";]"
 		end
-	elseif active_tab == "arm" then
-		local x = skin.slim_arms and 4.7 or 3.6
-		formspec = formspec ..
-			"image_button[3.6,0.3;1,1;mcl_skins_thick_arms.png;thick_arms;]" ..
-			"image_button[4.7,0.3;1,1;mcl_skins_slim_arms.png;slim_arms;]" ..
-			"style[arm;bgcolor=;bgimg=mcl_skins_select_overlay.png;bgimg_middle=14,14;bgimg_pressed=mcl_skins_select_overlay.png]" ..
-			"button[" .. x .. ",0.3;1,1;arm;]"
 	end
 
 	
@@ -431,12 +393,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		return true
 	end
 
-	if fields.alex then
-		mcl_skins.players[player] = table.copy(mcl_skins.alex)
-		mcl_skins.update_player_skin(player)
-		mcl_skins.show_formspec(player, active_tab, page_num)
-		return true
-	elseif fields.steve then
+	if fields.steve then
 		mcl_skins.players[player] = table.copy(mcl_skins.steve)
 		mcl_skins.update_player_skin(player)
 		mcl_skins.show_formspec(player, active_tab, page_num)
@@ -459,17 +416,6 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		return true
 	elseif fields.previous_page then
 		page_num = page_num - 1
-		mcl_skins.show_formspec(player, active_tab, page_num)
-		return true
-	end
-	
-	if active_tab == "arm" then
-		if fields.thick_arms then
-			skin.slim_arms = false
-		elseif fields.slim_arms then
-			skin.slim_arms = true
-		end
-		mcl_skins.update_player_skin(player)
 		mcl_skins.show_formspec(player, active_tab, page_num)
 		return true
 	end
@@ -578,13 +524,6 @@ local function init()
 	mcl_skins.steve.hair_color = 0xff5d473b
 	mcl_skins.steve.top_color = 0xff993535
 	mcl_skins.steve.bottom_color = 0xff644939
-	mcl_skins.steve.slim_arms = false
-	
-	mcl_skins.alex.base_color = mcl_skins.base_color[1]
-	mcl_skins.alex.hair_color = 0xff715d57
-	mcl_skins.alex.top_color = 0xff346840
-	mcl_skins.alex.bottom_color = 0xff383532
-	mcl_skins.alex.slim_arms = true
 end
 
 init()

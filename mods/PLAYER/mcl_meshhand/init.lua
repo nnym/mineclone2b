@@ -54,7 +54,7 @@ if mcl_skins_enabled then
 		local node_def = table.copy(node_def)
 		node_def._mcl_hand_id = skin.id
 		node_def.tiles = { skin.texture }
-		node_def.mesh = skin.slim_arms and "mcl_meshhand_female.b3d" or "mcl_meshhand.b3d"
+		node_def.mesh = "mcl_meshhand.b3d"
 		if skin.creative then
 			node_def.range = creative_hand_range
 			node_def.groups.dig_speed_class = 7

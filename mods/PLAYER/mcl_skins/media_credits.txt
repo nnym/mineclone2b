@@ -10,8 +10,6 @@ mcl_skins_mouth_3.png
 mcl_skins_mouth_4.png
 mcl_skins_mouth_5.png
 mcl_skins_select_overlay.png
-mcl_skins_slim_arms.png
-mcl_skins_thick_arms.png
 mcl_skins_top_2.png
 mcl_skins_top_5.png
 mcl_skins_eye_5.png

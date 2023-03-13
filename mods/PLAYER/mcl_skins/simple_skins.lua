@@ -36,8 +36,7 @@ local function init_simple_skins()
 
 		-- add metadata to list
 		mcl_skins.simple_skins[id] = {
-			texture = skin,
-			slim_arms = data and data.gender == "female",
+			texture = skin
 		}
 		id = id + 1
 	end

@@ -28,9 +28,6 @@ Coloring only works for "base", "bottom, "top", and "hair".
 `preview_rotation`
 A table containing properties x and y. x and y represent the x and y rotation of the item preview.
 
-`alex`
-If set to true the item will be default for female character.
-
 `steve`
 If set to true the item will be default for male character.
 
@@ -51,7 +48,6 @@ Each table contains the following properties:
 
 `id`: A string representing the node ID. A node can be registered using this node ID.
 `texture`: A texture string that can be used in the node defintion.
-`slim_arms`: A boolean value. If true, this texture is used with the "female" player mesh. Otherwise the regular mesh is to be used.
 
 ### `mcl_skins.get_node_id_by_player(player)`
 `player` is a player ObjectRef.

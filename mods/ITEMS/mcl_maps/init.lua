@@ -255,19 +255,11 @@ if mcl_skins_enabled then
 	-- Generate a node for every skin
 	local list = mcl_skins.get_skin_list()
 	for _, skin in pairs(list) do
-		if skin.slim_arms then
-			local female = table.copy(filled_wield_def)
-			female._mcl_hand_id = skin.id
-			female.mesh = "mcl_meshhand_female.b3d"
-			female.tiles = { skin.texture }
-			minetest.register_node("mcl_maps:filled_map_" .. skin.id, female)
-		else
-			local male = table.copy(filled_wield_def)
-			male._mcl_hand_id = skin.id
-			male.mesh = "mcl_meshhand.b3d"
-			male.tiles = { skin.texture }
-			minetest.register_node("mcl_maps:filled_map_" .. skin.id, male)
-		end
+		local male = table.copy(filled_wield_def)
+		male._mcl_hand_id = skin.id
+		male.mesh = "mcl_meshhand.b3d"
+		male.tiles = { skin.texture }
+		minetest.register_node("mcl_maps:filled_map_" .. skin.id, male)
 	end
 else
 	filled_wield_def._mcl_hand_id = "hand"
