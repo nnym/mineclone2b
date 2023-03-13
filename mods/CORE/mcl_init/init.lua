@@ -26,7 +26,7 @@ mcl_vars.tool_wield_scale = vector.new(1.8, 1.8, 1)
 
 -- Mapgen variables
 local mg_name = minetest.get_mapgen_setting("mg_name")
-local minecraft_height_limit = 256
+local minecraft_height_limit = 384
 local superflat = mg_name == "flat" and minetest.get_mapgen_setting("mcl_superflat_classic") == "true"
 local singlenode = mg_name == "singlenode"
 
@@ -113,33 +113,38 @@ if not superflat and not singlenode then
 	]]
 
 	-- Overworld
-	mcl_vars.mg_overworld_min = -62
-	mcl_vars.mg_overworld_max_official = mcl_vars.mg_overworld_min + minecraft_height_limit
+	mcl_vars.mg_overworld_min = -20618
+	mcl_vars.mg_overworld_min_original = -62
+	mcl_vars.mg_overworld_max_official = 30927
 	mcl_vars.mg_bedrock_overworld_min = mcl_vars.mg_overworld_min
 	mcl_vars.mg_bedrock_overworld_max = mcl_vars.mg_bedrock_overworld_min + 4
 	mcl_vars.mg_lava_overworld_max = mcl_vars.mg_overworld_min + 10
 	mcl_vars.mg_lava = true
 	mcl_vars.mg_bedrock_is_rough = true
 
-elseif singlenode then
-	mcl_vars.mg_overworld_min = -66
-	mcl_vars.mg_overworld_max_official = mcl_vars.mg_overworld_min + minecraft_height_limit
-	mcl_vars.mg_bedrock_overworld_min = mcl_vars.mg_overworld_min
-	mcl_vars.mg_bedrock_overworld_max = mcl_vars.mg_bedrock_overworld_min
-	mcl_vars.mg_lava = false
-	mcl_vars.mg_lava_overworld_max = mcl_vars.mg_overworld_min
-	mcl_vars.mg_bedrock_is_rough = false
 else
-	-- Classic superflat
-	local ground = tonumber(minetest.get_mapgen_setting("mgflat_ground_level")) or 8
+	if singlenode then
+		mcl_vars.mg_overworld_min = -66
+		mcl_vars.mg_overworld_max_official = mcl_vars.mg_overworld_min + minecraft_height_limit
+		mcl_vars.mg_bedrock_overworld_min = mcl_vars.mg_overworld_min
+		mcl_vars.mg_bedrock_overworld_max = mcl_vars.mg_bedrock_overworld_min
+		mcl_vars.mg_lava = false
+		mcl_vars.mg_lava_overworld_max = mcl_vars.mg_overworld_min
+		mcl_vars.mg_bedrock_is_rough = false
+	else
+		-- Classic superflat
+		local ground = tonumber(minetest.get_mapgen_setting("mgflat_ground_level")) or 8
 
-	mcl_vars.mg_overworld_min = ground - 3
-	mcl_vars.mg_overworld_max_official = mcl_vars.mg_overworld_min + minecraft_height_limit
-	mcl_vars.mg_bedrock_overworld_min = mcl_vars.mg_overworld_min
-	mcl_vars.mg_bedrock_overworld_max = mcl_vars.mg_bedrock_overworld_min
-	mcl_vars.mg_lava = false
-	mcl_vars.mg_lava_overworld_max = mcl_vars.mg_overworld_min
-	mcl_vars.mg_bedrock_is_rough = false
+		mcl_vars.mg_overworld_min = ground - 3
+		mcl_vars.mg_overworld_max_official = mcl_vars.mg_overworld_min + minecraft_height_limit
+		mcl_vars.mg_bedrock_overworld_min = mcl_vars.mg_overworld_min
+		mcl_vars.mg_bedrock_overworld_max = mcl_vars.mg_bedrock_overworld_min
+		mcl_vars.mg_lava = false
+		mcl_vars.mg_lava_overworld_max = mcl_vars.mg_overworld_min
+		mcl_vars.mg_bedrock_is_rough = false
+	end
+
+	mcl_vars.mg_overworld_min_original = mcl.vars.mg_overworld_min;
 end
 
 mcl_vars.mg_overworld_max = mcl_vars.mapgen_edge_max

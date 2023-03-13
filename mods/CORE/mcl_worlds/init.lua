@@ -62,7 +62,7 @@ local pos_to_dimension = mcl_worlds.pos_to_dimension
 -- mc_dimension is one of "overworld", "nether", "end" (default: "overworld").
 function mcl_worlds.layer_to_y(layer, mc_dimension)
 	   if mc_dimension == "overworld" or mc_dimension == nil then
-			   return layer + mcl_vars.mg_overworld_min
+			   return layer + mcl_vars.mg_overworld_min_original
 	   elseif mc_dimension == "nether" then
 			   return layer + mcl_vars.mg_nether_min
 	   elseif mc_dimension == "end" then
