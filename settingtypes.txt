@@ -45,6 +45,9 @@ mcl_disabled_structures (Disabled structures) string
 # Comma separated list of disabled event names
 mcl_disabled_events (Disabled events) string
 
+# Default maximum stack size (0-65535; default: 16384). 0 will be replaced by `default_stack_size`.
+mcl_stack_max (Default stack size) int 0 0 65535
+
 [Players]
 # If enabled, players respawn at the bed they last lay on instead of normal
 # spawn.

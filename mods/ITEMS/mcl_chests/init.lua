@@ -368,7 +368,7 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 		use_texture_alpha = minetest.features.use_texture_alpha_string_modes and "opaque" or false,
 		paramtype = "light",
 		paramtype2 = "facedir",
-		stack_max = 64,
+		stack_max = mcl_vars.stack_max,
 		sounds = mcl_sounds.node_sound_wood_defaults(),
 		groups = {deco_block=1},
 		on_construct = function(pos, node)
@@ -409,7 +409,7 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 		_chest_entity_animation_type = "chest",
 		paramtype = "light",
 		paramtype2 = "facedir",
-		stack_max = 64,
+		stack_max = mcl_vars.stack_max,
 		drop = drop,
 		groups = {handy=1,axey=1, container=2, deco_block=1, material_wood=1,flammable=-1,chest_entity=1, not_in_creative_inventory=1},
 		is_ground_content = false,
@@ -979,7 +979,7 @@ minetest.register_node("mcl_chests:ender_chest", {
 	use_texture_alpha = minetest.features.use_texture_alpha_string_modes and "opaque" or false,
 	paramtype = "light",
 	paramtype2 = "facedir",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = {deco_block=1},
 	sounds = mcl_sounds.node_sound_stone_defaults(),
 	on_construct = function(pos, node)

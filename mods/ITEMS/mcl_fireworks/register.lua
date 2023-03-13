@@ -8,7 +8,7 @@ local function register_rocket(n, duration, force)
 		description = description,
 		_tt_help = tt_help .. " " .. duration,
 		inventory_image = "mcl_fireworks_rocket.png",
-		stack_max = 64,
+		stack_max = mcl_vars.stack_max,
 		on_use = function(itemstack, user, pointed_thing)
 			local elytra = mcl_playerplus.elytra[user]
 			if elytra.active and elytra.rocketing <= 0 then

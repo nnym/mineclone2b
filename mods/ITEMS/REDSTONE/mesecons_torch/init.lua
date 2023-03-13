@@ -207,7 +207,7 @@ minetest.register_node("mesecons_torch:redstoneblock", {
 	_tt_help = S("Provides redstone power"),
 	_doc_items_longdesc = S("A block of redstone permanently supplies redstone power to its surrounding blocks."),
 	tiles = {"redstone_redstone_block.png"},
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = {pickaxey=1},
 	sounds = mcl_sounds.node_sound_stone_defaults(),
 	is_ground_content = false,

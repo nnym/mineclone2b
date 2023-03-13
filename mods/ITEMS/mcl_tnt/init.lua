@@ -79,7 +79,7 @@ minetest.register_node("mcl_tnt:tnt", {
 		"default_tnt_side.png",
 	},
 	is_ground_content = false,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	description = S("TNT"),
 	paramtype = "light",
 	sunlight_propagates = true,

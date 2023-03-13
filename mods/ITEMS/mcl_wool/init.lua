@@ -57,7 +57,7 @@ for _, row in ipairs(wool.dyes) do
 			_doc_items_create_entry = create_entry,
 			_doc_items_entry_name = name_wool,
 			_doc_items_longdesc = longdesc_wool,
-			stack_max = 64,
+			stack_max = mcl_vars.stack_max,
 			is_ground_content = false,
 			tiles = {texture..".png"},
 			groups = {handy=1,shearsy_wool=1, flammable=1,fire_encouragement=30, fire_flammability=60, wool=1,building_block=1,[color_group]=1},
@@ -79,7 +79,7 @@ for _, row in ipairs(wool.dyes) do
 			sounds = mcl_sounds.node_sound_wool_defaults(),
 			paramtype = "light",
 			sunlight_propagates = true,
-			stack_max = 64,
+			stack_max = mcl_vars.stack_max,
 			drawtype = "nodebox",
 			node_box = {
 				type = "fixed",

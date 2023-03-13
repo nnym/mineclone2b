@@ -18,7 +18,7 @@ minetest.register_craftitem("mcl_books:book", {
 	description = S("Book"),
 	_doc_items_longdesc = S("Books are used to make bookshelves and book and quills."),
 	inventory_image = "default_book.png",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { book=1, craftitem = 1, enchantability = 1 },
 	_mcl_enchanting_enchanted_tool = "mcl_enchanting:book_enchanted",
 })
@@ -208,7 +208,7 @@ minetest.register_craftitem("mcl_books:written_book", {
 S("To copy the text of the written book, place it into the crafting grid together with a book and quill (or multiple of those) and craft. The written book will not be consumed. Copies of copies can not be copied."),
 	inventory_image = "mcl_books_book_written.png",
 	groups = { not_in_creative_inventory=1, book=1, no_rename=1 },
-	stack_max = 16,
+	stack_max = mcl_vars.stack_max,
 	on_place = read,
 	on_secondary_use = read
 })
@@ -410,7 +410,7 @@ minetest.register_node("mcl_books:bookshelf", {
 	description = S("Bookshelf"),
 	_doc_items_longdesc = S("Bookshelves are used for decoration."),
 	tiles = {"mcl_books_bookshelf_top.png", "mcl_books_bookshelf_top.png", "default_bookshelf.png"},
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	is_ground_content = false,
 	groups = {
 		handy=1, axey=1, deco_block=1, material_wood=1,

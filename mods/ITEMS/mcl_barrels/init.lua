@@ -107,7 +107,7 @@ minetest.register_node("mcl_barrels:barrel_closed", {
 		minetest.rotate_and_place(itemstack, placer, pointed_thing, minetest.is_creative_enabled(placer:get_player_name()), {}, false)
 		return itemstack
 	end,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	sounds = mcl_sounds.node_sound_wood_defaults(),
 	groups = {handy = 1, axey = 1, container = 2, material_wood = 1, flammable = -1, deco_block = 1},
 	on_construct = function(pos)
@@ -151,7 +151,7 @@ minetest.register_node("mcl_barrels:barrel_open", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	drop = "mcl_barrels:barrel_closed",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	sounds = mcl_sounds.node_sound_wood_defaults(),
 	groups = {handy = 1, axey = 1, container = 2, material_wood = 1, flammable = -1, deco_block = 1, not_in_creative_inventory = 1},
 	allow_metadata_inventory_move = protection_check_move,

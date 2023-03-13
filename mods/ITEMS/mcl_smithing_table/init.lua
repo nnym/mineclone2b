@@ -66,7 +66,7 @@ minetest.register_node("mcl_smithing_table:table", {
 	description = S("Smithing table"),
 	-- ToDo: Add _doc_items_longdesc and _doc_items_usagehelp
 
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = {pickaxey = 2, deco_block = 1},
 
 	tiles = {

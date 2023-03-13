@@ -11,7 +11,7 @@ minetest.register_node("mcl_nether:glowstone", {
 	_doc_items_longdesc = S("Glowstone is a naturally-glowing block which is home to the Nether."),
 	tiles = {"mcl_nether_glowstone.png"},
 	is_ground_content = true,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = {handy=1,building_block=1, material_glass=1},
 	drop = {
 	max_items = 1,
@@ -39,7 +39,7 @@ minetest.register_node("mcl_nether:glowstone", {
 minetest.register_node("mcl_nether:quartz_ore", {
 	description = S("Nether Quartz Ore"),
 	_doc_items_longdesc = S("Nether quartz ore is an ore containing nether quartz. It is commonly found around netherrack in the Nether."),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	tiles = {"mcl_nether_quartz_ore.png"},
 	is_ground_content = true,
 	groups = {pickaxey=1, building_block=1, material_stone=1, xp=3},
@@ -54,7 +54,7 @@ minetest.register_node("mcl_nether:quartz_ore", {
 minetest.register_node("mcl_nether:ancient_debris", {
 	description = S("Ancient Debris"),
 	_doc_items_longdesc = S("Ancient debris can be found in the nether and is very very rare."),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	tiles = {"mcl_nether_ancient_debris_top.png", "mcl_nether_ancient_debris_side.png"},
 	is_ground_content = true,
 	groups = {pickaxey=4, building_block=1, material_stone=1, xp=0, blast_furnace_smeltable = 1},
@@ -68,7 +68,7 @@ minetest.register_node("mcl_nether:ancient_debris", {
 minetest.register_node("mcl_nether:netheriteblock", {
 	description = S("Netherite Block"),
 	_doc_items_longdesc = S("Netherite block is very hard and can be made of 9 netherite ingots."),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	tiles = {"mcl_nether_netheriteblock.png"},
 	is_ground_content = true,
 	groups = { pickaxey=4, building_block=1, material_stone=1, xp = 0, fire_immune=1 },
@@ -108,7 +108,7 @@ end
 minetest.register_node("mcl_nether:netherrack", {
 	description = S("Netherrack"),
 	_doc_items_longdesc = S("Netherrack is a stone-like block home to the Nether. Starting a fire on this block will create an eternal fire."),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	tiles = {"mcl_nether_netherrack.png"},
 	is_ground_content = true,
 	groups = {pickaxey=1, building_block=1, material_stone=1, enderman_takable=1},
@@ -125,7 +125,7 @@ minetest.register_node("mcl_nether:magma", {
 	description = S("Magma Block"),
 	_tt_help = minetest.colorize(mcl_colors.YELLOW, S("Burns your feet")),
 	_doc_items_longdesc = S("Magma blocks are hot solid blocks which hurt anyone standing on it, unless they have fire resistance. Starting a fire on this block will create an eternal fire."),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	tiles = {{name="mcl_nether_magma.png", animation={type="vertical_frames", aspect_w=32, aspect_h=32, length=1.5}}},
 	is_ground_content = true,
 	light_source = 3,
@@ -155,7 +155,7 @@ minetest.register_node("mcl_nether:soul_sand", {
 	description = S("Soul Sand"),
 	_tt_help = S("Reduces walking speed"),
 	_doc_items_longdesc = S("Soul sand is a block from the Nether. One can only slowly walk on soul sand. The slowing effect is amplified when the soul sand is on top of ice, packed ice or a slime block."),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	tiles = {"mcl_nether_soul_sand.png"},
 	is_ground_content = true,
 	groups = {handy = 1, shovely = 1, building_block = 1, soil_nether_wart = 1, material_sand = 1, soul_block = 1 },
@@ -173,7 +173,7 @@ minetest.register_node("mcl_nether:nether_brick", {
 	-- Original name: Nether Brick
 	description = S("Nether Brick Block"),
 	_doc_items_longdesc = doc.sub.items.temp.build,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	tiles = {"mcl_nether_nether_brick.png"},
 	is_ground_content = false,
 	groups = {pickaxey=1, building_block=1, material_stone=1},
@@ -186,7 +186,7 @@ minetest.register_node("mcl_nether:red_nether_brick", {
 	-- Original name: Red Nether Brick
 	description = S("Red Nether Brick Block"),
 	_doc_items_longdesc = doc.sub.items.temp.build,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	tiles = {"mcl_nether_red_nether_brick.png"},
 	is_ground_content = false,
 	groups = {pickaxey=1, building_block=1, material_stone=1},
@@ -199,7 +199,7 @@ minetest.register_node("mcl_nether:red_nether_brick", {
 minetest.register_node("mcl_nether:nether_wart_block", {
 	description = S("Nether Wart Block"),
 	_doc_items_longdesc = S("A nether wart block is a purely decorative block made from nether wart."),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	tiles = {"mcl_nether_nether_wart_block.png"},
 	is_ground_content = false,
 	groups = {handy=1, hoey=7, swordy=1, building_block=1, compostability = 85},
@@ -216,7 +216,7 @@ minetest.register_node("mcl_nether:nether_wart_block", {
 minetest.register_node("mcl_nether:quartz_block", {
 	description = S("Block of Quartz"),
 	_doc_items_longdesc = doc.sub.items.temp.build,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	is_ground_content = false,
 	tiles = {"mcl_nether_quartz_block_top.png", "mcl_nether_quartz_block_bottom.png", "mcl_nether_quartz_block_side.png"},
 	groups = {pickaxey=1, quartz_block=1,building_block=1, material_stone=1},
@@ -228,7 +228,7 @@ minetest.register_node("mcl_nether:quartz_block", {
 minetest.register_node("mcl_nether:quartz_chiseled", {
 	description = S("Chiseled Quartz Block"),
 	_doc_items_longdesc = doc.sub.items.temp.build,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	is_ground_content = false,
 	tiles = {"mcl_nether_quartz_chiseled_top.png", "mcl_nether_quartz_chiseled_top.png", "mcl_nether_quartz_chiseled_side.png"},
 	groups = {pickaxey=1, quartz_block=1,building_block=1, material_stone=1},
@@ -240,7 +240,7 @@ minetest.register_node("mcl_nether:quartz_chiseled", {
 minetest.register_node("mcl_nether:quartz_pillar", {
 	description = S("Pillar Quartz Block"),
 	_doc_items_longdesc = doc.sub.items.temp.build,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	on_place = mcl_util.rotate_axis,
@@ -254,7 +254,7 @@ minetest.register_node("mcl_nether:quartz_pillar", {
 minetest.register_node("mcl_nether:quartz_smooth", {
 	description = S("Smooth Quartz"),
 	_doc_items_longdesc = doc.sub.items.temp.build,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	is_ground_content = false,
 	tiles = {"mcl_nether_quartz_block_bottom.png"},
 	groups = {pickaxey=1, quartz_block=1,building_block=1, material_stone=1},
@@ -267,7 +267,7 @@ minetest.register_craftitem("mcl_nether:glowstone_dust", {
 	description = S("Glowstone Dust"),
 	_doc_items_longdesc = S("Glowstone dust is the dust which comes out of broken glowstones. It is mainly used in crafting."),
 	inventory_image = "mcl_nether_glowstone_dust.png",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { craftitem=1, brewitem=1 },
 })
 
@@ -275,7 +275,7 @@ minetest.register_craftitem("mcl_nether:quartz", {
 	description = S("Nether Quartz"),
 	_doc_items_longdesc = S("Nether quartz is a versatile crafting ingredient."),
 	inventory_image = "mcl_nether_quartz.png",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { craftitem = 1 },
 })
 
@@ -283,7 +283,7 @@ minetest.register_craftitem("mcl_nether:netherite_scrap", {
 	description = S("Netherite Scrap"),
 	_doc_items_longdesc = S("Netherite scrap is a crafting ingredient for netherite ingots."),
 	inventory_image = "mcl_nether_netherite_scrap.png",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { craftitem = 1, fire_immune=1 },
 })
 
@@ -291,7 +291,7 @@ minetest.register_craftitem("mcl_nether:netherite_ingot", {
 	description = S("Netherite Ingot"),
 	_doc_items_longdesc = S("Netherite ingots can be used with a smithing table to upgrade items to netherite."),
 	inventory_image = "mcl_nether_netherite_ingot.png",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { craftitem = 1, fire_immune=1 },
 })
 
@@ -299,7 +299,7 @@ minetest.register_craftitem("mcl_nether:netherbrick", {
 	description = S("Nether Brick"),
 	_doc_items_longdesc = S("Nether bricks are the main crafting ingredient for crafting nether brick blocks and nether fences."),
 	inventory_image = "mcl_nether_netherbrick.png",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { craftitem = 1 },
 })
 

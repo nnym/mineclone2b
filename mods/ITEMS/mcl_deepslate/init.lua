@@ -69,7 +69,7 @@ local function register_deepslate_ore(desc, drop, cooked, pick, xp)
 		_doc_items_hidden = false,
 		tiles = { "mcl_deepslate_"..item_string.."_ore.png" },
 		is_ground_content = true,
-		stack_max = 64,
+		stack_max = mcl_vars.stack_max,
 		groups = { pickaxey = pick, building_block = 1, material_stone = 1, xp = xp },
 		drop = drop,
 		sounds = mcl_sounds.node_sound_stone_defaults(),

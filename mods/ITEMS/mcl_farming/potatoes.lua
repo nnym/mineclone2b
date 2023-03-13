@@ -93,7 +93,7 @@ minetest.register_craftitem("mcl_farming:potato_item", {
 	inventory_image = "farming_potato.png",
 	groups = {food = 2, eatable = 1, compostability = 65, smoker_cookable = 1},
 	_mcl_saturation = 0.6,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	on_secondary_use = minetest.item_eat(1),
 	on_place = mcl_farming:get_seed_or_eat_callback("mcl_farming:potato_1", 1),
 })
@@ -101,7 +101,7 @@ minetest.register_craftitem("mcl_farming:potato_item", {
 minetest.register_craftitem("mcl_farming:potato_item_baked", {
 	description = S("Baked Potato"),
 	_doc_items_longdesc = S("Baked potatoes are food items which are more filling than the unbaked ones."),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	inventory_image = "farming_potato_baked.png",
 	on_place = minetest.item_eat(5),
 	on_secondary_use = minetest.item_eat(5),
@@ -113,7 +113,7 @@ minetest.register_craftitem("mcl_farming:potato_item_poison", {
 	description = S("Poisonous Potato"),
 	_tt_help = minetest.colorize(mcl_colors.YELLOW, S("60% chance of poisoning")),
 	_doc_items_longdesc = S("This potato doesn't look too healthy. You can eat it to restore hunger points, but there's a 60% chance it will poison you briefly."),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	inventory_image = "farming_potato_poison.png",
 	on_place = minetest.item_eat(2),
 	on_secondary_use = minetest.item_eat(2),

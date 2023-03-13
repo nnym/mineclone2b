@@ -450,7 +450,7 @@ local dragon_breath_def = {
 	image = "mcl_potions_dragon_breath.png",
 	groups = { brewitem = 1 },
 	on_use = nil,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 }
 
 local healing_def = {

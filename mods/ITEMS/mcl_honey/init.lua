@@ -75,7 +75,7 @@ minetest.register_craftitem("mcl_honey:honey_bottle", {
 	on_place = minetest.item_eat(6, "mcl_potions:glass_bottle"),
 	on_secondary_use = minetest.item_eat(6, "mcl_potions:glass_bottle"),
 	_mcl_saturation = 1.2,
-	stack_max = 16,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_node("mcl_honey:honey_block", {

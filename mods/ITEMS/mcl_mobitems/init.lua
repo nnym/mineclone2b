@@ -10,7 +10,7 @@ minetest.register_craftitem("mcl_mobitems:rotten_flesh", {
 	on_secondary_use = minetest.item_eat(4),
 	groups = { food = 2, eatable = 4 },
 	_mcl_saturation = 0.8,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:mutton", {
@@ -22,7 +22,7 @@ minetest.register_craftitem("mcl_mobitems:mutton", {
 	on_secondary_use = minetest.item_eat(2),
 	groups = { food = 2, eatable = 2, smoker_cookable = 1 },
 	_mcl_saturation = 1.2,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:cooked_mutton", {
@@ -34,7 +34,7 @@ minetest.register_craftitem("mcl_mobitems:cooked_mutton", {
 	on_secondary_use = minetest.item_eat(6),
 	groups = { food = 2, eatable = 6 },
 	_mcl_saturation = 9.6,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:beef", {
@@ -46,7 +46,7 @@ minetest.register_craftitem("mcl_mobitems:beef", {
 	on_secondary_use = minetest.item_eat(3),
 	groups = { food = 2, eatable = 3, smoker_cookable = 1 },
 	_mcl_saturation = 1.8,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:cooked_beef", {
@@ -58,7 +58,7 @@ minetest.register_craftitem("mcl_mobitems:cooked_beef", {
 	on_secondary_use = minetest.item_eat(8),
 	groups = { food = 2, eatable = 8 },
 	_mcl_saturation = 12.8,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:chicken", {
@@ -71,7 +71,7 @@ minetest.register_craftitem("mcl_mobitems:chicken", {
 	on_secondary_use = minetest.item_eat(2),
 	groups = { food = 2, eatable = 2, smoker_cookable = 1 },
 	_mcl_saturation = 1.2,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:cooked_chicken", {
@@ -83,7 +83,7 @@ minetest.register_craftitem("mcl_mobitems:cooked_chicken", {
 	on_secondary_use = minetest.item_eat(6),
 	groups = { food = 2, eatable = 6 },
 	_mcl_saturation = 7.2,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:porkchop", {
@@ -95,7 +95,7 @@ minetest.register_craftitem("mcl_mobitems:porkchop", {
 	on_secondary_use = minetest.item_eat(3),
 	groups = { food = 2, eatable = 3, smoker_cookable = 1 },
 	_mcl_saturation = 1.8,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:cooked_porkchop", {
@@ -107,7 +107,7 @@ minetest.register_craftitem("mcl_mobitems:cooked_porkchop", {
 	on_secondary_use = minetest.item_eat(8),
 	groups = { food = 2, eatable = 8 },
 	_mcl_saturation = 12.8,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:rabbit", {
@@ -119,7 +119,7 @@ minetest.register_craftitem("mcl_mobitems:rabbit", {
 	on_secondary_use = minetest.item_eat(3),
 	groups = { food = 2, eatable = 3, smoker_cookable = 1 },
 	_mcl_saturation = 1.8,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:cooked_rabbit", {
@@ -131,7 +131,7 @@ minetest.register_craftitem("mcl_mobitems:cooked_rabbit", {
 	on_secondary_use = minetest.item_eat(5),
 	groups = { food = 2, eatable = 5 },
 	_mcl_saturation = 6.0,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 -- Reset food poisoning and status effects
@@ -168,7 +168,7 @@ minetest.register_craftitem("mcl_mobitems:spider_eye", {
 	on_secondary_use = minetest.item_eat(2),
 	groups = { food = 2, eatable = 2, brewitem = 1 },
 	_mcl_saturation = 3.2,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:bone", {
@@ -176,7 +176,7 @@ minetest.register_craftitem("mcl_mobitems:bone", {
 	_doc_items_longdesc = S("Bones can be used to tame wolves so they will protect you. They are also useful as a crafting ingredient."),
 	_doc_items_usagehelp = S("Wield the bone near wolves to attract them. Use the “Place” key on the wolf to give it a bone and tame it. You can then give commands to the tamed wolf by using the “Place” key on it."),
 	inventory_image = "mcl_mobitems_bone.png",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { craftitem=1 },
 	_mcl_toollike_wield = true,
 })
@@ -185,7 +185,7 @@ minetest.register_craftitem("mcl_mobitems:ink_sac", {
 	description = S("Squid Ink Sac"),
 	_doc_items_longdesc = S("This item is dropped by dead squids. Squid ink can be used to as an ingredient to craft book and quill or black dye."),
 	inventory_image = "mcl_mobitems_ink_sac.png",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { craftitem = 1 },
 })
 
@@ -193,7 +193,7 @@ minetest.register_craftitem("mcl_mobitems:string",{
 	description = S("String"),
 	_doc_items_longdesc = S("Strings are used in crafting."),
 	inventory_image = "mcl_mobitems_string.png",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { craftitem = 1 },
 })
 
@@ -203,7 +203,7 @@ minetest.register_craftitem("mcl_mobitems:blaze_rod", {
 	wield_image = "mcl_mobitems_blaze_rod.png",
 	inventory_image = "mcl_mobitems_blaze_rod.png",
 	groups = { craftitem = 1 },
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:blaze_powder", {
@@ -212,7 +212,7 @@ minetest.register_craftitem("mcl_mobitems:blaze_powder", {
 	wield_image = "mcl_mobitems_blaze_powder.png",
 	inventory_image = "mcl_mobitems_blaze_powder.png",
 	groups = { craftitem = 1, brewitem = 1 },
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:magma_cream", {
@@ -221,7 +221,7 @@ minetest.register_craftitem("mcl_mobitems:magma_cream", {
 	wield_image = "mcl_mobitems_magma_cream.png",
 	inventory_image = "mcl_mobitems_magma_cream.png",
 	groups = { craftitem = 1, brewitem = 1 },
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:ghast_tear", {
@@ -230,7 +230,7 @@ minetest.register_craftitem("mcl_mobitems:ghast_tear", {
 	wield_image = "mcl_mobitems_ghast_tear.png",
 	inventory_image = "mcl_mobitems_ghast_tear.png",
 	groups = { brewitem = 1 },
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:nether_star", {
@@ -240,7 +240,7 @@ minetest.register_craftitem("mcl_mobitems:nether_star", {
 	inventory_image = "mcl_mobitems_nether_star.png",
 	-- TODO: Reveal item when it's useful
 	groups = { craftitem = 1, not_in_creative_inventory = 1 },
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:leather", {
@@ -249,7 +249,7 @@ minetest.register_craftitem("mcl_mobitems:leather", {
 	wield_image = "mcl_mobitems_leather.png",
 	inventory_image = "mcl_mobitems_leather.png",
 	groups = { craftitem = 1 },
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:feather", {
@@ -258,7 +258,7 @@ minetest.register_craftitem("mcl_mobitems:feather", {
 	wield_image = "mcl_mobitems_feather.png",
 	inventory_image = "mcl_mobitems_feather.png",
 	groups = { craftitem = 1 },
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:rabbit_hide", {
@@ -267,7 +267,7 @@ minetest.register_craftitem("mcl_mobitems:rabbit_hide", {
 	wield_image = "mcl_mobitems_rabbit_hide.png",
 	inventory_image = "mcl_mobitems_rabbit_hide.png",
 	groups = { craftitem = 1 },
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:rabbit_foot", {
@@ -276,7 +276,7 @@ minetest.register_craftitem("mcl_mobitems:rabbit_foot", {
 	wield_image = "mcl_mobitems_rabbit_foot.png",
 	inventory_image = "mcl_mobitems_rabbit_foot.png",
 	groups = { brewitem = 1 },
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:saddle", {
@@ -320,7 +320,7 @@ minetest.register_craftitem("mcl_mobitems:gunpowder", {
 	description = S("Gunpowder"),
 	_doc_items_longdesc = doc.sub.items.temp.craftitem,
 	inventory_image = "default_gunpowder.png",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { craftitem=1, brewitem = 1 },
 })
 
@@ -352,7 +352,7 @@ minetest.register_craftitem("mcl_mobitems:nautilus_shell", {
 	_doc_items_longdesc = S("The Nautilus Shell is used to craft a conduit. They can be obtained by fishing or killing a drowned that is wielding a shell."),
 	inventory_image = "mcl_mobitems_nautilus_shell.png",
 	groups = { craftitem=1 },
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craftitem("mcl_mobitems:heart_of_the_sea", {
@@ -361,7 +361,7 @@ minetest.register_craftitem("mcl_mobitems:heart_of_the_sea", {
 	_doc_items_longdesc = S("The Heart of the Sea is used to craft a conduit. They can be obtained by finding them in a buried treasure chest."),
 	inventory_image = "mcl_mobitems_heart_of_the_sea.png",
 	groups = { craftitem=1 },
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 })
 
 local horse_armor_use = S("Place it on a horse to put on the horse armor. Donkeys and mules can't wear horse armor.")

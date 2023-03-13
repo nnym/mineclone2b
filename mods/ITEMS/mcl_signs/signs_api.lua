@@ -161,7 +161,7 @@ mcl_signs.wall_standard = {
 	tiles = { "mcl_signs_sign.png" },
 	use_texture_alpha = minetest.features.use_texture_alpha_string_modes and "opaque" or false,
 	groups = mcl_signs.sign_groups,
-	stack_max = 16,
+	stack_max = mcl_vars.stack_max,
 	sounds = node_sounds,
 
 	on_timer = function(pos)
@@ -372,7 +372,7 @@ mcl_signs.standing_standard = {
 	tiles = { "mcl_signs_sign.png" },
 	groups = mcl_signs.sign_groups,
 	drop = "mcl_signs:wall_sign",
-	stack_max = 16,
+	stack_max = mcl_vars.stack_max,
 	sounds = node_sounds,
 
 	on_destruct = function(pos)

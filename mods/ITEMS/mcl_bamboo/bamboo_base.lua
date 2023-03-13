@@ -308,7 +308,7 @@ minetest.register_node("mcl_bamboo:bamboo_plank", {
 	_doc_items_longdesc = S("Bamboo Plank"),
 	_doc_items_hidden = false,
 	tiles = {"mcl_bamboo_bamboo_plank.png"},
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	is_ground_content = false,
 	groups = {handy = 1, axey = 1, flammable = 3, wood = 1, building_block = 1, material_wood = 1, fire_encouragement = 5, fire_flammability = 20},
 	sounds = mcl_sounds.node_sound_wood_defaults(),

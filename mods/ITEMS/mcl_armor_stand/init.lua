@@ -58,7 +58,7 @@ minetest.register_node("mcl_armor_stand:armor_stand", {
 	paramtype2 = "facedir",
 	walkable = false,
 	is_ground_content = false,
-	stack_max = 16,
+	stack_max = mcl_vars.stack_max,
 	selection_box = {
 		type = "fixed",
 		fixed = {-0.5,-0.5,-0.5, 0.5,1.4,0.5}

@@ -11,7 +11,7 @@ minetest.register_node("mcl_core:cactus", {
 	use_texture_alpha = minetest.features.use_texture_alpha_string_modes and "clip" or true,
 	tiles = {"mcl_core_cactus_top.png", "mcl_core_cactus_bottom.png", "mcl_core_cactus_side.png"},
 	is_ground_content = true,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = {
 		handy = 1, attached_node = 1, deco_block = 1, dig_by_piston = 1,
 		plant = 1, enderman_takable = 1, compostability = 50
@@ -81,7 +81,7 @@ minetest.register_node("mcl_core:reeds", {
 			{-6/16, -8/16, -6/16, 6/16, 8/16, 6/16},
 		},
 	},
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = {
 		dig_immediate = 3, craftitem = 1, deco_block = 1, dig_by_piston = 1,
 		plant = 1, non_mycelium_plant = 1, compostability = 50, grass_palette = 1

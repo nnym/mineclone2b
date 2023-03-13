@@ -11,7 +11,7 @@ minetest.register_node("mcl_core:glass", {
 	paramtype = "light",
 	paramtype2 = "glasslikeliquidlevel",
 	sunlight_propagates = true,
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = {handy=1, glass=1, building_block=1, material_glass=1},
 	sounds = mcl_sounds.node_sound_glass_defaults(),
 	drop = "",
@@ -47,7 +47,7 @@ function mcl_core.add_stained_glass(desc, recipeitem, colorgroup, color)
 		paramtype2 = "glasslikeliquidlevel",
 		sunlight_propagates = true,
 		use_texture_alpha = minetest.features.use_texture_alpha_string_modes and "blend" or true,
-		stack_max = 64,
+		stack_max = mcl_vars.stack_max,
 		-- TODO: Add color to groups
 		groups = {handy=1, glass=1, building_block=1, material_glass=1},
 		sounds = mcl_sounds.node_sound_glass_defaults(),

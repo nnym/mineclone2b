@@ -9,7 +9,7 @@ minetest.register_craftitem("mcl_mobs:nametag", {
 	_doc_items_usagehelp = S("Before you use the name tag, you need to set a name at an anvil. Then you can use the name tag to name a mob. This uses up the name tag."),
 	inventory_image = "mobs_nametag.png",
 	wield_image = "mobs_nametag.png",
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { tool=1 },
 })
 

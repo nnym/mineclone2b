@@ -1,6 +1,25 @@
 -- Some global variables (don't overwrite them!)
 mcl_vars = {}
 
+local stack_max = tonumber(minetest.settings:get("mcl_stack_max") or 0)
+
+if type(stack_max) ~= "number" then
+	minetest.log("error", "mcl_stack_max is not a number")
+	stack_max = 0
+end
+
+if stack_max == 0 then
+	stack_max = tonumber(minetest.settings:get("default_stack_size")) or 16384
+elseif stack_max > 65535 then
+	minetest.log("error", "mcl_stack_max > 65535")
+	stack_max = 65535
+elseif stack_max < 1 then
+	minetest.log("error", "mcl_stack_max < 1")
+	stack_max = 1
+end
+
+mcl_vars.stack_max = stack_max
+
 mcl_vars.redstone_tick = 0.1
 
 -- GUI / inventory menu settings
@@ -190,8 +209,8 @@ mcl_vars.mg_realm_barrier_overworld_end_min = mcl_vars.mg_end_max - 11
 mcl_vars.mg_dungeons = true
 
 -- Set default stack sizes
-minetest.nodedef_default.stack_max = 64
-minetest.craftitemdef_default.stack_max = 64
+minetest.nodedef_default.stack_max = mcl_vars.stack_max
+minetest.craftitemdef_default.stack_max = mcl_vars.stack_max
 
 -- Set random seed for all other mods (Remember to make sure no other mod calls this function)
 math.randomseed(os.time())

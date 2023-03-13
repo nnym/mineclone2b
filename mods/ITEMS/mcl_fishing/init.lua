@@ -431,7 +431,7 @@ minetest.register_craftitem("mcl_fishing:fish_raw", {
 	inventory_image = "mcl_fishing_fish_raw.png",
 	on_place = minetest.item_eat(2),
 	on_secondary_use = minetest.item_eat(2),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { food=2, eatable = 2, smoker_cookable = 1 },
 	_mcl_saturation = 0.4,
 })
@@ -442,7 +442,7 @@ minetest.register_craftitem("mcl_fishing:fish_cooked", {
 	inventory_image = "mcl_fishing_fish_cooked.png",
 	on_place = minetest.item_eat(5),
 	on_secondary_use = minetest.item_eat(5),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { food=2, eatable=5 },
 	_mcl_saturation = 6,
 })
@@ -461,7 +461,7 @@ minetest.register_craftitem("mcl_fishing:salmon_raw", {
 	inventory_image = "mcl_fishing_salmon_raw.png",
 	on_place = minetest.item_eat(2),
 	on_secondary_use = minetest.item_eat(2),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { food=2, eatable = 2, smoker_cookable = 1 },
 	_mcl_saturation = 0.4,
 })
@@ -472,7 +472,7 @@ minetest.register_craftitem("mcl_fishing:salmon_cooked", {
 	inventory_image = "mcl_fishing_salmon_cooked.png",
 	on_place = minetest.item_eat(6),
 	on_secondary_use = minetest.item_eat(6),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { food=2, eatable=6 },
 	_mcl_saturation = 9.6,
 })
@@ -491,7 +491,7 @@ minetest.register_craftitem("mcl_fishing:clownfish_raw", {
 	inventory_image = "mcl_fishing_clownfish_raw.png",
 	on_place = minetest.item_eat(1),
 	on_secondary_use = minetest.item_eat(1),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { food=2, eatable = 1 },
 	_mcl_saturation = 0.2,
 })
@@ -504,7 +504,7 @@ minetest.register_craftitem("mcl_fishing:pufferfish_raw", {
 	inventory_image = "mcl_fishing_pufferfish_raw.png",
 	on_place = minetest.item_eat(1),
 	on_secondary_use = minetest.item_eat(1),
-	stack_max = 64,
+	stack_max = mcl_vars.stack_max,
 	groups = { food=2, eatable=1, brewitem = 1 },
 	-- _mcl_saturation = 0.2,
 })

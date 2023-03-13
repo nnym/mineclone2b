@@ -272,7 +272,7 @@ S("You can copy the pattern of a banner by placing two banners of the same color
 
 	selection_box = {type = "fixed", fixed= {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3} },
 	groups = {axey=1,handy=1, attached_node = 1, not_in_creative_inventory = 1, not_in_craft_guide = 1, material_wood=1, dig_by_piston=1, flammable=-1 },
-	stack_max = 16,
+	stack_max = mcl_vars.stack_max,
 	sounds = node_sounds,
 	drop = "", -- Item drops are handled in entity code
 
@@ -316,7 +316,7 @@ minetest.register_node("mcl_banners:hanging_banner", {
 	},
 	selection_box = {type = "wallmounted", wall_side = {-0.5, -0.5, -0.5, -4/16, 0.5, 0.5} },
 	groups = {axey=1,handy=1, attached_node = 1, not_in_creative_inventory = 1, not_in_craft_guide = 1, material_wood=1, flammable=-1 },
-	stack_max = 16,
+	stack_max = mcl_vars.stack_max,
 	sounds = node_sounds,
 	drop = "", -- Item drops are handled in entity code
 
@@ -427,7 +427,7 @@ for colorid, colortab in pairs(mcl_banners.colors) do
 		-- Banner group groups together the banner items, but not the nodes.
 		-- Used for crafting.
 		groups = groups,
-		stack_max = 16,
+		stack_max = mcl_vars.stack_max,
 
 		on_place = function(itemstack, placer, pointed_thing)
 			local above = pointed_thing.above
