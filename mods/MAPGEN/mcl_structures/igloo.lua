@@ -66,7 +66,7 @@ function mcl_structures.generate_igloo(pos, def, pr)
 		if buffer <= 19 then
 			return success
 		end
-		local depth = pr:next(19, buffer)
+		local depth = pr:next(19, buffer == 32767 and buffer or math.min(buffer, 32768/5))
 		local bpos = {x=pos.x, y=pos.y-depth, z=pos.z}
 		-- trapdoor position
 		local tpos
