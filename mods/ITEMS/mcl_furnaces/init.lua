@@ -8,48 +8,30 @@ local LIGHT_ACTIVE_FURNACE = 13
 --
 
 local function active_formspec(fuel_percent, item_percent)
-	return mcl_formspec.player() ..
-	"label[2.75,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Furnace"))).."]"..
-	"list[context;src;2.75,0.5;1,1;]"..
-	mcl_formspec.get_itemslot_bg(2.75,0.5,1,1)..
-	"list[context;fuel;2.75,2.5;1,1;]"..
-	mcl_formspec.get_itemslot_bg(2.75,2.5,1,1)..
-	"list[context;dst;5.75,1.5;1,1;]"..
-	mcl_formspec.get_itemslot_bg(5.75,1.5,1,1)..
-	"image[2.75,1.5;1,1;default_furnace_fire_bg.png^[lowpart:"..
-	(100-fuel_percent)..":default_furnace_fire_fg.png]"..
-	"image[4.1,1.5;1.5,1;gui_furnace_arrow_bg.png^[lowpart:"..
-	(item_percent)..":gui_furnace_arrow_fg.png^[transformR270]"..
-	-- Craft guide button temporarily removed due to Minetest bug.
-	-- TODO: Add it back when the Minetest bug is fixed.
-	--"image_button[8,0;1,1;craftguide_book.png;craftguide;]"..
-	--"tooltip[craftguide;"..minetest.formspec_escape(S("Recipe book")).."]"..
-	"listring[context;dst]"..
-	"listring[current_player;main]"..
-	"listring[context;src]"..
-	"listring[current_player;main]"..
-	"listring[context;fuel]"
+	return mcl_formspec.player()
+		.. "label[2.75,0;" .. minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Furnace"))) .. "]"
+		.. "list[context;src;2.75,0.5;1,1;]"
+		.. mcl_formspec.get_itemslot_bg(2.75,0.5,1,1)
+		.. "list[context;fuel;2.75,2.5;1,1;]"
+		.. mcl_formspec.get_itemslot_bg(2.75,2.5,1,1)
+		.. "list[context;dst;5.75,1.5;1,1;]"
+		.. mcl_formspec.get_itemslot_bg(5.75,1.5,1,1)
+		.. "image[2.75,1.5;1,1;default_furnace_fire_bg.png^[lowpart:"
+		.. (100 - fuel_percent) .. ":default_furnace_fire_fg.png]"
+		.. "image[4.1,1.5;1.5,1;gui_furnace_arrow_bg.png^[lowpart:"
+		.. (item_percent) .. ":gui_furnace_arrow_fg.png^[transformR270]"
+		-- Craft guide button temporarily removed due to Minetest bug.
+		-- TODO: Add it back when the Minetest bug is fixed.
+		--"image_button[8,0;1,1;craftguide_book.png;craftguide;]"..
+		--"tooltip[craftguide;"..minetest.formspec_escape(S("Recipe book")).."]"..
+		.. "listring[context;src]"
+		.. "listring[current_player;main]"
+		.. "listring[context;fuel]"
+		.. "listring[current_player;main]"
+		.. "listring[context;dst]"
 end
 
-local inactive_formspec = mcl_formspec.player() ..
-	"label[2.75,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Furnace"))).."]"..
-	"list[context;src;2.75,0.5;1,1;]"..
-	mcl_formspec.get_itemslot_bg(2.75,0.5,1,1)..
-	"list[context;fuel;2.75,2.5;1,1;]"..
-	mcl_formspec.get_itemslot_bg(2.75,2.5,1,1)..
-	"list[context;dst;5.75,1.5;1,1;]"..
-	mcl_formspec.get_itemslot_bg(5.75,1.5,1,1)..
-	"image[2.75,1.5;1,1;default_furnace_fire_bg.png]"..
-	"image[4.1,1.5;1.5,1;gui_furnace_arrow_bg.png^[transformR270]"..
-	-- Craft guide button temporarily removed due to Minetest bug.
-	-- TODO: Add it back when the Minetest bug is fixed.
-	--"image_button[8,0;1,1;craftguide_book.png;craftguide;]"..
-	--"tooltip[craftguide;"..minetest.formspec_escape(S("Recipe book")).."]"..
-	"listring[context;dst]"..
-	"listring[current_player;main]"..
-	"listring[context;src]"..
-	"listring[current_player;main]"..
-	"listring[context;fuel]"
+local inactive_formspec = active_formspec(100, 0)
 
 local receive_fields = function(pos, formname, fields, sender)
 	if fields.craftguide then
