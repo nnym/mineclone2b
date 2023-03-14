@@ -8,12 +8,7 @@ local LIGHT_ACTIVE_FURNACE = 13
 --
 
 local function active_formspec(fuel_percent, item_percent)
-	return "size[9,8.75]"..
-	"label[0,4;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
-	"list[current_player;main;0,4.5;9,3;9]"..
-	mcl_formspec.get_itemslot_bg(0,4.5,9,3)..
-	"list[current_player;main;0,7.74;9,1;]"..
-	mcl_formspec.get_itemslot_bg(0,7.74,9,1)..
+	return mcl_formspec.player() ..
 	"label[2.75,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Furnace"))).."]"..
 	"list[context;src;2.75,0.5;1,1;]"..
 	mcl_formspec.get_itemslot_bg(2.75,0.5,1,1)..
@@ -33,16 +28,10 @@ local function active_formspec(fuel_percent, item_percent)
 	"listring[current_player;main]"..
 	"listring[context;src]"..
 	"listring[current_player;main]"..
-	"listring[context;fuel]"..
-	"listring[current_player;main]"
+	"listring[context;fuel]"
 end
 
-local inactive_formspec = "size[9,8.75]"..
-	"label[0,4;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
-	"list[current_player;main;0,4.5;9,3;9]"..
-	mcl_formspec.get_itemslot_bg(0,4.5,9,3)..
-	"list[current_player;main;0,7.74;9,1;]"..
-	mcl_formspec.get_itemslot_bg(0,7.74,9,1)..
+local inactive_formspec = mcl_formspec.player() ..
 	"label[2.75,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Furnace"))).."]"..
 	"list[context;src;2.75,0.5;1,1;]"..
 	mcl_formspec.get_itemslot_bg(2.75,0.5,1,1)..
@@ -60,8 +49,7 @@ local inactive_formspec = "size[9,8.75]"..
 	"listring[current_player;main]"..
 	"listring[context;src]"..
 	"listring[current_player;main]"..
-	"listring[context;fuel]"..
-	"listring[current_player;main]"
+	"listring[context;fuel]"
 
 local receive_fields = function(pos, formname, fields, sender)
 	if fields.craftguide then

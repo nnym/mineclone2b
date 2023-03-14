@@ -390,6 +390,44 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 		end
 	end
 
+	local function openDouble(pos, node, clicker, left, right, addendum)
+		local name = minetest.get_meta(left):get_string("name")
+		if name == "" then name = minetest.get_meta(right):get_string("name") end
+		if name == "" then name = S("Large Chest") end
+
+		local upLeftDef = minetest.registered_nodes[minetest.get_node({x = left.x, y = left.y + 1, z = left.z}).name]
+		local upRightDef = minetest.registered_nodes[minetest.get_node({x = right.x, y = right.y + 1, z = right.z}).name]
+
+		if not upLeftDef or upLeftDef.groups.opaque == 1 or not upRightDef or upRightDef.groups.opaque == 1 then
+			-- won't open if there is no space from the top
+			return false
+		end
+
+		minetest.show_formspec(
+			clicker:get_player_name(),
+			"mcl_chests:" .. canonical_basename .. "_" .. pos.x .. "_" .. pos.y .. "_" .. pos.z,
+			mcl_formspec.player(11.5, 7)
+			.. "label[0,0;" .. minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)) .. "]"
+			.. "list[nodemeta:" .. left.x .. "," .. left.y .. "," .. left.z .. ";main;0,0.5;9,3;]"
+			.. mcl_formspec.get_itemslot_bg(0,0.5,9,3)
+			.. "list[nodemeta:" .. right.x .. "," .. right.y .. "," .. right.z .. ";main;0,3.5;9,3;]"
+			.. mcl_formspec.get_itemslot_bg(0,3.5,9,3)
+			-- BEGIN OF LISTRING WORKAROUND
+			.. "listring[nodemeta:" .. pos.x .. "," .. pos.y .. "," .. pos.z .. ";input]"
+			-- END OF LISTRING WORKAROUND
+			.. "listring[current_player;main]"
+			.. "listring[nodemeta:" .. left.x .. "," .. left.y .. "," .. left.z .. ";main]"
+			.. "listring[current_player;main]"
+			.. "listring[nodemeta:" .. right.x .. "," .. right.y .. "," .. right.z .. ";main]"
+		)
+
+		if addendum then
+			addendum(pos, node, clicker)
+		end
+
+		player_chest_open(clicker, left, left_name, left_textures, node.param2, true, "default_chest", "mcl_chests_chest")
+	end
+
 	minetest.register_node(small_name, {
 		description = desc,
 		_tt_help = tt_help,
@@ -495,15 +533,10 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 
 			minetest.show_formspec(clicker:get_player_name(),
 			"mcl_chests:"..canonical_basename.."_"..pos.x.."_"..pos.y.."_"..pos.z,
-			"size[9,8.75]"..
-			"label[0,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)).."]"..
-			"list[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main;0,0.5;9,3;]"..
-			mcl_formspec.get_itemslot_bg(0,0.5,9,3)..
-			"label[0,4.0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
-			"list[current_player;main;0,4.5;9,3;9]"..
-			mcl_formspec.get_itemslot_bg(0,4.5,9,3)..
-			"list[current_player;main;0,7.74;9,1;]"..
-			mcl_formspec.get_itemslot_bg(0,7.74,9,1)..
+			mcl_formspec.player()..
+			"label[3.5,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)).."]"..
+			"list[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main;3.5,0.5;9,3;]"..
+			mcl_formspec.get_itemslot_bg(3.5,0.5,9,3)..
 			"listring[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main]"..
 			"listring[current_player;main]")
 
@@ -627,50 +660,7 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 		_mcl_hardness = 2.5,
 
 		on_rightclick = function(pos, node, clicker)
-			local pos_other = mcl_util.get_double_container_neighbor_pos(pos, node.param2, "left")
-			local above_def = minetest.registered_nodes[minetest.get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name]
-			local above_def_other = minetest.registered_nodes[minetest.get_node({x = pos_other.x, y = pos_other.y + 1, z = pos_other.z}).name]
-
-			if not above_def or above_def.groups.opaque == 1 or not above_def_other or above_def_other.groups.opaque == 1 then
-				-- won't open if there is no space from the top
-				return false
-			end
-
-			local name = minetest.get_meta(pos):get_string("name")
-			if name == "" then
-				name = minetest.get_meta(pos_other):get_string("name")
-			end
-			if name == "" then
-				name = S("Large Chest")
-			end
-
-			minetest.show_formspec(clicker:get_player_name(),
-			"mcl_chests:"..canonical_basename.."_"..pos.x.."_"..pos.y.."_"..pos.z,
-			"size[9,11.5]"..
-			"label[0,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)).."]"..
-			"list[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main;0,0.5;9,3;]"..
-			mcl_formspec.get_itemslot_bg(0,0.5,9,3)..
-			"list[nodemeta:"..pos_other.x..","..pos_other.y..","..pos_other.z..";main;0,3.5;9,3;]"..
-			mcl_formspec.get_itemslot_bg(0,3.5,9,3)..
-			"label[0,7;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
-			"list[current_player;main;0,7.5;9,3;9]"..
-			mcl_formspec.get_itemslot_bg(0,7.5,9,3)..
-			"list[current_player;main;0,10.75;9,1;]"..
-			mcl_formspec.get_itemslot_bg(0,10.75,9,1)..
-			-- BEGIN OF LISTRING WORKAROUND
-			"listring[current_player;main]"..
-			"listring[nodemeta:"..pos.x..","..pos.y..","..pos.z..";input]"..
-			-- END OF LISTRING WORKAROUND
-			"listring[current_player;main]"..
-			"listring[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main]"..
-			"listring[current_player;main]"..
-			"listring[nodemeta:"..pos_other.x..","..pos_other.y..","..pos_other.z..";main]")
-
-			if on_rightclick_addendum_left then
-				on_rightclick_addendum_left(pos, node, clicker)
-			end
-
-			player_chest_open(clicker, pos, left_name, left_textures, node.param2, true, "default_chest", "mcl_chests_chest")
+			return openDouble(pos, node, clicker, pos, mcl_util.get_double_container_neighbor_pos(pos, node.param2, "left"), on_rightclick_addendum_left)
 		end,
 		mesecons = mesecons,
 		on_rotate = no_rotate,
@@ -776,49 +766,7 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 		_mcl_hardness = 2.5,
 
 		on_rightclick = function(pos, node, clicker)
-			local pos_other = mcl_util.get_double_container_neighbor_pos(pos, node.param2, "right")
-			if minetest.registered_nodes[minetest.get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name].groups.opaque == 1
-				or minetest.registered_nodes[minetest.get_node({x = pos_other.x, y = pos_other.y + 1, z = pos_other.z}).name].groups.opaque == 1 then
-					-- won't open if there is no space from the top
-					return false
-			end
-
-			local name = minetest.get_meta(pos_other):get_string("name")
-			if name == "" then
-				name = minetest.get_meta(pos):get_string("name")
-			end
-			if name == "" then
-				name = S("Large Chest")
-			end
-
-			minetest.show_formspec(clicker:get_player_name(),
-			"mcl_chests:"..canonical_basename.."_"..pos.x.."_"..pos.y.."_"..pos.z,
-
-			"size[9,11.5]"..
-			"label[0,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)).."]"..
-			"list[nodemeta:"..pos_other.x..","..pos_other.y..","..pos_other.z..";main;0,0.5;9,3;]"..
-			mcl_formspec.get_itemslot_bg(0,0.5,9,3)..
-			"list[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main;0,3.5;9,3;]"..
-			mcl_formspec.get_itemslot_bg(0,3.5,9,3)..
-			"label[0,7;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
-			"list[current_player;main;0,7.5;9,3;9]"..
-			mcl_formspec.get_itemslot_bg(0,7.5,9,3)..
-			"list[current_player;main;0,10.75;9,1;]"..
-			mcl_formspec.get_itemslot_bg(0,10.75,9,1)..
-			-- BEGIN OF LISTRING WORKAROUND
-			"listring[current_player;main]"..
-			"listring[nodemeta:"..pos.x..","..pos.y..","..pos.z..";input]"..
-			-- END OF LISTRING WORKAROUND
-			"listring[current_player;main]"..
-			"listring[nodemeta:"..pos_other.x..","..pos_other.y..","..pos_other.z..";main]"..
-			"listring[current_player;main]"..
-			"listring[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main]")
-
-			if on_rightclick_addendum_right then
-				on_rightclick_addendum_right(pos, node, clicker)
-			end
-
-			player_chest_open(clicker, pos_other, left_name, left_textures, node.param2, true, "default_chest", "mcl_chests_chest")
+			return openDouble(pos, node, clicker, mcl_util.get_double_container_neighbor_pos(pos, node.param2, "right"), pos, on_rightclick_addendum_right)
 		end,
 		mesecons = mesecons,
 		on_rotate = no_rotate,

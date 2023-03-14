@@ -68,7 +68,7 @@ local function set_inventory(player)
 	end
 
 	local width = mcl_vars.inventory_width
-	local form = "size[" .. width .. ",8.75]" ..
+	local form = mcl_formspec.player() ..
 		"background[-0.19,-0.25;9.41,9.49;crafting_formspec_bg.png]" ..
 		mcl_player.get_player_formspec_model(player, 1.0, 0.0, 2.25, 4.5, "") ..
 
@@ -86,14 +86,9 @@ local function set_inventory(player)
 		armor_slot_imgs ..
 
 		-- Craft and inventory
-		"label[0,4;"..F(minetest.colorize(mcl_vars.font_color, S("Inventory"))) .. "]" ..
-		"list[current_player;main;0,4.5;" .. width .. ",3;" .. width .. "]" ..
-		"list[current_player;main;0,7.74;" .. width .. ",1;]" ..
 		"label[4,0.5;"..F(minetest.colorize(mcl_vars.font_color, S("Crafting"))) .. "]" ..
 		"list[current_player;craft;4,1;2,2]" ..
 		"list[current_player;craftpreview;7,1.5;1,1;]" ..
-		mcl_formspec.get_itemslot_bg(0, 4.5, width, 3) ..
-		mcl_formspec.get_itemslot_bg(0, 7.74, width, 1) ..
 		mcl_formspec.get_itemslot_bg(4, 1,2, 2) ..
 		mcl_formspec.get_itemslot_bg(7, 1.5, 1, 1) ..
 
@@ -118,7 +113,6 @@ local function set_inventory(player)
 		"tooltip[__mcl_achievements;" .. F(S("Advancements")) .. "]" ..
 
 		-- For shortcuts
-		"listring[current_player;main]" ..
 		"listring[current_player;armor]" ..
 		"listring[current_player;main]" ..
 		"listring[current_player;craft]" ..
