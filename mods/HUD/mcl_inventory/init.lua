@@ -67,7 +67,7 @@ local function set_inventory(player)
 		armor_slot_imgs = armor_slot_imgs .. "image[3,2;1,1;mcl_inventory_empty_armor_slot_shield.png]"
 	end
 
-	local width = inv:get_width("main");
+	local width = mcl_vars.inventory_width
 	local form = "size[" .. width .. ",8.75]" ..
 		"background[-0.19,-0.25;9.41,9.49;crafting_formspec_bg.png]" ..
 		mcl_player.get_player_formspec_model(player, 1.0, 0.0, 2.25, 4.5, "") ..

@@ -11,14 +11,16 @@ function mcl_crafting_table.show_crafting_form(player)
 	player:get_inventory():set_width("craft", 3)
 	player:get_inventory():set_size("craft", 9)
 
+	local w = mcl_vars.inventory_width
+
 	show_formspec(player:get_player_name(), "main",
-		"size[9,8.75]"..
+		"size[" .. w .. ",8.75]"..
 		"image[4.7,1.5;1.5,1;gui_crafting_arrow.png]"..
 		"label[0,4;"..formspec_escape(C(text_color, S("Inventory"))).."]"..
-		"list[current_player;main;0,4.5;9,3;9]"..
-		itemslot_bg(0,4.5,9,3)..
-		"list[current_player;main;0,7.74;9,1;]"..
-		itemslot_bg(0,7.74,9,1)..
+		"list[current_player;main;0,4.5;" .. w .. ",3;" .. w .. "]"..
+		itemslot_bg(0,4.5,w,3)..
+		"list[current_player;main;0,7.74;" .. w .. ",1;]"..
+		itemslot_bg(0,7.74,w,1)..
 		"label[1.75,0;"..formspec_escape(C(text_color, S("Crafting"))).."]"..
 		"list[current_player;craft;1.75,0.5;3,3;]"..
 		itemslot_bg(1.75,0.5,3,3)..
