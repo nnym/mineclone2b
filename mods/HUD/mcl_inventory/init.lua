@@ -67,7 +67,8 @@ local function set_inventory(player)
 		armor_slot_imgs = armor_slot_imgs .. "image[3,2;1,1;mcl_inventory_empty_armor_slot_shield.png]"
 	end
 
-	local form = "size[9,8.75]" ..
+	local width = inv:get_width("main");
+	local form = "size[" .. width .. ",8.75]" ..
 		"background[-0.19,-0.25;9.41,9.49;crafting_formspec_bg.png]" ..
 		mcl_player.get_player_formspec_model(player, 1.0, 0.0, 2.25, 4.5, "") ..
 
@@ -86,13 +87,13 @@ local function set_inventory(player)
 
 		-- Craft and inventory
 		"label[0,4;"..F(minetest.colorize(mcl_vars.font_color, S("Inventory"))) .. "]" ..
-		"list[current_player;main;0,4.5;9,3;9]" ..
-		"list[current_player;main;0,7.74;9,1;]" ..
+		"list[current_player;main;0,4.5;" .. width .. ",3;" .. width .. "]" ..
+		"list[current_player;main;0,7.74;" .. width .. ",1;]" ..
 		"label[4,0.5;"..F(minetest.colorize(mcl_vars.font_color, S("Crafting"))) .. "]" ..
 		"list[current_player;craft;4,1;2,2]" ..
 		"list[current_player;craftpreview;7,1.5;1,1;]" ..
-		mcl_formspec.get_itemslot_bg(0, 4.5, 9, 3) ..
-		mcl_formspec.get_itemslot_bg(0, 7.74, 9, 1) ..
+		mcl_formspec.get_itemslot_bg(0, 4.5, width, 3) ..
+		mcl_formspec.get_itemslot_bg(0, 7.74, width, 1) ..
 		mcl_formspec.get_itemslot_bg(4, 1,2, 2) ..
 		mcl_formspec.get_itemslot_bg(7, 1.5, 1, 1) ..
 
@@ -150,12 +151,12 @@ end)
 minetest.register_on_joinplayer(function(player)
 	--init inventory
 	local inv = player:get_inventory()
-	inv:set_width("main", 9)
-	inv:set_size("main", 36)
+	inv:set_width("main", 16)
+	inv:set_size("main", 64)
 	inv:set_size("offhand", 1)
 
 	--set hotbar size
-	player:hud_set_hotbar_itemcount(9)
+	player:hud_set_hotbar_itemcount(16)
 	--add hotbar images
 	player:hud_set_hotbar_image("mcl_inventory_hotbar.png")
 	player:hud_set_hotbar_selected_image("mcl_inventory_hotbar_selected.png")
