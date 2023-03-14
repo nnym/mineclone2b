@@ -85,10 +85,10 @@ local function set_inventory(player)
 		armor_slot_imgs ..
 
 		-- Craft and inventory
-		"label[0,4;"..F(minetest.colorize("#313131", S("Inventory"))) .. "]" ..
+		"label[0,4;"..F(minetest.colorize(mcl_vars.font_color, S("Inventory"))) .. "]" ..
 		"list[current_player;main;0,4.5;9,3;9]" ..
 		"list[current_player;main;0,7.74;9,1;]" ..
-		"label[4,0.5;"..F(minetest.colorize("#313131", S("Crafting"))) .. "]" ..
+		"label[4,0.5;"..F(minetest.colorize(mcl_vars.font_color, S("Crafting"))) .. "]" ..
 		"list[current_player;craft;4,1;2,2]" ..
 		"list[current_player;craftpreview;7,1.5;1,1;]" ..
 		mcl_formspec.get_itemslot_bg(0, 4.5, 9, 3) ..

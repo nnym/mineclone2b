@@ -381,10 +381,10 @@ local function bookshelf_gui(pos, node, clicker)
 		"mcl_books:bookshelf_"..pos.x.."_"..pos.y.."_"..pos.z,
 		table.concat({
 			"size[9,8.75]",
-			"label[0,0;"..F(C("#313131", name)).."]",
+			"label[0,0;"..F(C(mcl_vars.font_color, name)).."]",
 			"list[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main;0,0.5;9,3;]",
 			mcl_formspec.get_itemslot_bg(0, 0.5, 9, 3),
-			"label[0,4.0;"..F(C("#313131", S("Inventory"))).."]",
+			"label[0,4.0;"..F(C(mcl_vars.font_color, S("Inventory"))).."]",
 			"list[current_player;main;0,4.5;9,3;9]",
 			mcl_formspec.get_itemslot_bg(0, 4.5, 9, 3),
 			"list[current_player;main;0,7.74;9,1;]",

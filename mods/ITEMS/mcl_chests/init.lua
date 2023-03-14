@@ -496,10 +496,10 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 			minetest.show_formspec(clicker:get_player_name(),
 			"mcl_chests:"..canonical_basename.."_"..pos.x.."_"..pos.y.."_"..pos.z,
 			"size[9,8.75]"..
-			"label[0,0;"..minetest.formspec_escape(minetest.colorize("#313131", name)).."]"..
+			"label[0,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)).."]"..
 			"list[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main;0,0.5;9,3;]"..
 			mcl_formspec.get_itemslot_bg(0,0.5,9,3)..
-			"label[0,4.0;"..minetest.formspec_escape(minetest.colorize("#313131", S("Inventory"))).."]"..
+			"label[0,4.0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
 			"list[current_player;main;0,4.5;9,3;9]"..
 			mcl_formspec.get_itemslot_bg(0,4.5,9,3)..
 			"list[current_player;main;0,7.74;9,1;]"..
@@ -647,12 +647,12 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 			minetest.show_formspec(clicker:get_player_name(),
 			"mcl_chests:"..canonical_basename.."_"..pos.x.."_"..pos.y.."_"..pos.z,
 			"size[9,11.5]"..
-			"label[0,0;"..minetest.formspec_escape(minetest.colorize("#313131", name)).."]"..
+			"label[0,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)).."]"..
 			"list[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main;0,0.5;9,3;]"..
 			mcl_formspec.get_itemslot_bg(0,0.5,9,3)..
 			"list[nodemeta:"..pos_other.x..","..pos_other.y..","..pos_other.z..";main;0,3.5;9,3;]"..
 			mcl_formspec.get_itemslot_bg(0,3.5,9,3)..
-			"label[0,7;"..minetest.formspec_escape(minetest.colorize("#313131", S("Inventory"))).."]"..
+			"label[0,7;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
 			"list[current_player;main;0,7.5;9,3;9]"..
 			mcl_formspec.get_itemslot_bg(0,7.5,9,3)..
 			"list[current_player;main;0,10.75;9,1;]"..
@@ -795,12 +795,12 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 			"mcl_chests:"..canonical_basename.."_"..pos.x.."_"..pos.y.."_"..pos.z,
 
 			"size[9,11.5]"..
-			"label[0,0;"..minetest.formspec_escape(minetest.colorize("#313131", name)).."]"..
+			"label[0,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)).."]"..
 			"list[nodemeta:"..pos_other.x..","..pos_other.y..","..pos_other.z..";main;0,0.5;9,3;]"..
 			mcl_formspec.get_itemslot_bg(0,0.5,9,3)..
 			"list[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main;0,3.5;9,3;]"..
 			mcl_formspec.get_itemslot_bg(0,3.5,9,3)..
-			"label[0,7;"..minetest.formspec_escape(minetest.colorize("#313131", S("Inventory"))).."]"..
+			"label[0,7;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
 			"list[current_player;main;0,7.5;9,3;9]"..
 			mcl_formspec.get_itemslot_bg(0,7.5,9,3)..
 			"list[current_player;main;0,10.75;9,1;]"..
@@ -990,10 +990,10 @@ minetest.register_node("mcl_chests:ender_chest", {
 })
 
 local formspec_ender_chest = "size[9,8.75]"..
-	"label[0,0;"..minetest.formspec_escape(minetest.colorize("#313131", S("Ender Chest"))).."]"..
+	"label[0,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Ender Chest"))).."]"..
 	"list[current_player;enderchest;0,0.5;9,3;]"..
 	mcl_formspec.get_itemslot_bg(0,0.5,9,3)..
-	"label[0,4.0;"..minetest.formspec_escape(minetest.colorize("#313131", S("Inventory"))).."]"..
+	"label[0,4.0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
 	"list[current_player;main;0,4.5;9,3;9]"..
 	mcl_formspec.get_itemslot_bg(0,4.5,9,3)..
 	"list[current_player;main;0,7.74;9,1;]"..
@@ -1122,10 +1122,10 @@ local function formspec_shulker_box(name)
 		name = S("Shulker Box")
 	end
 	return "size[9,8.75]"..
-	"label[0,0;"..minetest.formspec_escape(minetest.colorize("#313131", name)).."]"..
+	"label[0,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)).."]"..
 	"list[context;main;0,0.5;9,3;]"..
 	mcl_formspec.get_itemslot_bg(0,0.5,9,3)..
-	"label[0,4.0;"..minetest.formspec_escape(minetest.colorize("#313131", S("Inventory"))).."]"..
+	"label[0,4.0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
 	"list[current_player;main;0,4.5;9,3;9]"..
 	mcl_formspec.get_itemslot_bg(0,4.5,9,3)..
 	"list[current_player;main;0,7.74;9,1;]"..

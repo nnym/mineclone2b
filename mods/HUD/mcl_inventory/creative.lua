@@ -434,7 +434,7 @@ function mcl_inventory.set_creative_formspec(player)
 	end
 	local caption = ""
 	if name ~= "inv" and filtername[name] then
-		caption = "label[0,1.2;"..F(minetest.colorize("#313131", filtername[name])).."]"
+		caption = "label[0,1.2;"..F(minetest.colorize(mcl_vars.font_color, filtername[name])).."]"
 	end
 
 	local formspec = "size[10,9.3]"..

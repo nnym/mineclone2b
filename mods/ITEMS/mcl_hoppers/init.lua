@@ -13,10 +13,10 @@ end
 
 local mcl_hoppers_formspec = table.concat({
 	"size[9,7]",
-	"label[2,0;" .. F(C("#313131", S("Hopper"))) .. "]",
+	"label[2,0;" .. F(C(mcl_vars.font_color, S("Hopper"))) .. "]",
 	"list[context;main;2,0.5;5,1;]",
 	mcl_formspec.get_itemslot_bg(2, 0.5, 5, 1),
-	"label[0,2;" .. F(C("#313131", S("Inventory"))) .. "]",
+	"label[0,2;" .. F(C(mcl_vars.font_color, S("Inventory"))) .. "]",
 	"list[current_player;main;0,2.5;9,3;9]",
 	mcl_formspec.get_itemslot_bg(0, 2.5, 9, 3),
 	"list[current_player;main;0,5.74;9,1;]",

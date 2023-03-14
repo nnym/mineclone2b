@@ -25,15 +25,18 @@ mcl_vars.redstone_tick = 0.1
 -- GUI / inventory menu settings
 mcl_vars.gui_slots = "listcolors[#9990;#FFF7;#FFF0;#000;#FFF]"
 
+local font_color = "#eee"
+mcl_vars.font_color = font_color
+
 -- nonbg is added as formspec prepend in mcl_formspec_prepend
 mcl_vars.gui_nonbg = table.concat({
 	mcl_vars.gui_slots,
 	"style_type[image_button;border=false;bgimg=mcl_inventory_button9.png;bgimg_pressed=mcl_inventory_button9_pressed.png;bgimg_middle=2,2]",
 	"style_type[button;border=false;bgimg=mcl_inventory_button9.png;bgimg_pressed=mcl_inventory_button9_pressed.png;bgimg_middle=2,2]",
-	"style_type[field;textcolor=#323232]",
-	"style_type[label;textcolor=#323232]",
-	"style_type[textarea;textcolor=#323232]",
-	"style_type[checkbox;textcolor=#323232]",
+	"style_type[field;textcolor=" .. font_color .. "]",
+	"style_type[label;textcolor=" .. font_color .. "]",
+	"style_type[textarea;textcolor=" .. font_color .. "]",
+	"style_type[checkbox;textcolor=" .. font_color .. "]",
 })
 
 -- Background stuff must be manually added by mods (no formspec prepend)

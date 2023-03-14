@@ -494,13 +494,13 @@ function mcl_enchanting.show_enchanting_formspec(player)
 	local formspec = ""
 		.. "size[9.07,8.6;]"
 		.. "formspec_version[3]"
-		.. "label[0,0;" .. C("#313131") .. F(table_name) .. "]"
+		.. "label[0,0;" .. C(mcl_vars.font_color) .. F(table_name) .. "]"
 		.. mcl_formspec.get_itemslot_bg(0.2, 2.4, 1, 1)
 		.. "list[current_player;enchanting_item;0.2,2.4;1,1]"
 		.. mcl_formspec.get_itemslot_bg(1.1, 2.4, 1, 1)
 		.. "image[1.1,2.4;1,1;mcl_enchanting_lapis_background.png]"
 		.. "list[current_player;enchanting_lapis;1.1,2.4;1,1]"
-		.. "label[0,4;" .. C("#313131") .. F(S("Inventory")).."]"
+		.. "label[0,4;" .. C(mcl_vars.font_color) .. F(S("Inventory")).."]"
 		.. mcl_formspec.get_itemslot_bg(0, 4.5, 9, 3)
 		.. mcl_formspec.get_itemslot_bg(0, 7.74, 9, 1)
 		.. "list[current_player;main;0,4.5;9,3;9]"

@@ -8,8 +8,8 @@ local MAX_WEAR = 65535
 local function get_grindstone_formspec()
 	return "size[9,8.75]"..
 	"image[3,1.5;1.5,1;gui_crafting_arrow.png]"..
-	"label[0,4.0;"..minetest.formspec_escape(minetest.colorize("#313131", S("Inventory"))).."]"..
-	"label[1,0.1;"..minetest.formspec_escape(minetest.colorize("#313131", S("Repair & Disenchant"))).."]"..
+	"label[0,4.0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
+	"label[1,0.1;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Repair & Disenchant"))).."]"..
 	"list[context;main;0,0;8,4;]"..
 	"list[current_player;main;0,4.5;9,3;9]"..
 	mcl_formspec.get_itemslot_bg(0,4.5,9,3)..

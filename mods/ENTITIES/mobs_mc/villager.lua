@@ -1515,7 +1515,7 @@ local function show_trade_formspec(playername, trader, tradenum)
 	"size[9,8.75]"
 	.."background[-0.19,-0.25;9.41,9.49;mobs_mc_trading_formspec_bg.png]"
 	..disabled_img
-.."label[3,0;"..F(minetest.colorize("#313131", S(profession).." - "..tiername)) .."]"
+.."label[3,0;"..F(minetest.colorize(mcl_vars.font_color, S(profession).." - "..tiername)) .."]"
 	.."list[current_player;main;0,4.5;9,3;9]"
 	.."list[current_player;main;0,7.74;9,1;]"
 	..b_prev..b_next
