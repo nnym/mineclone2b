@@ -98,11 +98,11 @@ local function set_inventory(player)
 		mcl_formspec.get_itemslot_bg(7, 1.5, 1, 1) ..
 
 		-- Crafting guide button
-		"image_button[4.5,3;1,1;craftguide_book.png;__mcl_craftguide;]" ..
+		"image_button[4,3;1,1;craftguide_book.png;__mcl_craftguide;]" ..
 		"tooltip[__mcl_craftguide;"..F(S("Recipe book")) .. "]" ..
 
 		-- Help button
-		"image_button[8,3;1,1;doc_button_icon_lores.png;__mcl_doc;]" ..
+		"image_button[3,1;1,1;doc_button_icon_lores.png;__mcl_doc;]" ..
 		"tooltip[__mcl_doc;" .. F(S("Help")) .. "]"
 
 	-- Skins button
@@ -114,7 +114,7 @@ local function set_inventory(player)
 
 	form = form ..
 		-- Achievements button
-		"image_button[7,3;1,1;mcl_achievements_button.png;__mcl_achievements;]" ..
+		"image_button[5,3;1,1;mcl_achievements_button.png;__mcl_achievements;]" ..
 		"tooltip[__mcl_achievements;" .. F(S("Advancements")) .. "]" ..
 
 		-- For shortcuts
