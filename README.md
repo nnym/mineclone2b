@@ -5,6 +5,7 @@
 + dark GUI (based on original graphics by Wuzzy)
 + Node drops are added to the digger's inventory by default (configurable by `mcl_add_drops`).
 - sprinting FOV change
+- pigs
 - Christmas and Halloween
 - bats
 - music
