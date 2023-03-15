@@ -106,7 +106,7 @@ minetest.register_globalstep(function(dtime)
 		local meta = meta(player)
 		--Check if the player should be sprinting
 		local v = player:get_velocity()
-		local shouldSprint = meta.clientSprint or ctrl.aux1 and ctrl.up and not ctrl.sneak and math.abs(v.x) + math.abs(v.z) >= 0.3
+		local shouldSprint = meta.clientSprint or ctrl.up and  (ctrl.aux1 or meta.sprinting) and not ctrl.sneak and math.abs(v.x) + math.abs(v.z) >= 0.3
 		local playerPos = player:get_pos()
 
 		--If the player is sprinting, create particles behind and cause exhaustion
