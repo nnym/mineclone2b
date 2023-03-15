@@ -140,9 +140,9 @@ if not superflat and not singlenode then
 	mcl_vars.mg_overworld_max_official = 30927
 	mcl_vars.mg_bedrock_overworld_min = mcl_vars.mg_overworld_min
 	mcl_vars.mg_bedrock_overworld_max = mcl_vars.mg_bedrock_overworld_min + 4
-	mcl_vars.mg_lava_overworld_max = mcl_vars.mg_overworld_min + 10
+	mcl_vars.mg_lava_overworld_max = mcl_vars.mg_overworld_min_original + 10
 	mcl_vars.mg_lava = true
-	mcl_vars.mg_bedrock_is_rough = true
+	mcl_vars.mg_bedrock_is_rough = false
 
 else
 	if singlenode then
