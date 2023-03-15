@@ -3,6 +3,7 @@
 - Maximum stack size is determined by `mcl_stack_max` which is `default_stack_max` by default.
 - 64 inventory and 16 hotbar slots.
 - Dark GUI <sub><sup>(based on original graphics by Wuzzy)</sub></sup>.
+- Sprinting does not change FOV.
 - No bats.
 - No music.
 - Reduced skin customization.
