@@ -3,6 +3,7 @@
 + Maximum stack size is determined by `mcl_stack_max` which is `default_stack_max` by default.
 + 64 inventory and 16 hotbar slots
 + dark GUI (based on original graphics by Wuzzy)
++ Node drops are added to the digger's inventory by default (configurable by `mcl_add_drops`).
 - sprinting FOV change
 - Christmas and Halloween
 - bats

@@ -48,6 +48,9 @@ mcl_disabled_events (Disabled events) string
 # Default maximum stack size (0-65535; default: 16384). 0 will be replaced by `default_stack_size`.
 mcl_stack_max (Default stack size) int 0 0 65535
 
+# Add node drops to the digger's inventory.
+mcl_add_drops (Add node drops to inventory) bool true
+
 [Players]
 # If enabled, players respawn at the bed they last lay on instead of normal
 # spawn.
