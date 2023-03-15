@@ -160,7 +160,7 @@ minetest.register_globalstep(function(dtime)
 		if shouldSprint then --Stopped
 			-- Prevent sprinting if hungry or sleeping
 			local sprinting = (mcl_hunger.active and mcl_hunger.get_hunger(player) > 6)
-				or player:get_meta():get_string("mcl_beds:sleeping") ~= "true"
+				and player:get_meta():get_string("mcl_beds:sleeping") ~= "true"
 
 			setSprinting(player, sprinting)
 		else
