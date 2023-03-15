@@ -25,10 +25,10 @@ Cooked Chicken=
 A cooked chicken is a healthy food item which can be eaten.=
 Raw Porkchop=
 
-A raw porkchop is the flesh from a pig and can be eaten safely. Cooking it will greatly increase its nutritional value.=
+A raw porkchop is the flesh from a cow and can be eaten safely. Cooking it will greatly increase its nutritional value.=
 
 Cooked Porkchop=
-Cooked porkchop is the cooked flesh of a pig and is used as food.=
+Cooked porkchop is the cooked flesh of a cow and is used as food.=
 Raw Rabbit=
 
 Raw rabbit is a food item from a dead rabbit. It can be eaten safely. Cooking it will increase its nutritional value.=
@@ -81,7 +81,7 @@ Saddle=
 Can be placed on animals to ride them=
 Saddles can be put on some animals in order to mount them.=
 
-Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and pigs. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=
+Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and cows. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=
 
 Rabbit Stew=
 Rabbit stew is a very nutricious food item.=
@@ -91,10 +91,10 @@ Slimeball=
 Slimeballs are used in crafting. They are dropped from slimes.=
 Gunpowder=
 Carrot on a Stick=
-Lets you ride a saddled pig=
-A carrot on a stick can be used on saddled pigs to ride them.=
+Lets you ride a saddled cow=
+A carrot on a stick can be used on saddled cows to ride them.=
 
-Place it on a saddled pig to mount it. You can now ride the pig like a horse. Pigs will also walk towards you when you just wield the carrot on a stick.=
+Place it on a saddled cow to mount it. You can now ride the cow like a horse. Cows will also walk towards you when you just wield the carrot on a stick.=
 
 Nautilus Shell=
 Used to craft a conduit=

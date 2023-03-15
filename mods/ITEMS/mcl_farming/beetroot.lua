@@ -139,7 +139,7 @@ minetest.register_node("mcl_farming:beetroot", {
 
 minetest.register_craftitem("mcl_farming:beetroot_item", {
 	description = S("Beetroot"),
-	_doc_items_longdesc = S("Beetroots are both used as food item and a dye ingredient. Pigs like beetroots, too."),
+	_doc_items_longdesc = S("Beetroots are both used as food item and a dye ingredient."),
 	_doc_items_usagehelp = S("Hold it in your hand and right-click to eat it. Rightclick an animal to feed it."),
 	inventory_image = "mcl_farming_beetroot.png",
 	wield_image = "mcl_farming_beetroot.png",

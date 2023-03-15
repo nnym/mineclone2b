@@ -86,30 +86,6 @@ minetest.register_craftitem("mcl_mobitems:cooked_chicken", {
 	stack_max = mcl_vars.stack_max,
 })
 
-minetest.register_craftitem("mcl_mobitems:porkchop", {
-	description = S("Raw Porkchop"),
-	_doc_items_longdesc = S("A raw porkchop is the flesh from a pig and can be eaten safely. Cooking it will greatly increase its nutritional value."),
-	inventory_image = "mcl_mobitems_porkchop_raw.png",
-	wield_image = "mcl_mobitems_porkchop_raw.png",
-	on_place = minetest.item_eat(3),
-	on_secondary_use = minetest.item_eat(3),
-	groups = { food = 2, eatable = 3, smoker_cookable = 1 },
-	_mcl_saturation = 1.8,
-	stack_max = mcl_vars.stack_max,
-})
-
-minetest.register_craftitem("mcl_mobitems:cooked_porkchop", {
-	description = S("Cooked Porkchop"),
-	_doc_items_longdesc = S("Cooked porkchop is the cooked flesh of a pig and is used as food."),
-	inventory_image = "mcl_mobitems_porkchop_cooked.png",
-	wield_image = "mcl_mobitems_porkchop_cooked.png",
-	on_place = minetest.item_eat(8),
-	on_secondary_use = minetest.item_eat(8),
-	groups = { food = 2, eatable = 8 },
-	_mcl_saturation = 12.8,
-	stack_max = mcl_vars.stack_max,
-})
-
 minetest.register_craftitem("mcl_mobitems:rabbit", {
 	description = S("Raw Rabbit"),
 	_doc_items_longdesc = S("Raw rabbit is a food item from a dead rabbit. It can be eaten safely. Cooking it will increase its nutritional value."),
@@ -283,7 +259,7 @@ minetest.register_craftitem("mcl_mobitems:saddle", {
 	description = S("Saddle"),
 	_tt_help = S("Can be placed on animals to ride them"),
 	_doc_items_longdesc = S("Saddles can be put on some animals in order to mount them."),
-	_doc_items_usagehelp = S("Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and pigs. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again."),
+	_doc_items_usagehelp = S("Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and cows. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again."),
 	wield_image = "mcl_mobitems_saddle.png",
 	inventory_image = "mcl_mobitems_saddle.png",
 	groups = { transport = 1 },
@@ -326,9 +302,9 @@ minetest.register_craftitem("mcl_mobitems:gunpowder", {
 
 minetest.register_tool("mcl_mobitems:carrot_on_a_stick", {
 	description = S("Carrot on a Stick"),
-	_tt_help = S("Lets you ride a saddled pig"),
-	_doc_items_longdesc = S("A carrot on a stick can be used on saddled pigs to ride them."),
-	_doc_items_usagehelp = S("Place it on a saddled pig to mount it. You can now ride the pig like a horse. Pigs will also walk towards you when you just wield the carrot on a stick."),
+	_tt_help = S("Lets you ride a saddled cow"),
+	_doc_items_longdesc = S("A carrot on a stick can be used on saddled cow to ride them."),
+	_doc_items_usagehelp = S("Place it on a saddled cow to mount it. You can now ride a cow like a horse. Cows will also walk towards you when you just wield the carrot on a stick."),
 	wield_image = "mcl_mobitems_carrot_on_a_stick.png^[transformFY^[transformR90",
 	inventory_image = "mcl_mobitems_carrot_on_a_stick.png",
 	groups = { transport = 1 },

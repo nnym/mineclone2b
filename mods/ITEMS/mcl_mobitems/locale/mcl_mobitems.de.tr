@@ -25,10 +25,6 @@ Cooked Chicken=Gebratenes Hühnchen
 A cooked chicken is a healthy food item which can be eaten.=Ein gebratenes Hühnchen ist ein gesundes essbares Lebensmittel.
 Raw Porkchop=Rohes Schweinefleisch
 
-A raw porkchop is the flesh from a pig and can be eaten safely. Cooking it will greatly increase its nutritional value.=Ein rohes Stück Schweinefleisch kann bedenkenlos gegessen werden. Man kann es braten, um seinen Nährwert stark zu erhöhen.
-
-Cooked Porkchop=Gebratenes Schweinefleisch
-Cooked porkchop is the cooked flesh of a pig and is used as food.=Ein gebratenes Stück Schweinefleisch ist ein gutes Lebensmittel.
 Raw Rabbit=Rohes Kaninchen
 
 Raw rabbit is a food item from a dead rabbit. It can be eaten safely. Cooking it will increase its nutritional value.=Rohes Kaninchenfleisch ist ein Lebensmittel, welches bedenkenlos verzehrt werden kann. Es kann gebraten werden, um seinen Nährwert zu erhöhen.
@@ -81,7 +77,7 @@ Saddle=Sattel
 Can be placed on animals to ride them=Kann auf Tieren platziert werden, um sie zu reiten
 Saddles can be put on some animals in order to mount them.=Sattel können auf einigen Tieren platziert werden, um sich aufzusatteln.
 
-Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and pigs. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=Platzierungstaste benutzen, während man den Sattel in der Hand hält, um zu versuchen, den Sattel anzulegen. Sattel passen auf Pferde, Maultiere, Esel und Schweine. Pferde, Maultiere und Esel müssen zuerst gezähmt werden, sonst werden sie den Sattel abweisen. Mit der Platzierungstaste kann man aufsatteln.
+Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and cows. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=
 
 Rabbit Stew=Kaninchenragout
 Rabbit stew is a very nutricious food item.=Kaninchenragout ist ein sehr nahrhaftes Lebensmittel.
@@ -91,10 +87,10 @@ Slimeball=Schleimkugel
 Slimeballs are used in crafting. They are dropped from slimes.=Schleimkugeln werden in der Fertigung verwendet. Sie werden von Schleimen fallen gelassen.
 Gunpowder=Schießpulver
 Carrot on a Stick=Karottenrute
-Lets you ride a saddled pig=Um auf gesattelten Schweinen zu reiten
-A carrot on a stick can be used on saddled pigs to ride them.=Eine Karottenrute kann auf gesattelten Schweinen angewendet werden, um sie zu reiten.
+Lets you ride a saddled cow=
+A carrot on a stick can be used on saddled cows to ride them.=
 
-Place it on a saddled pig to mount it. You can now ride the pig like a horse. Pigs will also walk towards you when you just wield the carrot on a stick.=Platzieren Sie sie auf einem Schwein mit Sattel, um sich aufzusatteln. Sie können nun das Schwein wie ein Pferd reiten. Schweine werden auch auf Sie zugehen, wenn Sie einfach nur die Karottenrute halten.
+Place it on a saddled cow to mount it. You can now ride the cow like a horse. Cows will also walk towards you when you just wield the carrot on a stick.=
 
 Iron Horse Armor=Eisenpferderüstung
 Iron horse armor can be worn by horses to increase their protection from harm a bit.=Eine Eisenpferderüstung kann von Pferden getragen werden, um ihren Schutz vor Schaden etwas zu erhöhen.

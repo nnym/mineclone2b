@@ -61,7 +61,6 @@ This mod adds mobs which closely resemble the mobs from the game Minecraft, vers
 * Axolotl
 * Chicken
 * Cow
-* Pig
 * Rabbit
 * Sheep
 * Squid

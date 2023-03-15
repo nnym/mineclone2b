@@ -25,10 +25,6 @@ Cooked Chicken=Жареный цыплёнок
 A cooked chicken is a healthy food item which can be eaten.=Жареный цыплёнок это здоровый питательный продукт, его можно есть.
 Raw Porkchop=Сырая свинина
 
-A raw porkchop is the flesh from a pig and can be eaten safely. Cooking it will greatly increase its nutritional value.=Сырая свинина это мясо свиньи, его можно безопасно есть. Приготовление значительно увеличивает его питательную ценность.
-
-Cooked Porkchop=Свиная отбивная
-Cooked porkchop is the cooked flesh of a pig and is used as food.=Свиная отбивная это приготовленное мясо свиньи, его можно есть.
 Raw Rabbit=Сырая крольчатина
 
 Raw rabbit is a food item from a dead rabbit. It can be eaten safely. Cooking it will increase its nutritional value.=Сырая крольчатина это мясо кролика, его можно безопасно есть. Приготовление значительно увеличивает его питательную ценность.
@@ -81,7 +77,7 @@ Saddle=Седло
 Can be placed on animals to ride them=Можно устанавливать на животных, чтобы ездить на них
 Saddles can be put on some animals in order to mount them.=Седло можно поставить на некоторых животных, чтобы закрепляться на них.
 
-Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and pigs. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=Используйте клавишу размещения, держа седло в руке, чтобы попытаться надеть его. Сёдла подходят для лошадей, мулов, осликов и свиней. Лошади, мулы и ослики должны быть предварительно приручены, иначе они откажутся от седла. На осёдланных животных можно сесть, снова нажав на них клавишу размещения.
+Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and cows. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=
 
 Rabbit Stew=Рагу из кролика
 Rabbit stew is a very nutricious food item.=Рагу из кролика это очень питательный продукт.
@@ -91,10 +87,10 @@ Slimeball=Слизь
 Slimeballs are used in crafting. They are dropped from slimes.=Слизь используется для крафтинга. Она выпадает из слизняков.
 Gunpowder=Порох
 Carrot on a Stick=Удочка с морковью
-Lets you ride a saddled pig=Позволяет вам ездить на осёдланной свинье
-A carrot on a stick can be used on saddled pigs to ride them.=Удочку с морковью можно использовать, чтобы оседлать свинью и поехать на ней.
+Lets you ride a saddled cow=
+A carrot on a stick can be used on saddled cows to ride them.=
 
-Place it on a saddled pig to mount it. You can now ride the pig like a horse. Pigs will also walk towards you when you just wield the carrot on a stick.=Поместите это на осёдланную свинью, чтобы закрепиться на ней. Теперь вы можете ехать на ней, как на лошади. Свиньи также идут вперёд, когда вы просто держите удочку с морковью.
+Place it on a saddled cow to mount it. You can now ride the cow like a horse. Cows will also walk towards you when you just wield the carrot on a stick.=
 
 Iron Horse Armor=Железные доспехи лошади
 Iron horse armor can be worn by horses to increase their protection from harm a bit.=Железные доспехи лошади, надетые на лошадь, немного защищают её от вреда.

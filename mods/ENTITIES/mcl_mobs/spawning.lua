@@ -535,8 +535,8 @@ end
 
 function mcl_mobs:non_spawn_specific(mob_name,dimension,min_light,max_light)
 	table.insert(non_spawn_dictionary, mob_name)
-	non_spawn_dictionary[mob_name] = { 
-		[dimension] = { 
+	non_spawn_dictionary[mob_name] = {
+		[dimension] = {
 			min_light = min_light , max_light = max_light
 		}
 	}
@@ -614,7 +614,7 @@ local function biome_check(biome_list, biome_goal)
 end
 
 local function is_farm_animal(n)
-	return n == "mobs_mc:pig" or n == "mobs_mc:cow" or n == "mobs_mc:sheep" or n == "mobs_mc:chicken" or n == "mobs_mc:horse" or n == "mobs_mc:donkey"
+	return n == "mobs_mc:cow" or n == "mobs_mc:sheep" or n == "mobs_mc:chicken" or n == "mobs_mc:horse" or n == "mobs_mc:donkey"
 end
 
 local function get_water_spawn(p)

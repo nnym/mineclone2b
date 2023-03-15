@@ -26,10 +26,6 @@ Cooked Chicken=Pieczony kurczak
 A cooked chicken is a healthy food item which can be eaten.=Pieczony kurczak jest zdrowym jedzeniem, które można bezpiecznie zjeść.
 Raw Porkchop=Surowy schab
 
-A raw porkchop is the flesh from a pig and can be eaten safely. Cooking it will greatly increase its nutritional value.=Surowy schab jest mięsem ze świni i może zostać bezpiecznie zjedzony. Upieczenie go znacząco zwiększy jego wartości odżywcze.
-
-Cooked Porkchop=Pieczony schab
-Cooked porkchop is the cooked flesh of a pig and is used as food.=Pieczony schab to upieczone mięso świni i jest używane jako jedzenie.
 Raw Rabbit=Surowy mięso królicze
 
 Raw rabbit is a food item from a dead rabbit. It can be eaten safely. Cooking it will increase its nutritional value.=Surowy mięso królicze jest mięsem z martwego królika. Może zostać bezpiecznie zjedzone. Upieczenie go znacząco zwiększy jego wartości odżywcze.
@@ -82,7 +78,7 @@ Saddle=Siodło
 Can be placed on animals to ride them=Może być umieszczone na zwierzętach aby na nich jeździć.
 Saddles can be put on some animals in order to mount them.=Siodła mogą być umieszczone na zwierzętach aby ich dosiąść.
 
-Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and pigs. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=Użyj przycisku umieszczania z siodłem w ręku, aby założyć siodło. Siodła pasują na konie, muły, osły i świnie. Konie, muły i osły muszą być najpierw oswojone, w przeciwnym razie nie dadzą się osiodłać. Osiodłane zwierzęta można dosiąść klikając je prawym przyciskiem myszy.
+Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and cows. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=
 
 Rabbit Stew=Potrawka z królika
 Rabbit stew is a very nutricious food item.=Potrawka z królika jest bardzo odżywczym posiłkiem.
@@ -92,8 +88,8 @@ Slimeball=Kula szlamu
 Slimeballs are used in crafting. They are dropped from slimes.=Kule szlamu są użyteczne w wytwarzaniu. Wypadają z szlamów.
 Gunpowder=Proch
 Carrot on a Stick=Marchewka na patyku
-Lets you ride a saddled pig=Pozwala prowadzić osiodłaną świnię
-A carrot on a stick can be used on saddled pigs to ride them.=Marchewka na patyku może być użyta na osiodłanej świni by ją prowadzić.
+Lets you ride a saddled cow=
+A carrot on a stick can be used on saddled cows to ride them.=
 
-Place it on a saddled pig to mount it. You can now ride the pig like a horse. Pigs will also walk towards you when you just wield the carrot on a stick.=Użyj jej na osiodłanej skrzyni aby ją założyć. Możesz teraz jeździć na świni jak na koniu. Świnie będą także do ciebie podchodzić jeśli po prostu trzymasz marchewkę na patyku.
+Place it on a saddled cow to mount it. You can now ride the cow like a horse. Cows will also walk towards you when you just wield the carrot on a stick.=
 

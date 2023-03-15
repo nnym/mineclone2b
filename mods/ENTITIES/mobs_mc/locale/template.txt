@@ -22,7 +22,6 @@ Iron Golem=
 Llama=
 Ocelot=
 Parrot=
-Pig=
 Polar Bear=
 Rabbit=
 Killer Bunny=

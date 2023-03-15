@@ -25,10 +25,6 @@ Cooked Chicken=Pollo cocinado
 A cooked chicken is a healthy food item which can be eaten.=Un pollo cocinado es un alimento saludable que se puede comer.
 Raw Porkchop=Chuleta de cerdo cruda
 
-A raw porkchop is the flesh from a pig and can be eaten safely. Cooking it will greatly increase its nutritional value.=Una chuleta de cerdo cruda es la carne de un cerdo y se puede comer de manera segura. Cocinarlo aumentará en gran medida su valor nutricional.
-
-Cooked Porkchop=Chuleta de cerdo cocinada
-Cooked porkchop is the cooked flesh of a pig and is used as food.=La chuleta de cerdo cocinada es la carne cocida de un cerdo y se usa como alimento.
 Raw Rabbit=Conejo crudo
 
 Raw rabbit is a food item from a dead rabbit. It can be eaten safely. Cooking it will increase its nutritional value.=El conejo crudo es un alimento de un conejo muerto. Se puede comer de forma segura. Cocinar aumentará su valor nutricional.
@@ -81,7 +77,7 @@ Saddle=Montura
 Can be placed on animals to ride them=
 Saddles can be put on some animals in order to mount them.=Se pueden poner monturas en algunos animales para montarlos.
 
-Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and pigs. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=
+Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and cows. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=
 
 Rabbit Stew=Estofado de conejo
 Rabbit stew is a very nutricious food item.=El estofado de conejo es un alimento muy nutritivo.
@@ -91,10 +87,10 @@ Slimeball=Bola de slime
 Slimeballs are used in crafting. They are dropped from slimes.=Las bolas de slime se usan en la elaboración. Se obtienen de slimes.
 Gunpowder=Pólvora
 Carrot on a Stick=Caña con zanahoria
-Lets you ride a saddled pig=
-A carrot on a stick can be used on saddled pigs to ride them.=La caña con zanahoria se puede usar en cerdos ensillados para montarlos.
+Lets you ride a saddled cow=
+A carrot on a stick can be used on saddled cows to ride them.=
 
-Place it on a saddled pig to mount it. You can now ride the pig like a horse. Pigs will also walk towards you when you just wield the carrot on a stick.=Colóquelo sobre un cerdo ensillado para montarlo. Ahora puedes montar el cerdo como un caballo. Los cerdos también caminarán hacia ti cuando solo manejes la zanahoria en un palo.
+Place it on a saddled cow to mount it. You can now ride the cow like a horse. Cows will also walk towards you when you just wield the carrot on a stick.=
 
 Iron Horse Armor=Armadura de hierro para caballo
 Iron horse armor can be worn by horses to increase their protection from harm a bit.=Los caballos pueden usar armadura de caballo de hierro para aumentar un poco su protección contra el daño.

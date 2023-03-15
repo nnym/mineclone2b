@@ -25,10 +25,6 @@ Cooked Chicken=Poulet cuit
 A cooked chicken is a healthy food item which can be eaten.=Un poulet cuit est un aliment sain qui peut être mangé.
 Raw Porkchop=Porc Cru
 
-A raw porkchop is the flesh from a pig and can be eaten safely. Cooking it will greatly increase its nutritional value.=Un porc cru est la chair d'un porc et peut être mangée en toute sécurité. La cuisson augmentera considérablement sa valeur nutritive.
-
-Cooked Porkchop=Porc cuit
-Cooked porkchop is the cooked flesh of a pig and is used as food.=Le porc cuit est la chair cuite d'un porc et est utilisé comme aliment.
 Raw Rabbit=Lapin Cru
 
 Raw rabbit is a food item from a dead rabbit. It can be eaten safely. Cooking it will increase its nutritional value.=Le lapin cru est un aliment provenant d'un lapin mort. Il peut être mangé en toute sécurité. La cuisson augmentera sa valeur nutritive.
@@ -81,7 +77,7 @@ Saddle=Selle
 Can be placed on animals to ride them=Peut être placé sur les animaux pour les monter
 Saddles can be put on some animals in order to mount them.=Des selles peuvent être posées sur certains animaux afin de les monter.
 
-Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and pigs. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=Utilisez la touche de placement avec la selle à la main pour essayer de mettre la selle. Les selles conviennent aux chevaux, mulets, ânes et cochons. Les chevaux, les mulets et les ânes doivent d'abord être apprivoisés, sinon ils rejetteront la selle. Les animaux sellés peuvent être montés en utilisant à nouveau la touche de placement.
+Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and cows. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=
 
 Rabbit Stew=Ragout de lapin
 Rabbit stew is a very nutricious food item.=Le ragoût de lapin est un aliment très nutritif.
@@ -91,10 +87,10 @@ Slimeball=Boule de Slime
 Slimeballs are used in crafting. They are dropped from slimes.=Les boules de slime sont utilisées dans l'artisanat. Ils sont lâchés par les Slimes.
 Gunpowder=Poudre à canon
 Carrot on a Stick=Carotte sur un bâton
-Lets you ride a saddled pig=Vous permet de monter un cochon sellé
-A carrot on a stick can be used on saddled pigs to ride them.=Une carotte sur un bâton peut être utilisée sur les porcs sellés pour les monter.
+Lets you ride a saddled cow=
+A carrot on a stick can be used on saddled cows to ride them.=
 
-Place it on a saddled pig to mount it. You can now ride the pig like a horse. Pigs will also walk towards you when you just wield the carrot on a stick.=Placez-le sur un cochon sellé pour le monter. Vous pouvez maintenant monter le cochon comme un cheval. Les porcs marcheront également vers vous lorsque vous brandirez la carotte sur un bâton.
+Place it on a saddled cow to mount it. You can now ride the cow like a horse. Cows will also walk towards you when you just wield the carrot on a stick.=
 
 Nautilus Shell=Coquille de nautile
 Used to craft a conduit=Utilisé pour fabriquer un conduit.

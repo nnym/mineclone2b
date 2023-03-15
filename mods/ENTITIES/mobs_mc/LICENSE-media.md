@@ -167,7 +167,6 @@ Origin of those models:
     * `mobs_fireball.ogg`
     * `mobs_mc_cat_idle.1.ogg`
     * `mobs_mc_llama.ogg`
-    * `mobs_pig.ogg`
     * `mobs_pig_angry.ogg`
     * `mobs_sandmonster.ogg`
 * [Daysycho](https://freesound.org/people/Darsycho/)

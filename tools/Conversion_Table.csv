@@ -698,7 +698,6 @@ Source path,Source file,Target path,Target file,xs,ys,xl,yl,xt,yt,Blacklisted?
 /assets/minecraft/textures/entity/slime,magmacube.png,/mods/ENTITIES/mobs_mc/textures,mobs_mc_magmacube.png,,,,,,,
 /assets/minecraft/textures/entity/cow,mooshroom.png,/mods/ENTITIES/mobs_mc/textures,mobs_mc_mooshroom.png,,,,,,,
 /assets/minecraft/textures/entity/horse,mule.png,/mods/ENTITIES/mobs_mc/textures,mobs_mc_mule.png,,,,,,,
-/assets/minecraft/textures/entity/pig,pig.png,/mods/ENTITIES/mobs_mc/textures,mobs_mc_pig.png,,,,,,,
 /assets/minecraft/textures/entity/pig,pig_saddle.png,/mods/ENTITIES/mobs_mc/textures,mobs_mc_pig_saddle.png,,,,,,,
 /assets/minecraft/textures/entity/bear,polarbear.png,/mods/ENTITIES/mobs_mc/textures,mobs_mc_polarbear.png,,,,,,,
 /assets/minecraft/textures/entity/rabbit,black.png,/mods/ENTITIES/mobs_mc/textures,mobs_mc_rabbit_black.png,,,,,,,

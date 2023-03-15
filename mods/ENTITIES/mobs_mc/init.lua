@@ -104,7 +104,6 @@ dofile(path .. "/horse.lua") -- KrupnoPavel; Mesh and animation by toby109tt  / 
 dofile(path .. "/llama.lua") --  Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/ocelot.lua") --  Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/parrot.lua") --  Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/pig.lua") -- Mesh and animation by Pavel_S
 dofile(path .. "/polar_bear.lua") --  Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/sheep.lua") -- Mesh and animation by Pavel_S
 dofile(path .. "/wolf.lua") -- KrupnoPavel

@@ -25,10 +25,6 @@ Cooked Chicken=ヤキトリ
 A cooked chicken is a healthy food item which can be eaten.=ヤキトリは、食べても大丈夫なヘルシー食品です。
 Raw Porkchop=生の豚肉
 
-A raw porkchop is the flesh from a pig and can be eaten safely. Cooking it will greatly increase its nutritional value.=生の豚の肉なので、安全に食べられます。調理することで栄養価が大幅にアップします。
-
-Cooked Porkchop=チャーシュー
-Cooked porkchop is the cooked flesh of a pig and is used as food.=チャーシューは豚の肉を調理したもので、食用です。
 Raw Rabbit=生の兎肉
 
 Raw rabbit is a food item from a dead rabbit. It can be eaten safely. Cooking it will increase its nutritional value.=死んだウサギ由来の食材です。安全に食べられます。調理することで栄養価が上がります。
@@ -78,7 +74,7 @@ Saddle=鞍
 Can be placed on animals to ride them=動物に被せて騎乗可能
 Saddles can be put on some animals in order to mount them.=動物によっては、鞍を装着して騎乗できます。
 
-Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and pigs. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=鞍を手にした状態で配置キーを使い、装着させてみましょう。鞍はウマ、ラバ、ロバ、ブタにフィットします。ウマ、ラバ、ロバは先に手なずけておかないと、鞍を拒んでしまいます。鞍をつけた動物には、もう一度配置キーを使えば騎乗できます。
+Use the placement key with the saddle in your hand to try to put on the saddle. Saddles fit on horses, mules, donkeys and cows. Horses, mules and donkeys need to be tamed first, otherwise they'll reject the saddle. Saddled animals can be mounted by using the placement key on them again.=
 
 Rabbit Stew=ラビットシチュー
 Rabbit stew is a very nutricious food item.=ラビットシチューは、とても栄養豊富な食品です。
@@ -88,10 +84,10 @@ Slimeball=スライムボール
 Slimeballs are used in crafting. They are dropped from slimes.=スライムボールはクラフトに使われます。それはスライムからドロップされます。
 Gunpowder=火薬
 Carrot on a Stick=ニンジン付きの棒
-Lets you ride a saddled pig=鞍をつけたブタに乗れる
-A carrot on a stick can be used on saddled pigs to ride them.=ニンジン付きの棒を使えば、鞍をつけたブタに騎乗できます。
+Lets you ride a saddled cow=
+A carrot on a stick can be used on saddled cows to ride them.=
 
-Place it on a saddled pig to mount it. You can now ride the pig like a horse. Pigs will also walk towards you when you just wield the carrot on a stick.=鞍をつけたブタの上にそれを掲げます。 これで、ブタに騎乗できること馬のごとしです。 ニンジン付きの棒を振るうだけでも、ブタはあなたに向かって歩いてきます。
+Place it on a saddled cow to mount it. You can now ride the cow like a horse. Cows will also walk towards you when you just wield the carrot on a stick.=
 
 Nautilus Shell=オウムガイの殻
 Used to craft a conduit=コンジットのクラフトに使用可

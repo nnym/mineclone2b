@@ -5,7 +5,7 @@ local table = table
 
 mcl_mobspawners = {}
 
-local default_mob = "mobs_mc:pig"
+local default_mob = "mobs_mc:cow"
 
 -- Mob spawner
 --local spawner_default = default_mob.." 0 15 4 15"
@@ -97,7 +97,7 @@ This function blindly assumes there's actually a spawner at pos.
 If not, then the results are undefined.
 All the arguments are optional!
 
-* Mob: ID of mob to spawn (default: mobs_mc:pig)
+* Mob: ID of mob to spawn (default: mobs_mc:cow)
 * MinLight: Minimum light to spawn (default: 0)
 * MaxLight: Maximum light to spawn (default: 15)
 * MaxMobsInArea: How many mobs are allowed in the area around the spawner (default: 4)
