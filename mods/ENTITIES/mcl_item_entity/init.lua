@@ -247,7 +247,6 @@ local function get_fortune_drops(fortune_drops, fortune_level)
 end
 
 local doTileDrops = minetest.settings:get_bool("mcl_doTileDrops", true)
-local handleNodeDrops = minetest.handle_node_drops
 
 function minetest.handle_node_drops(pos, drops, digger)
 	-- NOTE: This function override allows digger to be nil.
