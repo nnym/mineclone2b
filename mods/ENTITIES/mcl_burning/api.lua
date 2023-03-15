@@ -54,8 +54,8 @@ function mcl_burning.update_hud(player)
 		storage.animation_frame = 1
 		storage.fire_hud_id = player:hud_add({
 			hud_elem_type = "image",
-			position = {x = 0.5, y = 0.5},
-			scale = {x = -100, y = -100},
+			position = {x = 0.5, y = 0.95},
+			scale = {x = -125, y = -20},
 			text = hud_flame_animated .. storage.animation_frame,
 			z_index = 1000,
 		})

@@ -6,6 +6,7 @@
 + Node drops are added to the digger's inventory by default (configurable by `mcl_add_drops`).
 + smooth bedrock
 + Damaged mobs stay red for 0.5 s instead of 1 s.
++ less intrusive HUD burning animation
 - sprinting FOV change
 - pigs
 - Christmas and Halloween
