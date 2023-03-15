@@ -428,6 +428,128 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 		player_chest_open(clicker, left, left_name, left_textures, node.param2, true, "default_chest", "mcl_chests_chest")
 	end
 
+	local function registerDouble(name, side, otherSide, rating, addendum, box)
+		local definition = {
+			drawtype = "nodebox",
+			paramtype = "light",
+			paramtype2 = "facedir",
+			node_box = {
+				type = "fixed",
+				fixed = box,
+			},
+			tiles = {"blank.png^[resize:16x16"},
+			use_texture_alpha = minetest.features.use_texture_alpha_string_modes and "clip" or true,
+			groups = {handy = 1, axey = 1, container = 5 + rating, not_in_creative_inventory = 1, material_wood = 1, flammable = -1, chest_entity = 1 - rating, double_chest = 1 + rating},
+			drop = drop,
+			is_ground_content = false,
+			sounds = mcl_sounds.node_sound_wood_defaults(),
+			on_construct = function(pos)
+				local n = minetest.get_node(pos)
+				local p = mcl_util.get_double_container_neighbor_pos(pos, n.param2, side)
+
+				if not p or minetest.get_node(p).name ~= "mcl_chests:" .. canonical_basename .. "_" .. otherSide then
+					n.name = "mcl_chests:" .. canonical_basename .. "_small"
+					minetest.swap_node(pos, n)
+				end
+
+				if side == "left" then
+					create_entity(pos, name, left_textures, param2, true, "default_chest", "mcl_chests_chest", "chest")
+				end
+			end,
+			after_place_node = function(pos, placer, itemstack, pointed_thing)
+				minetest.get_meta(pos):set_string("name", itemstack:get_meta():get_string("name"))
+			end,
+			on_destruct = function(pos)
+				local n = minetest.get_node(pos)
+				if n.name == small_name then return end
+
+				close_forms(canonical_basename, pos)
+
+				local param2 = n.param2
+				local p = mcl_util.get_double_container_neighbor_pos(pos, param2, side)
+				if p and minetest.get_node(p).name == "mcl_chests:" .. basename .. "_" .. otherSide then
+					close_forms(canonical_basename, p)
+
+					minetest.swap_node(p, {name = small_name, param2 = param2})
+					create_entity(p, small_name, small_textures, param2, false, "default_chest", "mcl_chests_chest", "chest")
+				end
+			end,
+			after_dig_node = drop_items_chest,
+			on_blast = on_chest_blast,
+			allow_metadata_inventory_move = protection_check_move,
+			allow_metadata_inventory_take = protection_check_put_take,
+			allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+				local name = player:get_player_name()
+				if minetest.is_protected(pos, name) then
+					minetest.record_protection_violation(pos, name)
+					return 0
+					-- BEGIN OF LISTRING WORKAROUND
+				elseif listname == "input" then
+					local left = minetest.get_inventory {type = "node", pos = pos}
+					local right = minetest.get_inventory {type = "node", pos = mcl_util.get_double_container_neighbor_pos(pos, minetest.get_node(pos).param2, side)}
+					if side == "right" then left, right = right, left end
+					return limit_put(stack, left, right)
+					--[[if inv:room_for_item("main", stack) then
+						return -1
+					else
+
+						if other_inv:room_for_item("main", stack) then
+							return -1
+						else
+							return 0
+						end
+					end]]--
+					-- END OF LISTRING WORKAROUND
+				else
+					return stack:get_count()
+				end
+			end,
+			on_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
+				minetest.log("action", player:get_player_name()..
+					" moves stuff in chest at "..minetest.pos_to_string(pos))
+			end,
+			on_metadata_inventory_put = function(pos, listname, index, stack, player)
+				minetest.log("action", player:get_player_name()..
+					" moves stuff to chest at "..minetest.pos_to_string(pos))
+				-- BEGIN OF LISTRING WORKAROUND
+				if listname == "input" then
+					local inv = minetest.get_inventory({type="node", pos=pos})
+					local other_pos = mcl_util.get_double_container_neighbor_pos(pos, minetest.get_node(pos).param2, side)
+					local other_inv = minetest.get_inventory({type="node", pos=other_pos})
+
+					inv:set_stack("input", 1, nil)
+
+					double_chest_add_item(inv, other_inv, "main", stack)
+				end
+				-- END OF LISTRING WORKAROUND
+			end,
+			on_metadata_inventory_take = function(pos, listname, index, stack, player)
+				minetest.log("action", player:get_player_name()..
+					" takes stuff from chest at "..minetest.pos_to_string(pos))
+			end,
+			_mcl_blast_resistance = 2.5,
+			_mcl_hardness = 2.5,
+			on_rightclick = function(pos, node, clicker)
+				local left, right = pos, mcl_util.get_double_container_neighbor_pos(pos, node.param2, side)
+				if side == "right" then left, right = right, left end
+
+				return openDouble(pos, node, clicker, left, right, addendum)
+			end,
+			mesecons = mesecons,
+			on_rotate = no_rotate
+		}
+
+		if side == "left" then
+			definition._chest_entity_textures = left_textures
+			definition._chest_entity_sound = "default_chest"
+			definition._chest_entity_mesh = "mcl_chests_chest"
+			definition._chest_entity_animation_type = "chest"
+		end
+
+		minetest.register_node(name, definition)
+		return definition
+	end
+
 	minetest.register_node(small_name, {
 		description = desc,
 		_tt_help = tt_help,
@@ -554,223 +676,8 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 		on_rotate = simple_rotate,
 	})
 
-	minetest.register_node(left_name, {
-		drawtype = "nodebox",
-		node_box = {
-			type = "fixed",
-			fixed = {-0.4375, -0.5, -0.4375, 0.5, 0.375, 0.4375},
-		},
-		tiles = {"blank.png^[resize:16x16"},
-		use_texture_alpha = minetest.features.use_texture_alpha_string_modes and "clip" or true,
-		_chest_entity_textures = left_textures,
-		_chest_entity_sound = "default_chest",
-		_chest_entity_mesh = "mcl_chests_chest",
-		_chest_entity_animation_type = "chest",
-		paramtype = "light",
-		paramtype2 = "facedir",
-		groups = {handy=1,axey=1, container=5,not_in_creative_inventory=1, material_wood=1,flammable=-1,chest_entity=1,double_chest=1},
-		drop = drop,
-		is_ground_content = false,
-		sounds = mcl_sounds.node_sound_wood_defaults(),
-		on_construct = function(pos)
-			local n = minetest.get_node(pos)
-			local param2 = n.param2
-			local p = mcl_util.get_double_container_neighbor_pos(pos, param2, "left")
-			if not p or minetest.get_node(p).name ~= "mcl_chests:"..canonical_basename.."_right" then
-				n.name = "mcl_chests:"..canonical_basename.."_small"
-				minetest.swap_node(pos, n)
-			end
-			create_entity(pos, left_name, left_textures, param2, true, "default_chest", "mcl_chests_chest", "chest")
-		end,
-		after_place_node = function(pos, placer, itemstack, pointed_thing)
-			minetest.get_meta(pos):set_string("name", itemstack:get_meta():get_string("name"))
-		end,
-		on_destruct = function(pos)
-			local n = minetest.get_node(pos)
-			if n.name == small_name then
-				return
-			end
-
-			close_forms(canonical_basename, pos)
-
-			local param2 = n.param2
-			local p = mcl_util.get_double_container_neighbor_pos(pos, param2, "left")
-			if not p or minetest.get_node(p).name ~= "mcl_chests:"..basename.."_right" then
-				return
-			end
-			close_forms(canonical_basename, p)
-
-			minetest.swap_node(p, { name = small_name, param2 = param2 })
-			create_entity(p, small_name, small_textures, param2, false, "default_chest", "mcl_chests_chest", "chest")
-		end,
-		after_dig_node = drop_items_chest,
-		on_blast = on_chest_blast,
-		allow_metadata_inventory_move = protection_check_move,
-		allow_metadata_inventory_take = protection_check_put_take,
-		allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-			local name = player:get_player_name()
-			if minetest.is_protected(pos, name) then
-				minetest.record_protection_violation(pos, name)
-				return 0
-			-- BEGIN OF LISTRING WORKAROUND
-			elseif listname == "input" then
-				local inv = minetest.get_inventory({type="node", pos=pos})
-				local other_pos = mcl_util.get_double_container_neighbor_pos(pos, minetest.get_node(pos).param2, "left")
-				local other_inv = minetest.get_inventory({type="node", pos=other_pos})
-				return limit_put(stack, inv, other_inv)
-				--[[if inv:room_for_item("main", stack) then
-					return -1
-				else
-
-					if other_inv:room_for_item("main", stack) then
-						return -1
-					else
-						return 0
-					end
-				end]]--
-			-- END OF LISTRING WORKAROUND
-			else
-				return stack:get_count()
-			end
-		end,
-		on_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
-			minetest.log("action", player:get_player_name()..
-					" moves stuff in chest at "..minetest.pos_to_string(pos))
-		end,
-		on_metadata_inventory_put = function(pos, listname, index, stack, player)
-			minetest.log("action", player:get_player_name()..
-					" moves stuff to chest at "..minetest.pos_to_string(pos))
-			-- BEGIN OF LISTRING WORKAROUND
-			if listname == "input" then
-				local inv = minetest.get_inventory({type="node", pos=pos})
-				local other_pos = mcl_util.get_double_container_neighbor_pos(pos, minetest.get_node(pos).param2, "left")
-				local other_inv = minetest.get_inventory({type="node", pos=other_pos})
-
-				inv:set_stack("input", 1, nil)
-
-				double_chest_add_item(inv, other_inv, "main", stack)
-			end
-			-- END OF LISTRING WORKAROUND
-		end,
-		on_metadata_inventory_take = function(pos, listname, index, stack, player)
-			minetest.log("action", player:get_player_name()..
-					" takes stuff from chest at "..minetest.pos_to_string(pos))
-		end,
-		_mcl_blast_resistance = 2.5,
-		_mcl_hardness = 2.5,
-
-		on_rightclick = function(pos, node, clicker)
-			return openDouble(pos, node, clicker, pos, mcl_util.get_double_container_neighbor_pos(pos, node.param2, "left"), on_rightclick_addendum_left)
-		end,
-		mesecons = mesecons,
-		on_rotate = no_rotate,
-	})
-
-	minetest.register_node("mcl_chests:"..basename.."_right", {
-		drawtype = "nodebox",
-		paramtype = "light",
-		paramtype2 = "facedir",
-		node_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, -0.4375, 0.4375, 0.375, 0.4375},
-		},
-		tiles = {"blank.png^[resize:16x16"},
-		use_texture_alpha = minetest.features.use_texture_alpha_string_modes and "clip" or true,
-		groups = {handy=1,axey=1, container=6,not_in_creative_inventory=1, material_wood=1,flammable=-1,double_chest=2},
-		drop = drop,
-		is_ground_content = false,
-		sounds = mcl_sounds.node_sound_wood_defaults(),
-		on_construct = function(pos)
-			local n = minetest.get_node(pos)
-			local param2 = n.param2
-			local p = mcl_util.get_double_container_neighbor_pos(pos, param2, "right")
-			if not p or minetest.get_node(p).name ~= "mcl_chests:"..canonical_basename.."_left" then
-				n.name = "mcl_chests:"..canonical_basename.."_small"
-				minetest.swap_node(pos, n)
-			end
-		end,
-		after_place_node = function(pos, placer, itemstack, pointed_thing)
-			minetest.get_meta(pos):set_string("name", itemstack:get_meta():get_string("name"))
-		end,
-		on_destruct = function(pos)
-			local n = minetest.get_node(pos)
-			if n.name == small_name then
-				return
-			end
-
-			close_forms(canonical_basename, pos)
-
-			local param2 = n.param2
-			local p = mcl_util.get_double_container_neighbor_pos(pos, param2, "right")
-			if not p or minetest.get_node(p).name ~= "mcl_chests:"..basename.."_left" then
-				return
-			end
-			close_forms(canonical_basename, p)
-
-			minetest.swap_node(p, { name = small_name, param2 = param2 })
-			create_entity(p, small_name, small_textures, param2, false, "default_chest", "mcl_chests_chest", "chest")
-		end,
-		after_dig_node = drop_items_chest,
-		on_blast = on_chest_blast,
-		allow_metadata_inventory_move = protection_check_move,
-		allow_metadata_inventory_take = protection_check_put_take,
-		allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-			local name = player:get_player_name()
-			if minetest.is_protected(pos, name) then
-				minetest.record_protection_violation(pos, name)
-				return 0
-			-- BEGIN OF LISTRING WORKAROUND
-			elseif listname == "input" then
-				local other_pos = mcl_util.get_double_container_neighbor_pos(pos, minetest.get_node(pos).param2, "right")
-				local other_inv = minetest.get_inventory({type="node", pos=other_pos})
-				local inv = minetest.get_inventory({type="node", pos=pos})
-				--[[if other_inv:room_for_item("main", stack) then
-					return -1
-				else
-					if inv:room_for_item("main", stack) then
-						return -1
-					else
-						return 0
-					end
-				end--]]
-				return limit_put(stack, other_inv, inv)
-			-- END OF LISTRING WORKAROUND
-			else
-				return stack:get_count()
-			end
-		end,
-		on_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
-			minetest.log("action", player:get_player_name()..
-					" moves stuff in chest at "..minetest.pos_to_string(pos))
-		end,
-		on_metadata_inventory_put = function(pos, listname, index, stack, player)
-			minetest.log("action", player:get_player_name()..
-					" moves stuff to chest at "..minetest.pos_to_string(pos))
-			-- BEGIN OF LISTRING WORKAROUND
-			if listname == "input" then
-				local other_pos = mcl_util.get_double_container_neighbor_pos(pos, minetest.get_node(pos).param2, "right")
-				local other_inv = minetest.get_inventory({type="node", pos=other_pos})
-				local inv = minetest.get_inventory({type="node", pos=pos})
-
-				inv:set_stack("input", 1, nil)
-
-				double_chest_add_item(other_inv, inv, "main", stack)
-			end
-			-- END OF LISTRING WORKAROUND
-		end,
-		on_metadata_inventory_take = function(pos, listname, index, stack, player)
-			minetest.log("action", player:get_player_name()..
-					" takes stuff from chest at "..minetest.pos_to_string(pos))
-		end,
-		_mcl_blast_resistance = 2.5,
-		_mcl_hardness = 2.5,
-
-		on_rightclick = function(pos, node, clicker)
-			return openDouble(pos, node, clicker, mcl_util.get_double_container_neighbor_pos(pos, node.param2, "right"), pos, on_rightclick_addendum_right)
-		end,
-		mesecons = mesecons,
-		on_rotate = no_rotate,
-	})
+	registerDouble(left_name, "left", "right", 0, on_rightclick_addendum_left, {-0.4375, -0.5, -0.4375, 0.5, 0.375, 0.4375})
+	registerDouble("mcl_chests:" .. basename .. "_right", "right", "left", 1, on_rightclick_addendum_right, {-0.5, -0.5, -0.4375, 0.4375, 0.375, 0.4375})
 
 	if mod_doc then
 		doc.add_entry_alias("nodes", small_name, "nodes", "mcl_chests:"..basename.."_left")
