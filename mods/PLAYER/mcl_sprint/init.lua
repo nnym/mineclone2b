@@ -96,10 +96,6 @@ minetest.register_on_modchannel_message(function(channel_name, sender, message)
 	end
 end)
 
-minetest.register_on_respawnplayer(function(player)
-	cancelClientSprinting(player)
-end)
-
 minetest.register_globalstep(function(dtime)
 	--Get the gametime
 	local gameTime = minetest.get_gametime()
