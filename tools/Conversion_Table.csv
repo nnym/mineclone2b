@@ -356,7 +356,6 @@ Source path,Source file,Target path,Target file,xs,ys,xl,yl,xt,yt,Blacklisted?
 /assets/minecraft/textures/items,potato_baked.png,/mods/ITEMS/mcl_farming/textures,farming_potato_baked.png,,,,,,,
 /assets/minecraft/textures/items,potato.png,/mods/ITEMS/mcl_farming/textures,farming_potato.png,,,,,,,
 /assets/minecraft/textures/items,potato_poisonous.png,/mods/ITEMS/mcl_farming/textures,farming_potato_poison.png,,,,,,,
-/assets/minecraft/textures/blocks,pumpkin_face_on.png,/mods/ITEMS/mcl_farming/textures,farming_pumpkin_face_light.png,,,,,,,
 /assets/minecraft/textures/blocks,pumpkin_face_off.png,/mods/ITEMS/mcl_farming/textures,farming_pumpkin_face.png,,,,,,,
 /assets/minecraft/textures/items,seeds_pumpkin.png,/mods/ITEMS/mcl_farming/textures,mcl_farming_pumpkin_seeds.png,,,,,,,
 /assets/minecraft/textures/blocks,pumpkin_side.png,/mods/ITEMS/mcl_farming/textures,farming_pumpkin_side.png,,,,,,,

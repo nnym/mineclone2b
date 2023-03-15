@@ -189,35 +189,7 @@ mcl_farming:add_gourd("mcl_farming:pumpkintige_unconnect", "mcl_farming:pumpkint
 pumpkin_face_base_def.after_destruct = minetest.registered_nodes["mcl_farming:pumpkin"].after_destruct
 minetest.register_node("mcl_farming:pumpkin_face", pumpkin_face_base_def)
 
--- Jack o'Lantern
-minetest.register_node("mcl_farming:pumpkin_face_light", {
-	description = S("Jack o'Lantern"),
-	_doc_items_longdesc = S("A jack o'lantern is a traditional Halloween decoration made from a pumpkin. It glows brightly."),
-	is_ground_content = false,
-	stack_max = mcl_vars.stack_max,
-	paramtype = "light",
-	paramtype2 = "facedir",
-	light_source = minetest.LIGHT_MAX,
-	tiles = {"farming_pumpkin_top.png", "farming_pumpkin_top.png", "farming_pumpkin_side.png", "farming_pumpkin_side.png", "farming_pumpkin_side.png", "farming_pumpkin_face_light.png"},
-	groups = {handy=1,axey=1, building_block=1, dig_by_piston=1 },
-	sounds = mcl_sounds.node_sound_wood_defaults(),
-	on_construct = function(pos)
-		-- Attempt to spawn iron golem or snow golem
-		mobs_mc.check_iron_golem_summon(pos)
-		mobs_mc.check_snow_golem_summon(pos)
-	end,
-	on_rotate = on_rotate,
-	_mcl_blast_resistance = 1,
-	_mcl_hardness = 1,
-})
-
 -- Crafting
-
-minetest.register_craft({
-	output = "mcl_farming:pumpkin_face_light",
-	recipe = {{"mcl_farming:pumpkin_face"},
-	{"mcl_torches:torch"}}
-})
 
 minetest.register_craft({
 	output = "mcl_farming:pumpkin_seeds 4",

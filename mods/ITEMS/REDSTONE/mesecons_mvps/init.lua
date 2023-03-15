@@ -566,9 +566,8 @@ mesecon.register_mvps_unsticky("mcl_wool:red_carpet")
 mesecon.register_mvps_unsticky("mcl_wool:silver_carpet")
 mesecon.register_mvps_unsticky("mcl_wool:white_carpet")
 mesecon.register_mvps_unsticky("mcl_wool:yellow_carpet")
--- Carved & Jack O'Lantern Pumpkins, Pumpkin & Melon
+-- Carved Pumpkin, Pumpkin & Melon
 mesecon.register_mvps_unsticky("mcl_farming:pumpkin_face")
-mesecon.register_mvps_unsticky("mcl_farming:pumpkin_face_light")
 mesecon.register_mvps_unsticky("mcl_farming:pumpkin")
 mesecon.register_mvps_unsticky("mcl_farming:melon")
 -- Chorus Plant & Flower

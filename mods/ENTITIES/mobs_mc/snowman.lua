@@ -157,8 +157,7 @@ local summon_particles = function(obj)
 	})
 end
 
--- This is to be called when a pumpkin or jack'o lantern has been placed. Recommended: In the on_construct function
--- of the node.
+-- This is to be called when a pumpkin has been placed. Recommended: In the on_construct function of the node.
 -- This summons a snow golen when pos is next to a row of two snow blocks.
 function mobs_mc.check_snow_golem_summon(pos)
 	local checks = {

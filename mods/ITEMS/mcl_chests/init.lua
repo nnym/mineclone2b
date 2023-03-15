@@ -1,42 +1,8 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 local mod_doc = minetest.get_modpath("doc")
 
--- Christmas chest setup
-local it_is_christmas = false
-local date = os.date("*t")
-if (
-	date.month == 12 and (
-		date.day == 24 or
-		date.day == 25 or
-		date.day == 26
-	)
-) then
-	it_is_christmas = true
-end
-
-local tiles_chest_normal_small = {"mcl_chests_normal.png"}
-local tiles_chest_normal_double = {"mcl_chests_normal_double.png"}
-
-if it_is_christmas then
-	tiles_chest_normal_small = {"mcl_chests_normal_present.png^mcl_chests_noise.png"}
-	tiles_chest_normal_double = {"mcl_chests_normal_double_present.png^mcl_chests_noise_double.png"}
-end
-
-local tiles_chest_trapped_small = {"mcl_chests_trapped.png"}
 local tiles_chest_trapped_double = {"mcl_chests_trapped_double.png"}
-
-if it_is_christmas then
-	tiles_chest_trapped_small = {"mcl_chests_trapped_present.png^mcl_chests_noise.png"}
-	tiles_chest_trapped_double = {"mcl_chests_trapped_double_present.png^mcl_chests_noise_double.png"}
-end
-
-local tiles_chest_ender_small = {"mcl_chests_ender.png"}
-
 local ender_chest_texture = {"mcl_chests_ender.png"}
-if it_is_christmas then
-	tiles_chest_ender_small = {"mcl_chests_ender_present.png^mcl_chests_noise.png"}
-    ender_chest_texture = {"mcl_chests_ender_present.png"}
-end
 
 -- Chest Entity
 local animate_chests = (minetest.settings:get_bool("animated_chests") ~= false)
@@ -695,14 +661,14 @@ register_chest("chest",
 	chestusage,
 	S("27 inventory slots") .. "\n" .. S("Can be combined to a large chest"),
 	{
-		small = tiles_chest_normal_small,
-		double = tiles_chest_normal_double,
+		small = {"mcl_chests_normal.png"},
+		double = {"mcl_chests_normal_double.png"},
 	},
 	false
 )
 
 local traptiles = {
-	small = tiles_chest_trapped_small,
+	small = {"mcl_chests_trapped.png"},
 	double = tiles_chest_trapped_double,
 }
 
@@ -830,7 +796,7 @@ minetest.register_node("mcl_chests:ender_chest", {
 	_doc_items_usagehelp = S("Rightclick the ender chest to access your personal interdimensional inventory."),
 	drawtype = "mesh",
 	mesh = "mcl_chests_chest.b3d",
-	tiles = tiles_chest_ender_small,
+	tiles = {"mcl_chests_ender.png"},
 	use_texture_alpha = minetest.features.use_texture_alpha_string_modes and "opaque" or false,
 	paramtype = "light",
 	paramtype2 = "facedir",

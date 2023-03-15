@@ -631,7 +631,6 @@ mcl_farming:potato_6 74 119 64
 mcl_farming:potato_7 74 119 64
 mcl_farming:pumpkin 174 90 40
 mcl_farming:pumpkin_face 174 90 40
-mcl_farming:pumpkin_face_light 174 90 40
 mcl_farming:pumpkintige_unconnect 100 100 100
 mcl_farming:soil 103 81 69
 mcl_farming:soil_wet 70 56 47
