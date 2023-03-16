@@ -1,5 +1,6 @@
 -- Some global variables (don't overwrite them!)
 mcl_vars = {}
+mclMg = {}
 
 local stack_max = tonumber(minetest.settings:get("mcl_stack_max") or 0)
 
@@ -141,6 +142,7 @@ if not superflat and not singlenode then
 	mcl_vars.mg_bedrock_overworld_min = mcl_vars.mg_overworld_min
 	mcl_vars.mg_bedrock_overworld_max = mcl_vars.mg_bedrock_overworld_min + 4
 	mcl_vars.mg_lava_overworld_max = mcl_vars.mg_overworld_min_original + 10
+	mclMg.overworldAirMin = mcl_vars.mg_overworld_min + 10
 	mcl_vars.mg_lava = true
 	mcl_vars.mg_bedrock_is_rough = false
 

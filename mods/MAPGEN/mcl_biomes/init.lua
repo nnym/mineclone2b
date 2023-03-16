@@ -2168,6 +2168,7 @@ local function register_biomes()
 			name = biome .. "_underground",
 			heat_point = minetest.registered_biomes[biome].heat_point,
 			humidity_point = minetest.registered_biomes[biome].humidity_point,
+			node_cave_liquid = {"mcl_core:water_source", "mcl_core:lava_source"},
 			y_min = mcl_vars.mg_overworld_min,
 			y_max = DEEP_OCEAN_MIN - 1,
 			_mcl_biome_type = minetest.registered_biomes[biome]._mcl_biome_type,

@@ -329,7 +329,7 @@ local function world_structure(vm, data, data2, emin, emax, area, minp, maxp, bl
 
 		-- Big lava seas by replacing air below a certain height
 		if mcl_vars.mg_lava then
-			lvm_used = set_layers(data, area, c_lava, c_air, mcl_vars.mg_overworld_min, mcl_vars.mg_lava_overworld_max, minp, maxp, lvm_used, pr)
+			lvm_used = set_layers(data, area, c_lava, c_air, mcl_vars.mg_overworld_min, mclMg.overworldAirMin, minp, maxp, lvm_used, pr)
 			lvm_used = set_layers(data, area, c_nether_lava, c_air, mcl_vars.mg_nether_min, mcl_vars.mg_lava_nether_max, minp, maxp, lvm_used, pr)
 		end
 	end
