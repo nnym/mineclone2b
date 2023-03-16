@@ -181,6 +181,9 @@ mcl_default_shadow_intensity (Default shadow intensity) float 0.33 0.0 1.0
 # Selecting liquid nodes on clients without a cross hair will not work correctly if this setting is disabled.
 mcl_buckets_use_select_box (Buckets use select box) bool false
 
+# Enable effect particles.
+mclEffectParticles (Effect particles) bool false
+
 [Experimental]
 # Whether ice is translucent. If disabled, ice is fully opaque.
 #
