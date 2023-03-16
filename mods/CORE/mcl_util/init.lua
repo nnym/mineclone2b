@@ -2,13 +2,17 @@ mcl_util = {}
 
 function log(...)
 	local arg = {...}
-	local message = string.format(...)
 
-	if message == arg[1] then
-		minetest.log(table.concat(arg, " "))
-	else
-		minetest.log(message)
+	if type(arg[1]) == "string" then
+		local message = string.format(...)
+
+		if message ~= arg[1] then
+			return minetest.log(message)
+		end
 	end
+
+	for index, argument in pairs(arg) do arg[index] = tostring(argument) end
+	minetest.log(table.concat(arg, " "))
 end
 
 -- Updates all values in t using values from to*.
