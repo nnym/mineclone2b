@@ -61,8 +61,7 @@
 	{
 		"type": "hair",
 		"texture": "mcl_skins_hair_6.png",
-		"mask": "mcl_skins_hair_6_mask.png",
-		"steve": true
+		"mask": "mcl_skins_hair_6_mask.png"
 	},
 	{
 		"type": "hair",
@@ -72,7 +71,8 @@
 	{
 		"type": "hair",
 		"texture": "mcl_skins_hair_9.png",
-		"mask": "mcl_skins_hair_9_mask.png"
+		"mask": "mcl_skins_hair_9_mask.png",
+		"steve": true
 	},
 	{
 		"type": "hair",
