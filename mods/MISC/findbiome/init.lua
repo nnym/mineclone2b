@@ -2,7 +2,6 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 local mod_biomeinfo = minetest.get_modpath("biomeinfo")
 local mg_name = minetest.get_mapgen_setting("mg_name")
-local water_level = tonumber(minetest.get_mapgen_setting("water_level"))
 
 -- Calculate the maximum playable limit
 local mapgen_limit = tonumber(minetest.get_mapgen_setting("mapgen_limit"))
@@ -156,7 +155,7 @@ local function find_biome(pos, biomes)
 					pos = adjust_pos_to_biome_limits(pos, biome_id)
 					local spos = table.copy(pos)
 					if biome == biome_id then
-						local good_spawn_height = pos.y <= water_level + 16 and pos.y >= water_level
+						local good_spawn_height = pos.y <= mclMg.waterLevel + 16 and pos.y >= mclMg.waterLevel
 						local spawn_y = minetest.get_spawn_level(spos.x, spos.z)
 						if spawn_y then
 							spawn_pos = {x = spos.x, y = spawn_y, z = spos.z}

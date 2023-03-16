@@ -57,7 +57,6 @@ dofile(modpath.."/api.lua")
 dofile(modpath.."/ores.lua")
 
 local mg_name = minetest.get_mapgen_setting("mg_name")
-local sea_level = tonumber(minetest.get_mapgen_setting("water_level"))
 local superflat = mg_name == "flat" and minetest.get_mapgen_setting("mcl_superflat_classic") == "true"
 
 -- Content IDs

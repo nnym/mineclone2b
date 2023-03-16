@@ -282,7 +282,7 @@ mcl_mobs:spawn_specific(
 	30,
 	17000,
 	10,
-	mobs_mc.water_level,
+	mclMg.waterLevel,
 	mcl_vars.mg_overworld_max
 )
 

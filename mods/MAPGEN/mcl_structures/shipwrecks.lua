@@ -3,7 +3,6 @@ local modpath = minetest.get_modpath(modname)
 --local S = minetest.get_translator(modname)
 
 local seed = minetest.get_mapgen_setting("seed")
-local water_level = minetest.get_mapgen_setting("water_level")
 local pr = PseudoRandom(seed)
 
 --schematics by chmodsayshello
@@ -110,7 +109,7 @@ mcl_structures.register_structure("shipwreck",{
 	sidelen = 16,
 	flags = "force_placement",
 	biomes = ocean_biomes,
-	y_max = water_level-4,
+	y_max = mclMg.waterLevel - 4,
 	y_min = mcl_vars.mg_overworld_min,
 	filenames = schems,
 	y_offset = function(pr) return pr:next(-4,-2) end,
@@ -191,7 +190,7 @@ mcl_structures.register_structure("ocean_temple",{
 	sidelen = 32,
 	flags = "force_placement",
 	biomes = ocean_biomes,
-	y_max = water_level-4,
+	y_max = mclMg.waterLevel - 4,
 	y_min = mcl_vars.mg_overworld_min,
 	filenames = {
 		modpath .. "/schematics/mcl_structures_ocean_temple.mts",

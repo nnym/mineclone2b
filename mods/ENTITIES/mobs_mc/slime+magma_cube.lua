@@ -157,8 +157,6 @@ slime_tiny.on_die = nil
 
 mcl_mobs.register_mob("mobs_mc:slime_tiny", slime_tiny)
 
-local water_level = mobs_mc.water_level
-
 local cave_biomes = {
 	"FlowerForest_underground",
 	"JungleEdge_underground",
@@ -194,90 +192,96 @@ local cave_biomes = {
 }
 
 local cave_min = mcl_vars.mg_overworld_min
-local cave_max = water_level - 23
+local cave_max = mclMg.waterLevel - 23
 
 local swampy_biomes = {"Swampland", "MangroveSwamp"}
 local swamp_light_max = 7
-local swamp_min = water_level
-local swamp_max = water_level + 27
+local swamp_min = mclMg.waterLevel
+local swamp_max = mclMg.waterLevel + 27
 
 mcl_mobs:spawn_specific(
-"mobs_mc:slime_tiny",
-"overworld",
-"ground",
-cave_biomes,
-0,
-minetest.LIGHT_MAX+1,
-30,
-12000,
-4,
-cave_min,
-cave_max)
+	"mobs_mc:slime_tiny",
+	"overworld",
+	"ground",
+	cave_biomes,
+	0,
+	minetest.LIGHT_MAX + 1,
+	30,
+	12000,
+	4,
+	cave_min,
+	cave_max
+)
 
 mcl_mobs:spawn_specific(
-"mobs_mc:slime_tiny",
-"overworld",
-"ground",
-swampy_biomes,
-0,
-swamp_light_max,
-30,
-12000,
-4,
-swamp_min,
-swamp_max)
+	"mobs_mc:slime_tiny",
+	"overworld",
+	"ground",
+	swampy_biomes,
+	0,
+	swamp_light_max,
+	30,
+	12000,
+	4,
+	swamp_min,
+	swamp_max
+)
 
 mcl_mobs:spawn_specific(
-"mobs_mc:slime_small",
-"overworld",
-"ground",
-cave_biomes,
-0,
-minetest.LIGHT_MAX+1,
-30,
-8500,
-4,
-cave_min,
-cave_max)
+	"mobs_mc:slime_small",
+	"overworld",
+	"ground",
+	cave_biomes,
+	0,
+	minetest.LIGHT_MAX + 1,
+	30,
+	8500,
+	4,
+	cave_min,
+	cave_max
+)
 
 mcl_mobs:spawn_specific(
-"mobs_mc:slime_small",
-"overworld",
-"ground",
-swampy_biomes,
-0,
-swamp_light_max,
-30,
-8500,
-4,
-swamp_min,
-swamp_max)
+	"mobs_mc:slime_small",
+	"overworld",
+	"ground",
+	swampy_biomes,
+	0,
+	swamp_light_max,
+	30,
+	8500,
+	4,
+	swamp_min,
+	swamp_max
+)
 
 mcl_mobs:spawn_specific(
-"mobs_mc:slime_big",
-"overworld",
-"ground",
-cave_biomes,
-0,
-minetest.LIGHT_MAX+1,
-30,
-10000,
-4,
-cave_min,
-cave_max)
+	"mobs_mc:slime_big",
+	"overworld",
+	"ground",
+	cave_biomes,
+	0,
+	minetest.LIGHT_MAX + 1,
+	30,
+	10000,
+	4,
+	cave_min,
+	cave_max
+)
 
 mcl_mobs:spawn_specific(
-"mobs_mc:slime_big",
-"overworld",
-"ground",
-swampy_biomes,
-0,
-swamp_light_max,
-30,
-10000,
-4,
-swamp_min,
-swamp_max)
+	"mobs_mc:slime_big",
+	"overworld",
+	"ground",
+	swampy_biomes,
+	0,
+	swamp_light_max,
+	30,
+	10000,
+	4,
+	swamp_min,
+	swamp_max
+)
 -- Magma cube
 local magma_cube_big = {
 	description = S("Magma Cube"),
@@ -389,43 +393,43 @@ local nether_min = mcl_vars.mg_nether_min
 local nether_max = mcl_vars.mg_nether_max
 
 mcl_mobs:spawn_specific(
-"mobs_mc:magma_cube_tiny",
-"nether",
-"ground",
-magma_cube_biomes,
-0,
-minetest.LIGHT_MAX+1,
-30,
-15000,
-4,
-nether_min,
-nether_max)
+	"mobs_mc:magma_cube_tiny",
+	"nether",
+	"ground",
+	magma_cube_biomes,
+	0,
+	minetest.LIGHT_MAX + 1,
+	30,
+	15000,
+	4,
+	nether_min,
+	nether_max)
 
 mcl_mobs:spawn_specific(
-"mobs_mc:magma_cube_small",
-"nether",
-"ground",
-magma_cube_biomes,
-0,
-minetest.LIGHT_MAX+1,
-30,
-15500,
-4,
-nether_min,
-nether_max)
+	"mobs_mc:magma_cube_small",
+	"nether",
+	"ground",
+	magma_cube_biomes,
+	0,
+	minetest.LIGHT_MAX + 1,
+	30,
+	15500,
+	4,
+	nether_min,
+	nether_max)
 
 mcl_mobs:spawn_specific(
-"mobs_mc:magma_cube_big",
-"nether",
-"ground",
-magma_cube_biomes,
-0,
-minetest.LIGHT_MAX+1,
-30,
-16000,
-4,
-nether_min,
-nether_max)
+	"mobs_mc:magma_cube_big",
+	"nether",
+	"ground",
+	magma_cube_biomes,
+	0,
+	minetest.LIGHT_MAX + 1,
+	30,
+	16000,
+	4,
+	nether_min,
+	nether_max)
 
 -- spawn eggs
 mcl_mobs.register_egg("mobs_mc:magma_cube_big", S("Magma Cube"), "#350000", "#fcfc00")

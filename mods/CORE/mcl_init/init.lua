@@ -138,6 +138,7 @@ if not superflat and not singlenode then
 	-- Overworld
 	mcl_vars.mg_overworld_min = -20618
 	mcl_vars.mg_overworld_min_original = -62
+	mclMg.waterLevel = tonumber(minetest.get_mapgen_setting("water_level"))
 	mcl_vars.mg_overworld_max_official = 30927
 	mcl_vars.mg_bedrock_overworld_min = mcl_vars.mg_overworld_min
 	mcl_vars.mg_bedrock_overworld_max = mcl_vars.mg_bedrock_overworld_min + 4

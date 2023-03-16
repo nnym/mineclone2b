@@ -227,7 +227,7 @@ minetest.LIGHT_MAX+1,
 30,
 9000,
 7,
-mobs_mc.water_level+3,
+mclMg.waterLevel+3,
 mcl_vars.mg_overworld_max)
 
 mcl_mobs.register_egg("mobs_mc:wolf", S("Wolf"), "#d7d3d3", "#ceaf96", 0)

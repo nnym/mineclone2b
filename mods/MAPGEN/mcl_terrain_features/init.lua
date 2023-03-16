@@ -152,7 +152,7 @@ mcl_structures.register_structure("fallen_tree",{
 	sidelen = 18,
 	solid_ground = true,
 	y_max = mcl_vars.mg_overworld_max,
-	y_min = minetest.get_mapgen_setting("water_level"),
+	y_min = mclMg.waterLevel,
 	on_place = function(pos,def,pr)
 		local air_p1 = vector.offset(pos,-def.sidelen/2,1,-def.sidelen/2)
 		local air_p2 = vector.offset(pos,def.sidelen/2,1,def.sidelen/2)
@@ -183,7 +183,7 @@ mcl_structures.register_structure("lavapool",{
 	},
 	flags = "place_center_x, place_center_z, force_placement",
 	y_max = mcl_vars.mg_overworld_max,
-	y_min = minetest.get_mapgen_setting("water_level"),
+	y_min = mclMg.waterLevel,
 	place_func = function(pos,def,pr)
 		return makelake(pos,5,"mcl_core:lava_source",{"group:material_stone", "group:sand", "group:dirt"},"mcl_core:stone",pr)
 	end
@@ -203,15 +203,15 @@ mcl_structures.register_structure("water_lake",{
 	},
 	flags = "place_center_x, place_center_z, force_placement",
 	y_max = mcl_vars.mg_overworld_max,
-	y_min = minetest.get_mapgen_setting("water_level"),
+	y_min = mclMg.waterLevel,
 	place_func = function(pos,def,pr)
-		return makelake(pos,5,"mcl_core:water_source",{"group:material_stone", "group:sand", "group:dirt","group:grass_block"},"mcl_core:dirt_with_grass",pr)
+		return makelake(pos, 5, "mcl_core:water_source", {"group:material_stone", "group:sand", "group:dirt","group:grass_block"}, "mcl_core:dirt_with_grass", pr)
 	end
 })
 
 mcl_structures.register_structure("water_lake_mangrove_swamp",{
 	place_on = {"mcl_mud:mud"},
-	biomes = { "MangroveSwamp" },
+	biomes = {"MangroveSwamp"},
 	terrain_feature = true,
 	noise_params = {
 		offset = 0,
@@ -224,9 +224,9 @@ mcl_structures.register_structure("water_lake_mangrove_swamp",{
 	},
 	flags = "place_center_x, place_center_z, force_placement",
 	y_max = mcl_vars.mg_overworld_max,
-	y_min = minetest.get_mapgen_setting("water_level"),
+	y_min = mclMg.waterLevel,
 	place_func = function(pos,def,pr)
-		return makelake(pos,3,"mcl_core:water_source",{"group:material_stone", "group:sand", "group:dirt","group:grass_block","mcl_mud:mud"},"mcl_mud:mud",pr,true)
+		return makelake(pos, 3, "mcl_core:water_source", {"group:material_stone", "group:sand", "group:dirt", "group:grass_block", "mcl_mud:mud"}, "mcl_mud:mud", pr, true)
 	end
 })
 
@@ -239,7 +239,7 @@ local pool_adjacents = {
 }
 
 mcl_structures.register_structure("basalt_column",{
-	place_on = {"mcl_blackstone:blackstone","mcl_blackstone:basalt"},
+	place_on = {"mcl_blackstone:blackstone", "mcl_blackstone:basalt"},
 	terrain_feature = true,
 	spawn_by = {"air"},
 	num_spawn_by = 2,
@@ -255,35 +255,35 @@ mcl_structures.register_structure("basalt_column",{
 	flags = "all_floors",
 	y_max = mcl_vars.mg_nether_max - 20,
 	y_min = mcl_vars.mg_lava_nether_max + 1,
-	biomes = { "BasaltDelta" },
+	biomes = {"BasaltDelta"},
 	place_func = function(pos,def,pr)
-		local nn = minetest.find_nodes_in_area(vector.offset(pos,-5,-1,-5),vector.offset(pos,5,-1,5),{"air","mcl_blackstone:basalt","mcl_blackstone:blackstone"})
+		local nn = minetest.find_nodes_in_area(vector.offset(pos, -5, -1, -5),vector.offset(pos, 5, -1, 5),{"air", "mcl_blackstone:basalt", "mcl_blackstone:blackstone"})
 		table.sort(nn,function(a, b)
-		   return vector.distance(vector.new(pos.x,0,pos.z), a) < vector.distance(vector.new(pos.x,0,pos.z), b)
+			return vector.distance(vector.new(pos.x, 0, pos.z), a) < vector.distance(vector.new(pos.x, 0, pos.z), b)
 		end)
 		if #nn < 1 then return false end
 		local basalt = {}
 		local magma = {}
-		for i=1,pr:next(1,#nn) do
-			if minetest.get_node(vector.offset(nn[i],0,-1,0)).name ~= "air" then
-				local dst=vector.distance(pos,nn[i])
-				local r = pr:next(1,14)-dst
-				for ii=0,r do
-					if pr:next(1,25) == 1 then
-						table.insert(magma,vector.new(nn[i].x,nn[i].y + ii,nn[i].z))
+		for i = 1, pr:next(1, #nn) do
+			if minetest.get_node(vector.offset(nn[i], 0, -1, 0)).name ~= "air" then
+				local dst = vector.distance(pos, nn[i])
+				local r = pr:next(1, 14) - dst
+				for ii = 0, r do
+					if pr:next(1, 25) == 1 then
+						table.insert(magma, vector.new(nn[i].x, nn[i].y + ii, nn[i].z))
 					else
-						table.insert(basalt,vector.new(nn[i].x,nn[i].y + ii,nn[i].z))
+						table.insert(basalt, vector.new(nn[i].x, nn[i].y + ii, nn[i].z))
 					end
 				end
 			end
 		end
-		minetest.bulk_set_node(magma,{name="mcl_nether:magma"})
-		minetest.bulk_set_node(basalt,{name="mcl_blackstone:basalt"})
+		minetest.bulk_set_node(magma, {name = "mcl_nether:magma"})
+		minetest.bulk_set_node(basalt, {name = "mcl_blackstone:basalt"})
 		return true
 	end
 })
 mcl_structures.register_structure("basalt_pillar",{
-	place_on = {"mcl_blackstone:blackstone","mcl_blackstone:basalt"},
+	place_on = {"mcl_blackstone:blackstone", "mcl_blackstone:basalt"},
 	terrain_feature = true,
 	noise_params = {
 		offset = 0,

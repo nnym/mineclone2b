@@ -237,7 +237,7 @@ minetest.LIGHT_MAX+1,
 7,
 30000,
 1,
-mobs_mc.water_level+7,
+mclMg.waterLevel+7,
 mcl_vars.mg_overworld_max)
 
 -- spawn eggs

@@ -493,7 +493,7 @@ local function create_portal_2(pos1, name, obj)
 end
 
 local function get_lava_level(pos, pos1, pos2)
-	if pos.y > -1000 then
+	if pos.y >= mcl_vars.mg_overworld_min then
 		return max(min(mcl_vars.mg_lava_overworld_max, pos2.y-1), pos1.y+1)
 	end
 	return max(min(mcl_vars.mg_lava_nether_max, pos2.y-1), pos1.y+1)
