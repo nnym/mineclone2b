@@ -12,6 +12,7 @@
 + Clouds are at their proper height (layer 192).
 + Players don't stop sprinting after releasing the sprint key.
 + Effect particles are disabled by default (configurable by `mclEffectParticles`).
++ smaller slime group sizes
 - sprinting FOV change
 - pigs
 - Christmas and Halloween
