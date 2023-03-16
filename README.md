@@ -6,6 +6,7 @@
 + Node drops are added to the digger's inventory by default (configurable by `mcl_add_drops`).
 + correct creeper speed and explosion timer (1.5 s)
 + Damaged mobs stay red for 0.5 s instead of 1 s.
++ mushroom stew stacking
 + smooth bedrock
 + underground water pools
 + less intrusive HUD burning animation

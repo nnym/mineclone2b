@@ -81,15 +81,27 @@ minetest.register_node("mcl_mushrooms:mushroom_red", {
 	_mcl_blast_resistance = 0,
 })
 
+local eatStew = function(stack, eater, target)
+	local bowl = "mcl_core:bowl"
+	local count = stack:get_count()
+	local leftover = minetest.do_item_eat(6, bowl, stack, eater, target)
+
+	if leftover:get_count() ~= count and leftover:get_name() == stack:get_name() then
+		minetest.add_item(eater:get_pos(), eater:get_inventory():add_item("main", bowl))
+	end
+
+	return leftover
+end
+
 minetest.register_craftitem("mcl_mushrooms:mushroom_stew", {
 	description = S("Mushroom Stew"),
 	_doc_items_longdesc = S("Mushroom stew is a healthy soup which can be consumed to restore some hunger points."),
 	inventory_image = "farming_mushroom_stew.png",
-	on_place = minetest.item_eat(6, "mcl_core:bowl"),
-	on_secondary_use = minetest.item_eat(6, "mcl_core:bowl"),
-	groups = { food = 3, eatable = 6 },
+	on_place = eatStew,
+	on_secondary_use = eatStew,
+	groups = {food = 3, eatable = 6},
 	_mcl_saturation = 7.2,
-	stack_max = 1,
+	stack_max = mcl_vars.stack_max,
 })
 
 minetest.register_craft({
