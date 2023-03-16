@@ -8,6 +8,8 @@
 + Damaged mobs stay red for 0.5 s instead of 1 s.
 + smooth bedrock
 + less intrusive HUD burning animation
++ Clouds are at their proper height (layer 192).
++ Players don't stop sprinting after releasing the sprint key.
 - sprinting FOV change
 - pigs
 - Christmas and Halloween
