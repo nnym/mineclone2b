@@ -38,8 +38,8 @@ mcl_mobs.register_mob("mobs_mc:creeper", {
 		distance = 16,
 	},
 	makes_footstep_sound = true,
-	walk_velocity = 1.05,
-	run_velocity = 2.1,
+	walk_velocity = 1,
+	run_velocity = 1,
 	runaway_from = { "mobs_mc:ocelot", "mobs_mc:cat" },
 	attack_type = "explode",
 
@@ -150,8 +150,8 @@ mcl_mobs.register_mob("mobs_mc:creeper_charged", {
 		distance = 16,
 	},
 	makes_footstep_sound = true,
-	walk_velocity = 1.05,
-	run_velocity = 2.1,
+	walk_velocity = 1,
+	run_velocity = 1,
 	runaway_from = { "mobs_mc:ocelot", "mobs_mc:cat" },
 	attack_type = "explode",
 

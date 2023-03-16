@@ -4,8 +4,9 @@
 + 64 inventory and 16 hotbar slots
 + dark GUI (based on original graphics by Wuzzy)
 + Node drops are added to the digger's inventory by default (configurable by `mcl_add_drops`).
-+ smooth bedrock
++ correct creeper speed and explosion timer (1.5 s)
 + Damaged mobs stay red for 0.5 s instead of 1 s.
++ smooth bedrock
 + less intrusive HUD burning animation
 - sprinting FOV change
 - pigs

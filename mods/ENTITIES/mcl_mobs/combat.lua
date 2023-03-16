@@ -894,12 +894,10 @@ function mob_class:do_states_attack (dtime)
 		end
 
 		if self.v_start then
+			self.timer = self.timer + dtime / 20
+			self.blinktimer = (self.blinktimer or 0) + dtime / 20
 
-			self.timer = self.timer + dtime
-			self.blinktimer = (self.blinktimer or 0) + dtime
-
-			if self.blinktimer > 0.2 then
-
+			if self.blinktimer > 0.01 then
 				self.blinktimer = 0
 
 				if self.blinkstatus then
