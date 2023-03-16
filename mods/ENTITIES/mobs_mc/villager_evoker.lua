@@ -66,17 +66,13 @@ mcl_mobs.register_mob("mobs_mc:evoker", {
 	end,
 	shoot_interval = 15,
 	passive = false,
-	drops = {
-		{name = "mcl_core:emerald",
+	drops = {{
+		name = "mcl_core:emerald",
 		chance = 1,
 		min = 0,
 		max = 1,
-		looting = "common",},
-		{name = "mcl_totems:totem",
-		chance = 1,
-		min = 1,
-		max = 1,},
-	},
+		looting = "common"
+	}},
 	-- TODO: sounds
 	animation = {
 		stand_start = 0, stand_end = 0,

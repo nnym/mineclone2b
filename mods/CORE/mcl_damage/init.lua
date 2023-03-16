@@ -15,7 +15,7 @@ mcl_damage = {
 		sweet_berry = {},
 		fall = {bypasses_armor = true},
 		fly_into_wall = {bypasses_armor = true}, -- unused
-		out_of_world = {bypasses_armor = true, bypasses_magic = true, bypasses_invulnerability = true, bypasses_totem = true},
+		out_of_world = {bypasses_armor = true, bypasses_magic = true, bypasses_invulnerability = true},
 		generic = {bypasses_armor = true},
 		magic = {is_magic = true, bypasses_armor = true},
 		dragon_breath = {is_magic = true, bypasses_armor = true},	-- this is only used for dragon fireball; dragon fireball does not actually deal impact damage tho, so this is unreachable

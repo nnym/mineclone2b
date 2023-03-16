@@ -259,15 +259,6 @@ awards.register_achievement("mcl:theNether", {
 	group = "Nether",
 })
 
--- Triggered in mcl_totems
-awards.register_achievement("mcl:postMortal", {
-	title = S("Postmortal"),
-	description = S("Use a Totem of Undying to cheat death."),
-	icon = "mcl_totems_totem.png",
-	type = "Goal",
-	group = "Adventure",
-})
-
 -- Triggered in mcl_beds
 awards.register_achievement("mcl:sweetDreams", {
 	title = S("Sweet Dreams"),

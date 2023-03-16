@@ -1364,11 +1364,6 @@
     133,
     119
   ],
-  "mcl_particles_totem4.png": [
-    255,
-    255,
-    255
-  ],
   "mcl_particles_lava.png": [
     250,
     150,
@@ -1408,11 +1403,6 @@
     165,
     165,
     165
-  ],
-  "mcl_particles_totem2.png": [
-    255,
-    255,
-    255
   ],
   "mcl_particles_mob_death.png": [
     198,
@@ -1459,20 +1449,10 @@
     238,
     226
   ],
-  "mcl_particles_totem1.png": [
-    255,
-    255,
-    255
-  ],
   "mcl_particles_smoke.png": [
     174,
     174,
     174
-  ],
-  "mcl_particles_totem3.png": [
-    255,
-    255,
-    255
   ],
   "lightning_lightning_2.png": [
     255,
@@ -8938,11 +8918,6 @@
     147,
     143,
     139
-  ],
-  "mcl_totems_totem.png": [
-    185,
-    139,
-    52
   ],
   "mcl_anvils_anvil_top_damaged_1.png": [
     50,

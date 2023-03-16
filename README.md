@@ -16,6 +16,7 @@
 - bats
 - music
 - some skin customizations
+- Totem of Undying
 ```
 
 ### installation
