@@ -252,10 +252,10 @@ function minetest.handle_node_drops(pos, drops, digger)
 	-- NOTE: This function override allows digger to be nil.
 	-- This means there is no digger. This is a special case which allows this function to be called
 	-- by hand. Creative Mode is intentionally ignored in this case.
-	local creative = minetest.is_creative_enabled(digger:get_player_name())
 	local addDrops = minetest.settings:get_bool("mcl_add_drops")
 
 	if digger and digger:is_player() then
+		local creative = digger and minetest.is_creative_enabled(digger:get_player_name())
 		local inv = digger:get_inventory()
 
 		if inv then
