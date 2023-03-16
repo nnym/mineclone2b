@@ -21,6 +21,7 @@
 - Zombie Villager
 - music
 - levelup sound
+- achievement sound
 - some skin customizations
 - Totem of Undying
 ```
