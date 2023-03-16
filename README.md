@@ -20,6 +20,7 @@
 - bats
 - Zombie Villager
 - music
+- levelup sound
 - some skin customizations
 - Totem of Undying
 ```
