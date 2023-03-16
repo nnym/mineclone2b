@@ -18,6 +18,7 @@
 - pigs
 - Christmas and Halloween
 - bats
+- Zombie Villager
 - music
 - some skin customizations
 - Totem of Undying

@@ -42,7 +42,6 @@ Evoker=
 Illusioner=
 Villager=
 Vindicator=
-Zombie Villager=
 Witch=
 Wither=
 Wolf=

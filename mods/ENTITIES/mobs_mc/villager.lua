@@ -2150,14 +2150,6 @@ mcl_mobs.register_mob("mobs_mc:villager", {
 			jobsite_meta:set_string("villager", nil)
 			mcl_log("Died, so bye bye jobsite")
 		end
-
-		if cmi_cause and cmi_cause.puncher then
-			local l = cmi_cause.puncher:get_luaentity()
-			if l and math.random(2) == 1 and( l.name == "mobs_mc:zombie" or l.name == "mobs_mc:baby_zombie" or l.name == "mobs_mc:villager_zombie" or l.name == "mobs_mc:husk") then
-				mcl_util.replace_mob(self.object,"mobs_mc:villager_zombie")
-				return true
-			end
-		end
 	end,
 	on_lightning_strike = function(self, pos, pos2, objects)
 		 mcl_util.replace_mob(self.object, "mobs_mc:witch")
