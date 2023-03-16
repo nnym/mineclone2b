@@ -115,22 +115,13 @@ function mcl_experience.add_xp(player, xp)
 	if current_time - cache.last_time > 0.01 then
 		local name = player:get_player_name()
 
-		if old_level == cache.level then
-			minetest.sound_play("mcl_experience", {
-				to_player = name,
-				gain = 0.1,
-				pitch = math.random(75, 99) / 100,
-			})
+		minetest.sound_play("mcl_experience", {
+			to_player = name,
+			gain = 0.1,
+			pitch = math.random(75, 99) / 100,
+		})
 
-			cache.last_time = current_time
-		else
-			minetest.sound_play("mcl_experience_level_up", {
-				to_player = name,
-				gain = 0.2,
-			})
-
-			cache.last_time = current_time + 0.2
-		end
+		cache.last_time = current_time
 	end
 end
 
