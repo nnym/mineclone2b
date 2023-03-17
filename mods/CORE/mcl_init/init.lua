@@ -6,13 +6,13 @@ mclMg = {
 
 local stack_max = tonumber(minetest.settings:get("mcl_stack_max") or 0)
 
-if type(stack_max) ~= "number" then
+if not stack_max then
 	minetest.log("error", "mcl_stack_max is not a number")
 	stack_max = 0
 end
 
 if stack_max == 0 then
-	stack_max = tonumber(minetest.settings:get("default_stack_size")) or 16384
+	stack_max = tonumber(minetest.settings:get("default_stack_max")) or 16384
 elseif stack_max > 65535 then
 	minetest.log("error", "mcl_stack_max > 65535")
 	stack_max = 65535
