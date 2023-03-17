@@ -617,6 +617,16 @@ if minetest.settings:get_bool("mcl_generate_ores", true) then
 		y_min          = mcl_worlds.layer_to_y(0),
 		y_max          = mcl_worlds.layer_to_y(2),
 	})
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "mcl_core:stone_with_lapis",
+		wherein         = stonelike,
+		clust_scarcity = 5000,
+		clust_num_ores = 3,
+		clust_size     = 2,
+		y_min          = mcl_vars.mg_overworld_min,
+		y_max          = mcl_worlds.layer_to_y(0),
+	})
 
 	-- Rare spawn (above center)
 	minetest.register_ore({
