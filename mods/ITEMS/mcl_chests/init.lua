@@ -372,7 +372,7 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 		minetest.show_formspec(
 			clicker:get_player_name(),
 			"mcl_chests:" .. canonical_basename .. "_" .. pos.x .. "_" .. pos.y .. "_" .. pos.z,
-			mcl_formspec.withInventory(nil, 11.5, 7) {
+			mcl_formspec.withInventory(9, 11.5, 7) {
 				"label[0,0;", minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)), "]",
 				"list[nodemeta:", left.x, ",", left.y, ",", left.z, ";main;0,0.5;9,3;]",
 				mcl_formspec.get_itemslot_bg(0, 0.5, 9, 3),
