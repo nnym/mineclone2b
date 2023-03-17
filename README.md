@@ -23,6 +23,7 @@
 - music
 - levelup sound
 - achievement sound
+- amethyst walking sounds
 - some skin customizations
 - Totem of Undying
 ```

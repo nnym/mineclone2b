@@ -1,8 +1,7 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
 local sounds = mcl_sounds.node_sound_glass_defaults({
-	footstep = {name = "mcl_amethyst_amethyst_walk",  gain = 0.4},
-	dug      = {name = "mcl_amethyst_amethyst_break", gain = 0.44},
+	dug = {name = "mcl_amethyst_amethyst_break", gain = 0.44},
 })
 
 -- Amethyst block
