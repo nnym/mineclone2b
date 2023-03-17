@@ -11,20 +11,17 @@ function mcl_crafting_table.show_crafting_form(player)
 	player:get_inventory():set_width("craft", 3)
 	player:get_inventory():set_size("craft", 9)
 
-	local w = mcl_vars.inventory_width
-
-	show_formspec(player:get_player_name(), "main",
-		mcl_formspec.player() ..
-		"image[4.7,1.5;1.5,1;gui_crafting_arrow.png]"..
-		"label[1.75,0;"..formspec_escape(C(text_color, S("Crafting"))).."]"..
-		"list[current_player;craft;1.75,0.5;3,3;]"..
-		itemslot_bg(1.75,0.5,3,3)..
-		"list[current_player;craftpreview;6.1,1.5;1,1;]"..
-		itemslot_bg(6.1,1.5,1,1)..
-		"image_button[0.75,1.5;1,1;craftguide_book.png;__mcl_craftguide;]"..
-		"tooltip[__mcl_craftguide;"..formspec_escape(S("Recipe book")).."]"..
+	show_formspec(player:get_player_name(), "main", mcl_formspec.withInventory(7.75) {
+		"image[4.7,1.5;1.5,1;gui_crafting_arrow.png]",
+		"label[1.75,0;", formspec_escape(C(text_color, S("Crafting"))), "]",
+		"list[current_player;craft;1.75,0.5;3,3;]",
+		itemslot_bg(1.75, 0.5, 3, 3),
+		"list[current_player;craftpreview;6.1,1.5;1,1;]",
+		itemslot_bg(6.1, 1.5, 1, 1),
+		"image_button[0.75,1.5;1,1;craftguide_book.png;__mcl_craftguide;]",
+		"tooltip[__mcl_craftguide;", formspec_escape(S("Recipe book")), "]",
 		"listring[current_player;craft]"
-	)
+	})
 end
 
 minetest.register_node("mcl_crafting_table:crafting_table", {

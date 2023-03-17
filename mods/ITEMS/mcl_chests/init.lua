@@ -372,19 +372,20 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 		minetest.show_formspec(
 			clicker:get_player_name(),
 			"mcl_chests:" .. canonical_basename .. "_" .. pos.x .. "_" .. pos.y .. "_" .. pos.z,
-			mcl_formspec.player(11.5, 7)
-			.. "label[0,0;" .. minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)) .. "]"
-			.. "list[nodemeta:" .. left.x .. "," .. left.y .. "," .. left.z .. ";main;0,0.5;9,3;]"
-			.. mcl_formspec.get_itemslot_bg(0,0.5,9,3)
-			.. "list[nodemeta:" .. right.x .. "," .. right.y .. "," .. right.z .. ";main;0,3.5;9,3;]"
-			.. mcl_formspec.get_itemslot_bg(0,3.5,9,3)
-			-- BEGIN OF LISTRING WORKAROUND
-			.. "listring[nodemeta:" .. pos.x .. "," .. pos.y .. "," .. pos.z .. ";input]"
-			-- END OF LISTRING WORKAROUND
-			.. "listring[current_player;main]"
-			.. "listring[nodemeta:" .. left.x .. "," .. left.y .. "," .. left.z .. ";main]"
-			.. "listring[current_player;main]"
-			.. "listring[nodemeta:" .. right.x .. "," .. right.y .. "," .. right.z .. ";main]"
+			mcl_formspec.withInventory(nil, 11.5, 7) {
+				"label[0,0;", minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)), "]",
+				"list[nodemeta:", left.x, ",", left.y, ",", left.z, ";main;0,0.5;9,3;]",
+				mcl_formspec.get_itemslot_bg(0, 0.5, 9, 3),
+				"list[nodemeta:", right.x, ",", right.y, ",", right.z, ";main;0,3.5;9,3;]",
+				mcl_formspec.get_itemslot_bg(0, 3.5, 9, 3),
+				-- BEGIN OF LISTRING WORKAROUND
+				"listring[nodemeta:", pos.x, ",", pos.y, ",", pos.z, ";input]",
+				-- END OF LISTRING WORKAROUND
+				"listring[current_player;main]",
+				"listring[nodemeta:", left.x, ",", left.y, ",", left.z, ";main]",
+				"listring[current_player;main]",
+				"listring[nodemeta:", right.x, ",", right.y, ",", right.z, ";main]"
+			}
 		)
 
 		if addendum then
@@ -620,13 +621,15 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 			end
 
 			minetest.show_formspec(clicker:get_player_name(),
-			"mcl_chests:"..canonical_basename.."_"..pos.x.."_"..pos.y.."_"..pos.z,
-			mcl_formspec.player()..
-			"label[3.5,0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)).."]"..
-			"list[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main;3.5,0.5;9,3;]"..
-			mcl_formspec.get_itemslot_bg(3.5,0.5,9,3)..
-			"listring[nodemeta:"..pos.x..","..pos.y..","..pos.z..";main]"..
-			"listring[current_player;main]")
+				"mcl_chests:" .. canonical_basename .. "_" .. pos.x .. "_" .. pos.y .. "_" .. pos.z,
+				mcl_formspec.withInventory {
+					"label[3.5,0;", minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)), "]",
+					"list[nodemeta:", pos.x, ",", pos.y, ",", pos.z, ";main;3.5,0.5;9,3;]",
+					mcl_formspec.get_itemslot_bg(3.5, 0.5, 9, 3),
+					"listring[nodemeta:", pos.x, ",", pos.y, ",", pos.z, ";main]",
+					"listring[current_player;main]"
+				}
+			)
 
 			if on_rightclick_addendum then
 				on_rightclick_addendum(pos, node, clicker)

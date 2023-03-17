@@ -22,7 +22,7 @@ elseif stack_max < 1 then
 end
 
 mcl_vars.stack_max = stack_max
-mcl_vars.inventory_width = 16
+mcl_vars.inventoryWidth = 16
 mcl_vars.redstone_tick = 0.1
 
 -- GUI / inventory menu settings

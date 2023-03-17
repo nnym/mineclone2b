@@ -11,30 +11,22 @@ local MATERIAL_TOOL_REPAIR_BOOST = {
 }
 
 local function get_anvil_formspec(set_name)
-	if not set_name then
-		set_name = ""
-	end
-	return "size[9,8.75]"..
-	"background[-0.19,-0.25;9.41,9.49;mcl_anvils_inventory.png]"..
-	"label[0,4.0;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Inventory"))).."]"..
-	"list[current_player;main;0,4.5;9,3;9]"..
-	mcl_formspec.get_itemslot_bg(0,4.5,9,3)..
-	"list[current_player;main;0,7.74;9,1;]"..
-	mcl_formspec.get_itemslot_bg(0,7.74,9,1)..
-	"list[context;input;1,2.5;1,1;]"..
-	mcl_formspec.get_itemslot_bg(1,2.5,1,1)..
-	"list[context;input;4,2.5;1,1;1]"..
-	mcl_formspec.get_itemslot_bg(4,2.5,1,1)..
-	"list[context;output;8,2.5;1,1;]"..
-	mcl_formspec.get_itemslot_bg(8,2.5,1,1)..
-	"label[3,0.1;"..minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Repair and Name"))).."]"..
-	"field[3.25,1;4,1;name;;"..minetest.formspec_escape(set_name).."]"..
-	"field_close_on_enter[name;false]"..
-	"button[7,0.7;2,1;name_button;"..minetest.formspec_escape(S("Set Name")).."]"..
-	"listring[context;output]"..
-	"listring[current_player;main]"..
-	"listring[context;input]"..
-	"listring[current_player;main]"
+	return mcl_formspec.withInventory(8) {
+		"background[-1.2,-0.25;9.41,9.49;mcl_anvils_inventory.png]",
+		"list[context;input;0,2.5;1,1;]",
+		mcl_formspec.get_itemslot_bg(0, 2.5, 1, 1),
+		"list[context;input;3,2.5;1,1;1]",
+		mcl_formspec.get_itemslot_bg(3, 2.5, 1, 1),
+		"list[context;output;7,2.5;1,1;]",
+		mcl_formspec.get_itemslot_bg(7, 2.5, 1, 1),
+		"label[1.96,0.1;", minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, S("Repair and Name"))), "]",
+		"field[0.28,1;5.72,1;name;;", minetest.formspec_escape(set_name or ""), "]",
+		"field_close_on_enter[name;false]",
+		"button[6,0.7;2,1;name_button;", minetest.formspec_escape(S("Set Name")), "]",
+		"listring[context;input]",
+		"listring[current_player;main]",
+		"listring[context;output]"
+	}
 end
 
 -- Given a tool and material stack, returns how many items of the material stack

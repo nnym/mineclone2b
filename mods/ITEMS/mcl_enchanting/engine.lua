@@ -491,28 +491,19 @@ function mcl_enchanting.show_enchanting_formspec(player)
 	local inv = player:get_inventory()
 	local num_bookshelves = meta:get_int("mcl_enchanting:num_bookshelves")
 	local table_name = meta:get_string("mcl_enchanting:table_name")
-	local formspec = ""
-		.. "size[9.07,8.6;]"
-		.. "formspec_version[3]"
-		.. "label[0,0;" .. C(mcl_vars.font_color) .. F(table_name) .. "]"
+	local formspec = "label[0.7,0;" .. C(mcl_vars.font_color) .. F(table_name) .. "]"
 		.. mcl_formspec.get_itemslot_bg(0.2, 2.4, 1, 1)
 		.. "list[current_player;enchanting_item;0.2,2.4;1,1]"
 		.. mcl_formspec.get_itemslot_bg(1.1, 2.4, 1, 1)
 		.. "image[1.1,2.4;1,1;mcl_enchanting_lapis_background.png]"
 		.. "list[current_player;enchanting_lapis;1.1,2.4;1,1]"
-		.. "label[0,4;" .. C(mcl_vars.font_color) .. F(S("Inventory")).."]"
-		.. mcl_formspec.get_itemslot_bg(0, 4.5, 9, 3)
-		.. mcl_formspec.get_itemslot_bg(0, 7.74, 9, 1)
-		.. "list[current_player;main;0,4.5;9,3;9]"
-		.. "listring[current_player;enchanting_item]"
-		.. "listring[current_player;main]"
 		.. "listring[current_player;enchanting]"
 		.. "listring[current_player;main]"
 		.. "listring[current_player;enchanting_lapis]"
 		.. "listring[current_player;main]"
-		.. "list[current_player;main;0,7.74;9,1;]"
+		.. "listring[current_player;enchanting_item]"
 		.. "real_coordinates[true]"
-		.. "image[3.15,0.6;7.6,4.1;mcl_enchanting_button_background.png]"
+		.. "image[4,0.6;7.6,4.1;mcl_enchanting_button_background.png]"
 	local itemstack = inv:get_stack("enchanting_item", 1)
 	local player_levels = mcl_experience.get_level(player)
 	local y = 0.65
@@ -526,7 +517,7 @@ function mcl_enchanting.show_enchanting_formspec(player)
 		local ending = (can_enchant and "" or "_off")
 		local hover_ending = (can_enchant and "_hovered" or "_off")
 		formspec = formspec
-			.. "container[3.2," .. y .. "]"
+			.. "container[4.1," .. y .. "]"
 			.. (slot and "tooltip[button_" .. i .. ";" .. C("#818181") .. ((slot.description and F(slot.description)) or "") .. " " .. C("#FFFFFF") .. " . . . ?\n\n" .. (enough_levels and C(enough_lapis and "#818181" or "#FC5454") .. F(S("@1 Lapis Lazuli", i)) .. "\n" .. C("#818181") .. F(S("@1 Enchantment Levels", i)) or C("#FC5454") .. F(S("Level requirement: @1", slot.level_requirement))) .. "]" or "")
 			.. "style[button_" .. i .. ";bgimg=mcl_enchanting_button" .. ending .. ".png;bgimg_hovered=mcl_enchanting_button" .. hover_ending .. ".png;bgimg_pressed=mcl_enchanting_button" .. hover_ending .. ".png]"
 			.. "button[0,0;7.5,1.3;button_" .. i .. ";]"
@@ -537,8 +528,8 @@ function mcl_enchanting.show_enchanting_formspec(player)
 		y = y + 1.35
 	end
 	formspec = formspec
-		.. "image[" .. (any_enchantment and 0.58 or 1.15) .. ",1.2;" .. (any_enchantment and 2 or 0.87) .. ",1.43;mcl_enchanting_book_" .. (any_enchantment and "open" or "closed") .. ".png]"
-	minetest.show_formspec(name, "mcl_enchanting:table", formspec)
+		.. "image[" .. (any_enchantment and 1.57 or 2.14) .. ",1.2;" .. (any_enchantment and 2 or 0.87) .. ",1.43;mcl_enchanting_book_" .. (any_enchantment and "open" or "closed") .. ".png]"
+	minetest.show_formspec(name, "mcl_enchanting:table", mcl_formspec.withInventory(9, 8.6, formspec))
 end
 
 function mcl_enchanting.handle_formspec_fields(player, formname, fields)
