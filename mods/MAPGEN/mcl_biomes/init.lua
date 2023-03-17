@@ -4590,22 +4590,12 @@ local function register_decorations()
 		deco_type = "simple",
 		place_on = {"group:material_stone"},
 		sidelen = 80,
-		fill_ratio = 0.009,
+		fill_ratio = 0.018,
 		noise_threshold = 2.0,
 		flags = "all_floors",
 		y_min = mcl_vars.mg_overworld_min,
 		y_max = mcl_vars.mg_overworld_max,
-		decoration = "mcl_mushrooms:mushroom_red",
-	})
-	minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {"group:material_stone"},
-		sidelen = 80,
-		fill_ratio = 0.009,
-		noise_threshold = 2.0,
-		y_min = mcl_vars.mg_overworld_min,
-		y_max = mcl_vars.mg_overworld_max,
-		decoration = "mcl_mushrooms:mushroom_brown",
+		decoration = {"mcl_mushrooms:mushroom_red", "mcl_mushrooms:mushroom_brown"},
 	})
 
 	-- Mossy cobblestone boulder (3×3)
@@ -5511,49 +5501,47 @@ local function register_decorations()
 
 	-- Mushrooms next to trees
 	local mushrooms = {"mcl_mushrooms:mushroom_red", "mcl_mushrooms:mushroom_brown"}
-	local mseeds = {7133, 8244}
-	for m = 1, #mushrooms do
-		-- Mushrooms next to trees
-		minetest.register_decoration({
-			deco_type = "simple",
-			place_on = {"group:grass_block_no_snow", "mcl_core:dirt", "mcl_core:podzol", "mcl_core:mycelium", "mcl_core:stone", "mcl_core:andesite", "mcl_core:diorite", "mcl_core:granite"},
-			sidelen = 16,
-			noise_params = {
-				offset = 0,
-				scale = 0.003,
-				spread = {x = 250, y = 250, z = 250},
-				seed = mseeds[m],
-				octaves = 3,
-				persist = 0.66,
-			},
-			y_min = 1,
-			y_max = mcl_vars.mg_overworld_max,
-			decoration = mushrooms[m],
-			spawn_by = {"mcl_core:tree", "mcl_core:sprucetree", "mcl_core:darktree", "mcl_core:birchtree"},
-			num_spawn_by = 1,
-		})
+	local seed = 7133
+	-- Mushrooms next to trees
+	minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {"group:grass_block_no_snow", "mcl_core:dirt", "mcl_core:podzol", "mcl_core:mycelium", "mcl_core:stone", "mcl_core:andesite", "mcl_core:diorite", "mcl_core:granite"},
+		sidelen = 16,
+		noise_params = {
+			offset = 0,
+			scale = 0.006,
+			spread = {x = 250, y = 250, z = 250},
+			seed = seed,
+			octaves = 3,
+			persist = 0.66,
+		},
+		y_min = 1,
+		y_max = mcl_vars.mg_overworld_max,
+		decoration = mushrooms,
+		spawn_by = {"mcl_core:tree", "mcl_core:sprucetree", "mcl_core:darktree", "mcl_core:birchtree"},
+		num_spawn_by = 1,
+	})
 
-		-- More mushrooms in Swampland
-		minetest.register_decoration({
-			deco_type = "simple",
-			place_on = {"group:grass_block_no_snow", "mcl_core:dirt", "mcl_core:podzol", "mcl_core:mycelium", "mcl_core:stone", "mcl_core:andesite", "mcl_core:diorite", "mcl_core:granite"},
-			sidelen = 16,
-			noise_params = {
-				offset = 0.05,
-				scale = 0.003,
-				spread = {x = 250, y = 250, z = 250},
-				seed = mseeds[m],
-				octaves = 3,
-				persist = 0.6,
-			},
-			y_min = 1,
-			y_max = mcl_vars.mg_overworld_max,
-			decoration = mushrooms[m],
-			biomes = {"Swampland"},
-			spawn_by = {"mcl_core:tree", "mcl_core:sprucetree", "mcl_core:darktree", "mcl_core:birchtree"},
-			num_spawn_by = 1,
-		})
-	end
+	-- More mushrooms in Swampland
+	minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {"group:grass_block_no_snow", "mcl_core:dirt", "mcl_core:podzol", "mcl_core:mycelium", "mcl_core:stone", "mcl_core:andesite", "mcl_core:diorite", "mcl_core:granite"},
+		sidelen = 16,
+		noise_params = {
+			offset = 0.05,
+			scale = 0.006,
+			spread = {x = 250, y = 250, z = 250},
+			seed = seed,
+			octaves = 3,
+			persist = 0.6,
+		},
+		y_min = 1,
+		y_max = mcl_vars.mg_overworld_max,
+		decoration = mushrooms,
+		biomes = {"Swampland"},
+		spawn_by = {"mcl_core:tree", "mcl_core:sprucetree", "mcl_core:darktree", "mcl_core:birchtree"},
+		num_spawn_by = 1,
+	})
 	local function register_flower(name, biomes, seed, is_in_flower_forest)
 		if is_in_flower_forest == nil then
 			is_in_flower_forest = true
@@ -5637,23 +5625,12 @@ local function register_dimension_decorations()
 		deco_type = "simple",
 		place_on = {"mcl_nether:netherrack"},
 		sidelen = 16,
-		fill_ratio = 0.013,
+		fill_ratio = 0.025,
 		biomes = {"Nether"},
 		y_min = mcl_vars.mg_lava_nether_max + 1,
 		y_max = mcl_vars.mg_nether_max - 1,
 		flags = "all_floors",
-		decoration = "mcl_mushrooms:mushroom_brown",
-	})
-	minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {"mcl_nether:netherrack"},
-		sidelen = 16,
-		fill_ratio = 0.012,
-		biomes = {"Nether"},
-		y_min = mcl_vars.mg_lava_nether_max + 1,
-		y_max = mcl_vars.mg_nether_max - 1,
-		flags = "all_floors",
-		decoration = "mcl_mushrooms:mushroom_red",
+		decoration = {"mcl_mushrooms:mushroom_brown", "mcl_mushrooms:mushroom_red"},
 	})
 
 	-- WARPED FOREST

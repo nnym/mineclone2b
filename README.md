@@ -14,6 +14,7 @@
 + Players don't stop sprinting after releasing the sprint key.
 + Effect particles are disabled by default (configurable by `mclEffectParticles`).
 + smaller slime group sizes
++ equal mushroom distribution (was mostly red originally)
 - sprinting FOV change
 - Ender Pearl damage
 - pigs
