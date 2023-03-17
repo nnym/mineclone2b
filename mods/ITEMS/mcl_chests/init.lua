@@ -622,10 +622,10 @@ local function register_chest(basename, desc, longdesc, usagehelp, tt_help, tile
 
 			minetest.show_formspec(clicker:get_player_name(),
 				"mcl_chests:" .. canonical_basename .. "_" .. pos.x .. "_" .. pos.y .. "_" .. pos.z,
-				mcl_formspec.withInventory {
-					"label[3.5,0;", minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)), "]",
-					"list[nodemeta:", pos.x, ",", pos.y, ",", pos.z, ";main;3.5,0.5;9,3;]",
-					mcl_formspec.get_itemslot_bg(3.5, 0.5, 9, 3),
+				mcl_formspec.withInventory(9) {
+					"label[0,0;", minetest.formspec_escape(minetest.colorize(mcl_vars.font_color, name)), "]",
+					"list[nodemeta:", pos.x, ",", pos.y, ",", pos.z, ";main;0,0.5;9,3;]",
+					mcl_formspec.get_itemslot_bg(0, 0.5, 9, 3),
 					"listring[nodemeta:", pos.x, ",", pos.y, ",", pos.z, ";main]",
 					"listring[current_player;main]"
 				}
