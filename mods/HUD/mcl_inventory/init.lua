@@ -142,12 +142,12 @@ end)
 minetest.register_on_joinplayer(function(player)
 	--init inventory
 	local inv = player:get_inventory()
-	inv:set_width("main", 16)
-	inv:set_size("main", 64)
+	inv:set_width("main", mcl_vars.inventory_width)
+	inv:set_size("main", mcl_vars.inventory_width * 4)
 	inv:set_size("offhand", 1)
 
 	--set hotbar size
-	player:hud_set_hotbar_itemcount(16)
+	player:hud_set_hotbar_itemcount(mcl_vars.inventory_width)
 	--add hotbar images
 	player:hud_set_hotbar_image("mcl_inventory_hotbar.png")
 	player:hud_set_hotbar_selected_image("mcl_inventory_hotbar_selected.png")
