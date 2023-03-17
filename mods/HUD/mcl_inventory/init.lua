@@ -55,67 +55,65 @@ local function set_inventory(player)
 	inv:set_width("craft", 2)
 	inv:set_size("craft", 4)
 
+	local armorX = mcl_vars.inventory_width / 2 - 3.875
+	local offhandX = armorX + 3
 	local armor_slots = {"helmet", "chestplate", "leggings", "boots"}
 	local armor_slot_imgs = ""
-	for a=1,4 do
-		if inv:get_stack("armor", a+1):is_empty() then
-			armor_slot_imgs = armor_slot_imgs .. "image[0,"..(a-1)..";1,1;mcl_inventory_empty_armor_slot_"..armor_slots[a]..".png]"
+
+	for a = 1, 4 do
+		if inv:get_stack("armor", a + 1):is_empty() then
+			armor_slot_imgs = armor_slot_imgs .. "image[" .. armorX .. "," .. (a - 1) .. ";1,1;mcl_inventory_empty_armor_slot_" .. armor_slots[a] .. ".png]"
 		end
 	end
 
 	if inv:get_stack("offhand", 1):is_empty() then
-		armor_slot_imgs = armor_slot_imgs .. "image[3,2;1,1;mcl_inventory_empty_armor_slot_shield.png]"
+		armor_slot_imgs = armor_slot_imgs .. "image[" .. offhandX .. ",2;1,1;mcl_inventory_empty_armor_slot_shield.png]"
 	end
 
-	local form = mcl_formspec.player() ..
-		"background[-0.19,-0.25;9.41,9.49;crafting_formspec_bg.png]" ..
-		mcl_player.get_player_formspec_model(player, 1.0, 0.0, 2.25, 4.5, "") ..
-
+	local form = mcl_formspec.player()
 		-- Armor
-		"list[current_player;armor;0,0;1,1;1]" ..
-		"list[current_player;armor;0,1;1,1;2]" ..
-		"list[current_player;armor;0,2;1,1;3]" ..
-		"list[current_player;armor;0,3;1,1;4]" ..
-		mcl_formspec.get_itemslot_bg(0,0,1,1) ..
-		mcl_formspec.get_itemslot_bg(0,1,1,1) ..
-		mcl_formspec.get_itemslot_bg(0,2,1,1) ..
-		mcl_formspec.get_itemslot_bg(0,3,1,1) ..
-		"list[current_player;offhand;3,2;1,1]" ..
-		mcl_formspec.get_itemslot_bg(3,2,1,1) ..
-		armor_slot_imgs ..
-
+		.. "list[current_player;armor;" .. armorX .. ",0;1,1;1]"
+		.. "list[current_player;armor;" .. armorX .. ",1;1,1;2]"
+		.. "list[current_player;armor;" .. armorX .. ",2;1,1;3]"
+		.. "list[current_player;armor;" .. armorX .. ",3;1,1;4]"
+		.. mcl_formspec.get_itemslot_bg(armorX, 0, 1, 1)
+		.. mcl_formspec.get_itemslot_bg(armorX, 1, 1, 1)
+		.. mcl_formspec.get_itemslot_bg(armorX, 2, 1, 1)
+		.. mcl_formspec.get_itemslot_bg(armorX, 3, 1, 1)
+		.. "background[" .. armorX - 0.2 .. ",-0.25;9.41,9.49;crafting_formspec_bg.png]"
+		.. mcl_player.get_player_formspec_model(player, armorX + 1, 0.0, 2.25, 4.5, "")
+		.. "list[current_player;offhand;" .. offhandX .. ",2;1,1]"
+		.. mcl_formspec.get_itemslot_bg(offhandX, 2, 1, 1)
+		.. armor_slot_imgs
 		-- Craft and inventory
-		"label[4,0.5;"..F(minetest.colorize(mcl_vars.font_color, S("Crafting"))) .. "]" ..
-		"list[current_player;craft;4,1;2,2]" ..
-		"list[current_player;craftpreview;7,1.5;1,1;]" ..
-		mcl_formspec.get_itemslot_bg(4, 1,2, 2) ..
-		mcl_formspec.get_itemslot_bg(7, 1.5, 1, 1) ..
-
+		.. "label[" .. offhandX + 1 .. ",0.5;"..F(minetest.colorize(mcl_vars.font_color, S("Crafting"))) .. "]"
+		.. "list[current_player;craft;" .. offhandX + 1 .. ",1;2,2]"
+		.. "list[current_player;craftpreview;" .. offhandX + 4 .. ",1.5;1,1;]"
+		.. mcl_formspec.get_itemslot_bg(offhandX + 1, 1,2, 2)
+		.. mcl_formspec.get_itemslot_bg(offhandX + 4, 1.5, 1, 1)
 		-- Crafting guide button
-		"image_button[4,3;1,1;craftguide_book.png;__mcl_craftguide;]" ..
-		"tooltip[__mcl_craftguide;"..F(S("Recipe book")) .. "]" ..
-
+		.. "image_button[" .. offhandX + 1 .. ",3;1,1;craftguide_book.png;__mcl_craftguide;]"
+		.. "tooltip[__mcl_craftguide;"..F(S("Recipe book")) .. "]"
 		-- Help button
-		"image_button[3,1;1,1;doc_button_icon_lores.png;__mcl_doc;]" ..
-		"tooltip[__mcl_doc;" .. F(S("Help")) .. "]"
+		.. "image_button[" .. offhandX .. ",1;1,1;doc_button_icon_lores.png;__mcl_doc;]"
+		.. "tooltip[__mcl_doc;" .. F(S("Help")) .. "]"
 
 	-- Skins button
 	if minetest.global_exists("mcl_skins") then
-		form = form ..
-			"image_button[3,3;1,1;mcl_skins_button.png;__mcl_skins;]" ..
-			"tooltip[__mcl_skins;" .. F(S("Select player skin")) .. "]"
+		form = form
+			.. "image_button[" .. offhandX .. ",3;1,1;mcl_skins_button.png;__mcl_skins;]"
+			.. "tooltip[__mcl_skins;" .. F(S("Select player skin")) .. "]"
 	end
 
-	form = form ..
+	form = form
 		-- Achievements button
-		"image_button[5,3;1,1;mcl_achievements_button.png;__mcl_achievements;]" ..
-		"tooltip[__mcl_achievements;" .. F(S("Advancements")) .. "]" ..
-
+		.. "image_button[" .. offhandX + 2 .. ",3;1,1;mcl_achievements_button.png;__mcl_achievements;]"
+		.. "tooltip[__mcl_achievements;" .. F(S("Advancements")) .. "]"
 		-- For shortcuts
-		"listring[current_player;armor]" ..
-		"listring[current_player;main]" ..
-		"listring[current_player;craft]" ..
-		"listring[current_player;main]"
+		.. "listring[current_player;armor]"
+		.. "listring[current_player;main]"
+		.. "listring[current_player;craft]"
+		.. "listring[current_player;main]"
 
 	player:set_inventory_formspec(form)
 end
