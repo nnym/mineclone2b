@@ -37,7 +37,7 @@ local egg_ENTITY={
 }
 
 -- Ender pearl entity
-local pearl_ENTITY={
+local pearlEntity = {
 	physical = false,
 	timer=0,
 	textures = {"mcl_throwing_ender_pearl.png"},
@@ -256,7 +256,6 @@ local function pearl_on_step(self, dtime)
 				local oldpos = player:get_pos()
 				-- Teleport and hurt player
 				player:set_pos(telepos)
-				player:set_hp(player:get_hp() - 5, { type = "fall", from = "mod" })
 
 				-- 5% chance to spawn endermite at the player's origin
 				local r = math.random(1,20)
@@ -277,11 +276,11 @@ end
 
 snowball_ENTITY.on_step = snowball_on_step
 egg_ENTITY.on_step = egg_on_step
-pearl_ENTITY.on_step = pearl_on_step
+pearlEntity.on_step = pearl_on_step
 
 minetest.register_entity("mcl_throwing:snowball_entity", snowball_ENTITY)
 minetest.register_entity("mcl_throwing:egg_entity", egg_ENTITY)
-minetest.register_entity("mcl_throwing:ender_pearl_entity", pearl_ENTITY)
+minetest.register_entity("mcl_throwing:ender_pearl_entity", pearlEntity)
 
 
 local how_to_throw = S("Use the punch key to throw.")

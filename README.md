@@ -15,6 +15,7 @@
 + Effect particles are disabled by default (configurable by `mclEffectParticles`).
 + smaller slime group sizes
 - sprinting FOV change
+- Ender Pearl damage
 - pigs
 - Christmas and Halloween
 - bats
