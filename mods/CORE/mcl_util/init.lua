@@ -1,5 +1,10 @@
 mcl_util = {}
 
+function join(array, separator, i, j)
+	for index = i or 1, j or #array do array[index] = tostring(array[index]) end
+	return table.concat(array, separator, i, j)
+end
+
 function log(...)
 	local arg = {...}
 
@@ -11,8 +16,7 @@ function log(...)
 		end
 	end
 
-	for index, argument in pairs(arg) do arg[index] = tostring(argument) end
-	minetest.log(table.concat(arg, " "))
+	minetest.log(join(arg, " "))
 end
 
 -- Updates all values in t using values from to*.
