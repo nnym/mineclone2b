@@ -1,6 +1,6 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
-local MAX_NAME_LENGTH = 35
+local MAX_NAME_LENGTH = 100
 local MAX_WEAR = 65535
 local SAME_TOOL_REPAIR_BOOST = math.ceil(MAX_WEAR * 0.12) -- 12%
 local MATERIAL_TOOL_REPAIR_BOOST = {
