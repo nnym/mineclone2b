@@ -1,6 +1,6 @@
 ```diff
 + Minimum y is -20618.
-+ Maximum stack size is determined by `mcl_stack_max` which is `default_stack_max` by default.
++ Maximum stack size is determined by `mcl_stack_max` which is `default_stack_max` or 16384 by default.
 + 64 inventory and 16 hotbar slots
 + dark GUI (based on original graphics by Wuzzy)
 + Node drops are added to the digger's inventory by default (configurable by `mcl_add_drops`).
