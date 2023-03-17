@@ -15,6 +15,7 @@
 + Effect particles are disabled by default (configurable by `mclEffectParticles`).
 + smaller slime group sizes
 + equal mushroom distribution (was mostly red originally)
++ maximum name length at Anvil of 100 characters (was 35)
 - sprinting FOV change
 - Ender Pearl damage
 - pigs
