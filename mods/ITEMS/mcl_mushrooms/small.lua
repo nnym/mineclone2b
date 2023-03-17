@@ -84,10 +84,15 @@ minetest.register_node("mcl_mushrooms:mushroom_red", {
 local eatStew = function(stack, eater, target)
 	local bowl = "mcl_core:bowl"
 	local count = stack:get_count()
+	local name = stack:get_name()
 	local leftover = minetest.do_item_eat(6, bowl, stack, eater, target)
+	local finished = leftover:get_name() == bowl
+	local inventory = eater:get_inventory()
 
-	if leftover:get_count() ~= count and leftover:get_name() == stack:get_name() then
-		minetest.add_item(eater:get_pos(), eater:get_inventory():add_item("main", bowl))
+	if leftover:get_count() ~= count or finished and inventory:contains_item("main", bowl) then
+		minetest.add_item(eater:get_pos(), inventory:add_item("main", bowl))
+
+		if finished then return {} end
 	end
 
 	return leftover
